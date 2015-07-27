@@ -3,7 +3,7 @@ by Saad Khan, Data Analyst Nanodegree Nov '14 [Data Analyst Nanodegree](https://
 
 ## Summary
 
-The intent was to compare visitors that went to the top 10 most visited National Parks in the US during the last 20 years. The top 10 parks chosen for the visualization are based on National Geographic article [Top 10 Most Visited National Parks](http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/). Data used to create the visualization was taken from the National Parks website [National Park Service - Park Reports] (https://irma.nps.gov/Stats/) and the focus was specifically on recreation visitors as they take the major percentage chunk of the total visitors, visiting a National Park. The narrative/story in the final article was written utilizing information on National Geographic website and Wikipedia.
+The intent was to compare visitors that went to the top 10 most visited National Parks in the US during the last 20 years. The top 10 parks chosen for the visualization are based on National Geographic article [Top 10 Most Visited National Parks](http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/). Data used to create the visualization was taken from the National Parks website [National Park Service - Park Reports](https://irma.nps.gov/Stats/) and the focus was specifically on recreation visitors as they take the major percentage chunk of the total visitors, visiting a National Park. The narrative/story in the final article was written utilizing information on National Geographic website and Wikipedia.
 
 ## Design
 
