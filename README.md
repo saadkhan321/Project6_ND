@@ -48,9 +48,11 @@ Final version of the data visualization including enhanced interactivity of the 
 
 ## Feedback
 
+**NO FEEDBACK RECEIVED**
+
 ## Resources
 
-##### National Park Information
+##### National Parks Information
 
 http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/
 https://irma.nps.gov/Stats/Reports/National
