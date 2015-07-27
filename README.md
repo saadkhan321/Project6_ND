@@ -31,9 +31,15 @@ In order to add interaction/animation to the visualization I decided to switch t
 
 To create the visualization using dimple.js I gathered some additional information pertaining to the parks and created a more detailed version of the data file .Data file are in the index_files/data folder [parkdata_initial_2.tsv].
 
-Using the newly created data file I created the initial visualization in dimple.js. The interactive part to the visualization was added using the [advanced dimple example](http://dimplejs.org/advanced_examples_viewer.html?id=advanced_interactive_legends) and manipulating the display structure according to my requirements. The code for this visualization is in the index_files folder **[html file: index3.html / data file: parkdata_initial_2.tsv]** [Initial DataVis Parks Dimple v1] 
+Using the newly created data file I created the initial visualization in dimple.js. Interactivity was added to the visualization. The code for this visualization is in the index_files folder **[html file: index3.html / data file: parkdata_initial_2.tsv]** [Initial DataVis Parks Dimple v1] 
 
-##### Improving Display
+##### Wider Visual Display
+
+Little enhancement in the code helped in improving the visualization display, making it more wider. The code for the visualization is in the index_files folder **[html file: index4.html / data file: parkdata_initial_2.tsv]** [Initial DataVis Parks Dimple v2]
+
+##### Addition of Tooltip Animation
+
+To enhance the data representation of the visualization, I thought of adding useful information such as park name, park area and monthly visitation in the tooltips for each data point. 
 
 ## Feedback
 
