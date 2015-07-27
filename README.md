@@ -39,7 +39,10 @@ Little enhancement in the code helped in improving the visualization display, ma
 
 ##### Addition of Tooltip Animation
 
-To enhance the data representation of the visualization, I thought of adding useful information such as park name, park area and monthly visitation in the tooltips for each data point. 
+To enhance the data representation of the visualization, I thought of adding useful information such as park name, park area and monthly visitation in the tooltips for each data point. The version of the code with enhanced version of the visualization is in the index_files folder **[html file: index5.html / data file: parkdata_initial_3.tsv]** [Initial DataVis Parks Dimple v3]
+
+##### 
+
 
 ## Feedback
 
