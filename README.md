@@ -9,7 +9,7 @@ The intent was to compare visitors that visited the top 10 most visited National
 
 ### Initial Design Process
 
-##### Data Collection/Extraction
+##### Data Collection/Extraction and Sketching
 
 The raw data was extracted from the National Parks website for each of the parks - example: [Acadia National Park](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Recreation%20Visitors%20By%20Month%20(1979%20-%20Last%20Calendar%20Year)?Park=ACAD). Some Park related information was included from wikipedia (such as Area, and States). After that basic MS Excel manipulation was performed to combine all the Top 10 Parks data into a tsv file.
 
