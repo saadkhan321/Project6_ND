@@ -50,6 +50,7 @@ Final version of the data visualization includes enhanced interactivity of the c
 The final version of the code was used as part of a narrative/story to show the comparison of the top most visited National Parks in the US. The html file pertaining to the full article and the associated data file are in the index_files folder **[html file: index_final.html / data file: parkdata_final.tsv]**
 
 Article itself is at [this link](http://saadkhan321.github.io/)
+
 Code view version is at [this link](http://bl.ocks.org/saadkhan321/4d8a10332f67f59cde6f)
 
 
