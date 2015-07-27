@@ -17,7 +17,7 @@ Initial sketch of what I wanted to visualize was created in MS Excel, which is i
 
 I started off by creating a basic multiple-line chart in D3 using the example: [Multi-Series Line Chart](http://bl.ocks.org/mbostock/3884955). This initial plot as shown below had no interactive element and also had improper/chopped off labels [Initial DataVis Parks D3].
 
-Next version of the chart was created in which, font for the charts was adjusted, y-axis values were displayed using appropriate axis customization according to [the link](http://curran.github.io/screencasts/introToD3/examples/viewer/#/103). Domain for y-axis was set at 0 to better visualize the visitation per park. Legend was added to the plot using [the link](link: http://bl.ocks.org/weiglemc/6185069).
+Next version of the chart was created in which, font for the charts was adjusted, y-axis values were displayed using appropriate axis customization according to [the link](http://curran.github.io/screencasts/introToD3/examples/viewer/#/103). Domain for y-axis was set at 0 to better visualize the visitation per park. Legend was added to the plot using [the link](http://bl.ocks.org/weiglemc/6185069).
 
 
 ## Feedback
