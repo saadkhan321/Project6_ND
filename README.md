@@ -3,7 +3,7 @@ by Saad Khan, Data Analyst Nanodegree Nov '14 [Data Analyst Nanodegree](https://
 
 ## Summary
 
-The intent was to analyze the distribution of visitors visiting the top 10 most visited National Parks in the US during the last 20 years. The data visualization displays comparison of the most visited National Parks in the US. The top 10 parks chosen for the visualization are based on National Geographic article [Top 10 Most Visited National Parks](http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/). Data used to create the visualization was taken from the National Parks website [National Park Service - Park Reports] (https://irma.nps.gov/Stats/Reports/Park/) and the focus was specifically on recreation visitors as they take the major percentage chunk of the total visitors, visiting a National Park.
+The intent was to compare visitors that visited the top 10 most visited National Parks in the US during the last 20 years. The top 10 parks chosen for the visualization are based on National Geographic article [Top 10 Most Visited National Parks](http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/). Data used to create the visualization was taken from the National Parks website [National Park Service - Park Reports] (https://irma.nps.gov/Stats/Reports/Park/) and the focus was specifically on recreation visitors as they take the major percentage chunk of the total visitors, visiting a National Park. The narrative/story in the final article was written utilizing information on National Geographic website and Wikipedia.
 
 ## Design
 
@@ -45,6 +45,10 @@ To enhance the data representation of the visualization, I thought of adding use
 
 Final version of the data visualization including enhanced interactivity of the chart and animation of the tooltip. Code for the final version is also placed in the index_files folder **[html file: index6.html / data file: parkdata_final.tsv]** [Initial DataVis Parks Dimple Final]
 
+##### Full Article
+
+The final version of the code was used as part of a narrative/story to show the coparison of the top most visited National Parks in the US. The full article html and the associated data file are in the index_files folder **[html file: index_final.html / data file: parkdata_final.tsv]**
+
 
 ## Feedback
 
@@ -59,6 +63,7 @@ https://irma.nps.gov/Stats/Reports/National
 https://irma.nps.gov/Stats/Reports/Park/
 https://irma.nps.gov/Stats/Reports/Park/ACAD
 https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Recreation%20Visitors%20By%20Month%20(1979%20-%20Last%20Calendar%20Year)?Park=ACAD
+https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States
 
 ##### Javascript, HTML, CSS, D3, Dimple.js
 
