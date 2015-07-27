@@ -1,4 +1,4 @@
-# Data Visualization: Top 10 U.S. National Parks Recreation Visitation, 1995-2014
+# Top 10 Most Visited National Parks in US, 1995-2014
 by Saad Khan, Data Analyst Nanodegree Nov '14 [Data Analyst Nanodegree](https://www.udacity.com/course/nd002)
 
 ## Summary
