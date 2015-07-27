@@ -90,4 +90,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 http://stackoverflow.com/questions/5012111/how-to-position-a-div-in-the-middle-of-the-screen-when-the-page-is-bigger-than-t
 http://www.sitepoint.com/create-data-visualizations-javascript-dimple-d3/
 
+## Data
 
+Final .tsv file used for data visualization is \index_files\data\parkdata_final.tsv
