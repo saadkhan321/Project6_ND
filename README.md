@@ -100,7 +100,6 @@ http://stackoverflow.com/questions/5012111/how-to-position-a-div-in-the-middle-o
 http://www.sitepoint.com/create-data-visualizations-javascript-dimple-d3/
 http://www.w3.org/Style/Examples/007/center.en.html
 http://www.w3schools.com/tags/tag_ol.asp
-http://www.w3schools.com/cssref/pr_font_font-size.asp
 http://www.w3schools.com/cssref/playit.asp?filename=playcss_font-size&preval=xx-small
 
 
