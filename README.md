@@ -60,47 +60,47 @@ Code view version is at [this link](http://bl.ocks.org/saadkhan321/4d8a10332f67f
 
 ## Resources
 
-##### National Parks Information
+#### National Parks Information
 
-http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/
-https://irma.nps.gov/Stats/Reports/National
-https://irma.nps.gov/Stats/Reports/Park/
-https://irma.nps.gov/Stats/Reports/Park/ACAD
-https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Recreation%20Visitors%20By%20Month%20(1979%20-%20Last%20Calendar%20Year)?Park=ACAD
-https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States
+##### http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/
+##### https://irma.nps.gov/Stats/Reports/National
+##### https://irma.nps.gov/Stats/Reports/Park/
+##### https://irma.nps.gov/Stats/Reports/Park/ACAD
+##### https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Recreation%20Visitors%20By%20Month%20(1979%20-%20Last%20Calendar%20Year)?Park=ACAD
+##### https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States
 
-##### Javascript, HTML, CSS, D3, Dimple.js
+#### Javascript, HTML, CSS, D3, Dimple.js
 
-http://webdesign.about.com/od/html5tags/fl/div-vs-section.htm
-http://bl.ocks.org/weiglemc/6185069
-https://www.youtube.com/watch?v=8jvoTV54nXw
-http://bl.ocks.org/weiglemc/6185069
-http://bl.ocks.org/mbostock/9764126
-http://stackoverflow.com/questions/8639383/how-do-i-center-an-svg-in-a-div
-http://bost.ocks.org/mike/selection/
-http://blog.fullstackacademy.com/post/100672562966/d3-js-in-10-minutes
-http://bost.ocks.org/mike/nest/
-https://robot.bolink.org/ebooks/Interactive%20Data%20Visualization%20For%20The%20Web.pdf
-http://bl.ocks.org/mbostock/3883245
-http://bl.ocks.org/mbostock/3884955
-http://www.d3noob.org/2013/07/arranging-more-than-one-d3js-graph-on.html
-http://115.28.34.34/wp-content/uploads/2015/01/d3cookbook.pdf
-https://leanpub.com/D3-Tips-and-Tricks/read
-http://dc-js.github.io/dc.js/
-https://github.com/mbostock/d3/wiki/SVG-Shapes#line
-http://stackoverflow.com/questions/15288850/font-size-is-not-working-in-my-d3-js-code
-http://stackoverflow.com/questions/12057145/d3-js-axis-labels-color-not-changing
-http://dimplejs.org/advanced_examples_viewer.html?id=advanced_interactive_legends
-http://dimplejs.org/advanced_examples_viewer.html?id=advanced_trellis_bar
-https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#legends
-https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.series
-http://annapawlicka.com/pretty-charts-with-dimple-js/
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
-http://stackoverflow.com/questions/5012111/how-to-position-a-div-in-the-middle-of-the-screen-when-the-page-is-bigger-than-t
-http://www.sitepoint.com/create-data-visualizations-javascript-dimple-d3/
-http://www.w3.org/Style/Examples/007/center.en.html
-http://www.w3schools.com/tags/tag_ol.asp
-http://www.w3schools.com/cssref/playit.asp?filename=playcss_font-size&preval=xx-small
+##### http://webdesign.about.com/od/html5tags/fl/div-vs-section.htm
+##### http://bl.ocks.org/weiglemc/6185069
+##### https://www.youtube.com/watch?v=8jvoTV54nXw
+##### http://bl.ocks.org/weiglemc/6185069
+##### http://bl.ocks.org/mbostock/9764126
+##### http://stackoverflow.com/questions/8639383/how-do-i-center-an-svg-in-a-div
+##### http://bost.ocks.org/mike/selection/
+##### http://blog.fullstackacademy.com/post/100672562966/d3-js-in-10-minutes
+##### http://bost.ocks.org/mike/nest/
+##### https://robot.bolink.org/ebooks/Interactive%20Data%20Visualization%20For%20The%20Web.pdf
+##### http://bl.ocks.org/mbostock/3883245
+##### http://bl.ocks.org/mbostock/3884955
+##### http://www.d3noob.org/2013/07/arranging-more-than-one-d3js-graph-on.html
+##### http://115.28.34.34/wp-content/uploads/2015/01/d3cookbook.pdf
+##### https://leanpub.com/D3-Tips-and-Tricks/read
+##### http://dc-js.github.io/dc.js/
+##### https://github.com/mbostock/d3/wiki/SVG-Shapes#line
+##### http://stackoverflow.com/questions/15288850/font-size-is-not-working-in-my-d3-js-code
+##### http://stackoverflow.com/questions/12057145/d3-js-axis-labels-color-not-changing
+##### http://dimplejs.org/advanced_examples_viewer.html?id=advanced_interactive_legends
+##### http://dimplejs.org/advanced_examples_viewer.html?id=advanced_trellis_bar
+##### https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#legends
+##### https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.series
+##### http://annapawlicka.com/pretty-charts-with-dimple-js/
+##### https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
+##### http://stackoverflow.com/questions/5012111/how-to-position-a-div-in-the-middle-of-the-screen-when-the-page-is-bigger-than-t
+##### http://www.sitepoint.com/create-data-visualizations-javascript-dimple-d3/
+##### http://www.w3.org/Style/Examples/007/center.en.html
+##### http://www.w3schools.com/tags/tag_ol.asp
+##### http://www.w3schools.com/cssref/playit.asp?filename=playcss_font-size&preval=xx-small
 
 
 ## Data
