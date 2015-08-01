@@ -75,7 +75,7 @@ Code view version is at [this link](http://bl.ocks.org/saadkhan321/4d8a10332f67f
 
 #### National Parks Information
 
-##### http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/
+National Geographic Article: http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/
 ##### https://irma.nps.gov/Stats/Reports/National
 ##### https://irma.nps.gov/Stats/Reports/Park/
 ##### https://irma.nps.gov/Stats/Reports/Park/ACAD
