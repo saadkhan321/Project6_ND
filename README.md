@@ -3,7 +3,7 @@ by Saad Khan, Data Analyst Nanodegree Nov '14 [Data Analyst Nanodegree](https://
 
 ## Project Deliverables
 
-1. The original index.html file for the first version of your graphic **[ index_final_V1.html]**
+1. The original index.html file for the first version of your graphic **[Full Artice: index_final_V1.html | Html Code: index_final_V1.html]**
 2. The final index.html file for the final version of your graphic **[index_final.html]**
 3. The README.md file with the sections Summary, Design, Feedback, and Resources **[This file]**
 4. The final data set file used for the graphic **[parkdata_final.tsv]** This file is in the Project6_ND/index_files/data/ location
