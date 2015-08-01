@@ -1,11 +1,24 @@
 # Top 10 Most Visited National Parks in US, 1995-2014
 by Saad Khan, Data Analyst Nanodegree Nov '14 [Data Analyst Nanodegree](https://www.udacity.com/course/nd002)
 
+## Project Deliverables
+
+1. The original index.html file for the first version of your graphic **[ index_final_V1.html]**
+2. The final index.html file for the final version of your graphic **[index_final.html]**
+3. The README.md file with the sections Summary, Design, Feedback, and Resources **[This file]**
+4. The final data set file used for the graphic **[parkdata_final.tsv]** This file is in the Project6_ND/index_files/data/ location
+5. A list of Web sites, books, forums, blog posts, github repositories, etc. that you referred to or used in creating your submission **[At the end of this README file in Resources section]**
+6. Additional versions of your index.html as you iterated on your visualization based on feedback (index1.html, index2.html, index3.html, ... , index_final.html)
+
 ## Summary
 
 The intent was to compare visitors that went to the top 10 most visited National Parks in the US during the last 20 years. The top 10 parks chosen for the visualization are based on National Geographic article [Top 10 Most Visited National Parks](http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/). Data used to create the visualization was taken from the National Parks website [National Park Service - Park Reports](https://irma.nps.gov/Stats/) and the focus was specifically on recreation visitors as they take the major percentage chunk of the total visitors, visiting a National Park. The narrative/story in the final article was written utilizing information on National Geographic website and Wikipedia.
 
 ## Design
+
+### Goal
+
+The initial goal before I started was to display the information either in some sort of bar, line or bubble charts. The initial rough plot/sketch was using line charts in MS Excel so I decide to keep line chart as my mode of presentation.
 
 ### Initial Design Process
 
