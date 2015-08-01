@@ -54,13 +54,29 @@ Little enhancement in the code helped in improving the visualization display, ma
 
 To enhance the data representation of the visualization, I thought of adding useful information such as park name, park area and monthly visitation in the tooltips for each data point. The version of the code with enhancements in the visualization are in the index_files folder **[html file: index5.html / data file: parkdata_initial_3.tsv]** ![Initial DataVis Parks Dimple v3](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_Dimple_v3.png)
 
-##### Final Version
+##### Initial Draft of the Final Version [without feedback]
 
 Final version of the data visualization includes enhanced interactivity of the charts and animation of the tooltip with detailed tooltip chart displaying monthly visitor information. Code for the final version is also in the index_files folder **[html file: index6.html / data file: parkdata_final.tsv]** ![Initial DataVis Parks Dimple Final](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_Dimple_v4.png)
 
-##### Full Article
+##### Final Version 1 [without feedback]
 
-The final version of the code was used as part of a narrative/story to show the comparison of the top most visited National Parks in the US. The html file pertaining to the full article and the associated data file are in the index_files folder **[html file: index_final.html / data file: parkdata_final.tsv]**
+The final version of the code was used as part of a narrative/story to show the comparison of the top most visited National Parks in the US. The html file pertaining to the full article and the associated data file are in the index_files folder. Following is the first iteration of the full article without any feedback. Subsequent version have the feedback incorporated **[html file: index_final_V1.html / data file: parkdata_final.tsv]**
+
+bl.ocks code version 1 is at [this link](http://bl.ocks.org/saadkhan321/ffa7663330bb317bea19)
+
+##### Final Version 2 [incorporating 1st feedback]
+
+After the 1st feedback, an updated version of the data visualization was created and uploaded on to bl.ocks.org. The associated .html files are int he index_files folder **[html file: index_final_V2.html / data file: parkdata_final.tsv]**
+
+The code version 2 for the visualization after 1st feedback is at [this link](http://bl.ocks.org/saadkhan321/3afb4229b42e81dfcace)
+
+##### Final Version 3 [incorporating 2nd feedback]
+
+Index_final_V3.html was generated which incorporated the 2nd feedback. The code was uploaded on to bl.ocks.org and associated .html files are uploaded are in the index_files folder **[html file: index_final_V3.html / data file: parkdata_final.tsv]**
+
+Code version after the 2nd feedback for the visualization is at [this link](http://bl.ocks.org/saadkhan321/af2604432728503f60a7)
+
+
 
 Article itself is at [this link](http://saadkhan321.github.io/)
 
