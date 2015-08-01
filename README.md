@@ -76,15 +76,20 @@ Code view version is at [this link](http://bl.ocks.org/saadkhan321/4d8a10332f67f
 #### National Parks Information
 
 National Geographic Article: http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/
+
 National Park Service website link 1: https://irma.nps.gov/Stats/Reports/National
+
 National Park Service website link 2: https://irma.nps.gov/Stats/Reports/Park/
+
 National Park Service website link 3: https://irma.nps.gov/Stats/Reports/Park/ACAD
+
 National Park Service website link 4: https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Recreation%20Visitors%20By%20Month%20(1979%20-%20Last%20Calendar%20Year)?Park=ACAD
+
 Wikipedia Resource: https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States
 
 #### Javascript, HTML, CSS, D3, Dimple.js
 
-###### http://webdesign.about.com/od/html5tags/fl/div-vs-section.htm
+##### http://webdesign.about.com/od/html5tags/fl/div-vs-section.htm
 ##### http://bl.ocks.org/weiglemc/6185069
 ##### https://www.youtube.com/watch?v=8jvoTV54nXw
 ##### http://bl.ocks.org/weiglemc/6185069
