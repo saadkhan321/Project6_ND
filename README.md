@@ -1,4 +1,4 @@
-# Top 10 Most Visited National Parks in US, 1995-2014
+# Data Visualization Project - Nanodegree
 by Saad Khan, Data Analyst Nanodegree Nov '14 [Data Analyst Nanodegree](https://www.udacity.com/course/nd002)
 
 ## Project Deliverables
