@@ -12,51 +12,73 @@ by Saad Khan, [Data Analyst Nanodegree](https://www.udacity.com/course/nd002) No
 
 ## Summary
 
-The intent was to compare visitors that went to the top 10 most visited National Parks in the US during the last 20 years. The top 10 parks chosen for the visualization are based on National Geographic article [Top 10 Most Visited National Parks](http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/). Data used to create the visualization was taken from the National Parks website [National Park Service - Park Reports](https://irma.nps.gov/Stats/) and the focus was specifically on recreation visitors as they take the major percentage chunk of the total visitors, visiting a National Park. The narrative/story in the final article was written utilizing information on National Geographic website and Wikipedia.
+The visualization illustrates annual visitor trend for the top 5 most visited National Parks in the US. The top 5 parks chosen for the visualization are based on National Geographic article [Top 10 Most Visited National Parks](http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/) and the [National Park Service website](www.nps.gov). Data used to create the visualization was, taken for the past 20 years, from the National Parks website [National Park Service - Park Reports](https://irma.nps.gov/Stats/) and the focus was specifically on recreation visitors as they take the major percentage chunk of the total visitors, visiting a National Park.
 
 ## Design
 
 ### Goal
 
-The initial goal before I started was to display the information either in some sort of bar, line or bubble charts. The initial rough plot/sketch was using line charts in MS Excel so I decide to keep line chart as my mode of presentation.
+The initial goal before I started was to display the information either in some sort of bar, line or bubble charts. I started of by considering the top 10 parks and later on decided to stick with the top 5. Initial rough plot/sketch was using line charts in MS Excel so I decide to keep line chart as my mode of presentation.
 
 ### Initial Design Process
 
 ##### Data Collection/Extraction and Sketching
 
-The raw data was extracted from the National Parks website for each of the parks - example: [Grand Canyon National Park](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Recreation%20Visitors%20By%20Month%20(1979%20-%20Last%20Calendar%20Year)?Park=GRCA). Some Park related information was included from wikipedia (such as Area, and States). After that basic MS Excel manipulation was performed to combine all the Top 10 Parks data into a tsv file.
+The raw data was extracted from the National Parks website for each of the parks - example: [Grand Canyon National Park](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Recreation%20Visitors%20By%20Month%20(1979%20-%20Last%20Calendar%20Year)?Park=GRCA). Some Park related information was included from wikipedia (such as Area, and States). Then basic MS Excel manipulation was performed to combine all the Top 10 Parks data into a tsv file.
 
 Initial sketch of what I wanted to visualize was created in MS Excel, which is illustrated in the image below .![Initial DataVis Parks MSExcel](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_MSExcel.PNG)
 
 ### Initial Design Process
 
-##### Struggles
+##### Struggles [Starting with D3.js]
 
-I started off by creating a basic multiple-line chart in D3 using the example: [Multi-Series Line Chart](http://bl.ocks.org/mbostock/3884955). This initial plot as shown below had no interactive element along with improper/chopped off labels. Data considered for this visualization was only taken for 10 years [2005 - 2014]. Code and data files for this particular visualization are in the index_files folder **[html file: index1.html / data file: parkdata_initial_1.tsv]** ![Initial DataVis Parks D3 v1](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_D3_v1.PNG)
+For the actual visualization, I started off by creating a basic multiple-line chart in D3 using the example: [Multi-Series Line Chart](http://bl.ocks.org/mbostock/3884955). This initial plot as shown below had no interactive element along with overlapping labels. Data considered for this visualization was only taken for 10 years [2005 - 2014]. Code and data files for this particular visualization are in the index_files folder:
 
-Next, a slightly imporoved version of the chart was created where font for the charts was adjusted, y-axis values were displayed using appropriate axis customization according to [the link](http://curran.github.io/screencasts/introToD3/examples/viewer/#/103). Domain for y-axis was set at 0 to better visualize the visitation per park. Legend was added to the plot using [the link](http://bl.ocks.org/weiglemc/6185069). The image of the visualization is shown below. Code and data files for this improved version are in the index_files folder **[html file: index2.html / data file: parkdata_initial_1.tsv]** ![Initial DataVis Parks D3 v2](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_D3_v2.PNG)
+##### **[html file: index_initial_V1.html / data file: parkdata_initial_1.tsv]** 
 
-### Final Design Process
+![Initial DataVis Parks D3 v1](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_D3_v1.PNG)
+
+Next, a slightly imporoved version of the chart was created where font for the charts was adjusted, y-axis values were displayed using appropriate axis customization according to [the link](http://curran.github.io/screencasts/introToD3/examples/viewer/#/103). Domain for y-axis was set at 0 to better visualize the visitation per park. Legend was added to the plot using [the link](http://bl.ocks.org/weiglemc/6185069). The image of the visualization is shown below. Code and data files for this improved version are in the index_files folder:
+
+##### **[html file: index_initial_V2.html / data file: parkdata_initial_1.tsv]** 
+
+![Initial DataVis Parks D3 v2](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_D3_v2.PNG)
+
+### Intermediate Design Process
 
 In order to add interaction/animation to the visualization I decided to switch to dimple.js and use its already built in features to enhance my visualization.
 
-##### Initial Visualization with Interaction using Dimple.js
+##### Initial Visualization with Interaction [ moving on to Dimple.js]
 
 To create the visualization using dimple.js I gathered some additional information pertaining to the parks and created a more detailed version of the data file. This data file is in the index_files/data folder [parkdata_initial_2.tsv].
 
-Using the newly created data file I created the initial visualization in dimple.js. Interactivity was added to the visualization in form of filtering the line charts on park basis. The code for this visualization is in the index_files folder **[html file: index3.html / data file: parkdata_initial_2.tsv]** ![Initial DataVis Parks Dimple v1](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_Dimple_v1.PNG)
+Using the newly created data file I created the initial visualization in dimple.js. Interactivity was added to the visualization in form of filtering the line charts on park basis. The code for this visualization is in the index_files folder:
+
+##### **[html file: index_initial_V3.html / data file: parkdata_initial_2.tsv]** 
+
+![Initial DataVis Parks Dimple v1](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_Dimple_v1.PNG)
 
 ##### Wider Visual Display
 
-Little enhancement in the code helped in improving the visualization display, making it more wider. The code for this visualization is in the index_files folder **[html file: index4.html / data file: parkdata_initial_2.tsv]** ![Initial DataVis Parks Dimple v2](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_Dimple_v2.png)
+Little enhancement in the code helped in improving the visualization display, making it more wider. The code for this visualization is in the index_files folder:
+
+##### **[html file: index_initial_V4.html / data file: parkdata_initial_2.tsv]** 
+
+![Initial DataVis Parks Dimple v2](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_Dimple_v2.png)
 
 ##### Addition of Tooltip Animation
 
-To enhance the data representation of the visualization, I thought of adding useful information such as park name, park area and monthly visitation in the tooltips for each data point. The version of the code with enhancements in the visualization are in the index_files folder **[html file: index5.html / data file: parkdata_initial_3.tsv]** ![Initial DataVis Parks Dimple v3](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_Dimple_v3.png)
+To enhance the data representation of the visualization, I added useful information such as park name, park area and monthly visitation (without axis labels) in the tooltips for each data point. The version of the code with enhancements in the visualization are in the index_files folder:
 
-##### Initial Draft of the Final Version [without feedback]
+##### **[html file: index_initial_V5.html / data file: parkdata_initial_3.tsv]** 
 
-Final version of the data visualization includes enhanced interactivity of the charts and animation of the tooltip with detailed tooltip chart displaying monthly visitor information. Code for the final version is also in the index_files folder **[html file: index6.html / data file: parkdata_final.tsv]** ![Initial DataVis Parks Dimple Final](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_Dimple_v4.png)
+![Initial DataVis Parks Dimple v3](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_Dimple_v3.png)
+
+##### Enhancing the Tooltip [without feedback]
+
+This version of the data visualization included enhanced interactivity of the charts and animation of the tooltip with detailed tooltip chart displaying monthly visitor information. Code for this version is also in the index_files folder **[html file: index6.html / data file: parkdata_final.tsv]** 
+
+![Initial DataVis Parks Dimple Final](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_Dimple_v4.png)
 
 ##### Final Version 1 [without feedback]
 
