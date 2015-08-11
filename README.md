@@ -1,5 +1,5 @@
 # Data Visualization Project - Nanodegree
-by Saad Khan, Data Analyst Nanodegree Nov '14 [Data Analyst Nanodegree](https://www.udacity.com/course/nd002)
+by Saad Khan, [Data Analyst Nanodegree](https://www.udacity.com/course/nd002) Nov '14
 
 ## Project Deliverables
 
