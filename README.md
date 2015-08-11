@@ -28,9 +28,9 @@ The raw data was extracted from the National Parks website for each of the parks
 
 Initial sketch of what I wanted to visualize was created in MS Excel, which is illustrated in the image below .![Initial DataVis Parks MSExcel](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_MSExcel.PNG)
 
-### Initial Design Process
+### Initial Design Process [Starting with D3.js]
 
-##### Struggles [Starting with D3.js]
+##### Struggles 
 
 For the actual visualization, I started off by creating a basic multiple-line chart in D3 using the example: [Multi-Series Line Chart](http://bl.ocks.org/mbostock/3884955). This initial plot as shown below had no interactive element along with overlapping labels. Data considered for this visualization was only taken for 10 years [2005 - 2014]. Code and data files for this particular visualization are in the index_files folder:
 
@@ -44,11 +44,11 @@ Next, a slightly imporoved version of the chart was created where font for the c
 
 ![Initial DataVis Parks D3 v2](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_D3_v2.PNG)
 
-### Intermediate Design Process
+### Initial Design Process [ moving on to Dimple.js]
 
 In order to add interaction/animation to the visualization I decided to switch to dimple.js and use its already built in features to enhance my visualization.
 
-##### Initial Visualization with Interaction [ moving on to Dimple.js]
+##### Initial Visualization with Interaction 
 
 To create the visualization using dimple.js I gathered some additional information pertaining to the parks and created a more detailed version of the data file. This data file is in the index_files/data folder [parkdata_initial_2.tsv].
 
@@ -76,7 +76,7 @@ To enhance the data representation of the visualization, I added useful informat
 
 ##### Enhancing the Tooltip [without feedback]
 
-This version of the data visualization included enhanced interactivity of the charts and animation of the tooltip with detailed tooltip chart displaying monthly visitor information. Code for this version is also in the index_files folder **[html file: index6.html / data file: parkdata_final.tsv]** 
+This version of the data visualization included enhanced interactivity of the charts and animation of the tooltip with detailed tooltip chart displaying monthly visitor information. Code for this version is also in the index_files folder **[html file: index_initial_V6.html / data file: parkdata_final.tsv]** 
 
 ![Initial DataVis Parks Dimple Final](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_Dimple_v4.png)
 
