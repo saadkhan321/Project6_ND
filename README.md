@@ -103,6 +103,11 @@ National Park Service website link 4: https://irma.nps.gov/Stats/SSRSReports/Par
 
 Wikipedia Resource: https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States
 
+##### http://news.discovery.com/adventure/everything-you-need-to-know-about-national-parks.htm
+##### http://www.nationalparkstraveler.com/parks/great-smoky-mountains-national-park/park-history-great-smoky-mountains
+##### http://www.livescience.com/39515-yosemite-national-park-facts-information-lodging.html 
+##### http://wikitravel.org/en/Rocky_Mountain_National_Park
+
 #### Javascript, HTML, CSS, D3, Dimple.js
 
 ##### http://webdesign.about.com/od/html5tags/fl/div-vs-section.htm
