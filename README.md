@@ -147,13 +147,6 @@ Visualization is at [this link](http://saadkhan321.github.io/)
 Image below shows the snapshot of how the visualization looks
 
 
-
-
-
-
-
-
-
 ## Feedback
 
 The feedback was received via Udacity forums and email.
@@ -162,7 +155,7 @@ Link to [Udacity Forums feedback](https://discussions.udacity.com/t/project-feed
 
 ### Feedback 1
 
-##### Matthew Mucker (Fellow Nanodegree class mate)
+##### Matthew Mucker (Fellow Nanodegree class mate) - Feedback via Udacity Forums
 
 "Very nice!
 
@@ -174,15 +167,54 @@ I like the transitions when parks are added/removed from the chart".
 
 ### Response
 
+##### Improved Version after feedback [html file: index_intermediate_V2.html]
+
 Solution to the issue identified was given by modifying the code and impriving the tooltip chart. Before and after scenario is shown in the image below.
 
 ###  Feedback 2
 
-##### Susan Streisand (Fellow Nanodegree class mate)
+##### Susan Streisand (Fellow Nanodegree class mate) - Feedback via Udacity Forums
 
 "I like this chart. The colors are pretty and the pop-up for each year is a nice way to show details. It might be nice to have the year on the pop-up as it's not easy to see exactly which year you are looking at. I am in chrome and it doesn't look squished. The pale yellow for Acadia is a little hard to read sometimes though".
 
-##### Response
+### Response
+
+##### Improved Version after feedback [html file: index_intermediate_V3.html]
+
+Code was modified to incorporate the suggestions and the snapshot of the improvement made in the visualizaiton following this feedback is as follows
+
+### Feedback 3
+
+##### Tyler Byers (Fellow Nanodegree class mate) - Feedback via email
+
+"To me, 20 years seems to be maybe a little bit longer of a time-table than necessary, especially since there is relatively little year-to-year change (the graphs look mostly flat to me).  Maybe 10 or 12 years would look better, IMHO.  Also, having 12 national parks on there automatically makes the chart a little bit "busy" for me.  Perhaps just show 4 or 6 parks as the "default" (default to the other parks being off but with the ability to show them).  I'd also like to see some explanatory text on the chart itself -- sort of like a New York Times visualization or something like that.  Put a little text block about where your data were sourced from".  
+
+"Your paragraph explanation of the project was very good.  I don't know if you're turning that part in (?).  I'd really take the key points from that and condense it to 3 lines that you can fit at the top of the chart.  Also choose a title that really grabs me. Your title should be a few words to describe your findings. So you need to weave a story around your data.  I honestly don't know how you would do this with yours, but you know the data well.  Maybe you need to roll in another data set -- average temperature in the month or something like that.   Tell me why Rocky Mountain National Park gets so many more visitors in summer".  
+
+### Response
+
+##### Improved Version after feedback [html file: index_intermediate_V3.html]
+
+1. A little text block was included at bottom left that mentioned the source where data was taken from.
+2. Reduced the number of parks from 10 to 5 to avoid cluttering.
+3. Explanatory text added to chart itself as an to understand the trend of visitation.
+4. Attempt was made to create the visualizaiton which looks like sort of a New York Times visualization.
+5. Appropriate title was chosen for the visualization
+6. Explanatory text added to the main chart explains the high summer visitation at Rocky Mountain National Park
+
+###  Feedback 4
+
+##### Sheng Kung (Nanodegree Coach) - Feedback via Udacity Forums
+
+"Hi Saad, looks like your visualization is coming along nicely. The visualization is fairly free-form, so it was good to see the points laid out in the Summary section to help direct attention. One thing that I noticed from playing around with the plot, and which I also saw when reading through your observations in the Summary section, is that there was a lot of emphasis in looking at the monthly trends in the park attendance and comparing them between parks. Since monthly attendance is only visible from the popup charts, it can be a bit tricky to compare multiple parks".
+
+"It may be worth looking at the converse plot to what you created, with month aggregated over years on the horizontal axis, and breakdown or trend by year with the popup charts. This'll make it easier to see the differences between the parks that are year-round and those parks that are seasonal".
+
+### Response
+
+##### Improved Version after feedback [html file: index_intermediate_V5.html]
+
+As suggested, line charts were shift from yearly trend to monthly trend for better comparison of the park visitation as either being year round or seasonal.
 
 ## Resources
 
