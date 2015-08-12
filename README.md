@@ -167,7 +167,7 @@ I like the transitions when parks are added/removed from the chart".
 
 ### Response
 
-##### Improved Version after feedback [html file: index_intermediate_V2.html]
+###### Improved Version after feedback [html file: index_intermediate_V2.html]
 
 Solution to the issue identified was given by modifying the code and impriving the tooltip chart. Before and after scenario is shown in the image below.
 
@@ -179,7 +179,7 @@ Solution to the issue identified was given by modifying the code and impriving t
 
 ### Response
 
-##### Improved Version after feedback [html file: index_intermediate_V3.html]
+###### Improved Version after feedback [html file: index_intermediate_V3.html]
 
 Code was modified to incorporate the suggestions and the snapshot of the improvement made in the visualizaiton following this feedback is as follows
 
@@ -193,12 +193,12 @@ Code was modified to incorporate the suggestions and the snapshot of the improve
 
 ### Response
 
-##### Improved Version after feedback [html file: index_intermediate_V3.html]
+###### Improved Version after feedback [html file: index_intermediate_V3.html]
 
 1. A little text block was included at bottom left that mentioned the source where data was taken from.
 2. Reduced the number of parks from 10 to 5 to avoid cluttering.
 3. Explanatory text added to chart itself as an to understand the trend of visitation.
-4. Attempt was made to create the visualizaiton which looks like sort of a New York Times visualization.
+4. Attempt was made to create the visualizaiton which looks like that of a typical New York Times visualization.
 5. Appropriate title was chosen for the visualization
 6. Explanatory text added to the main chart explains the high summer visitation at Rocky Mountain National Park
 
@@ -212,7 +212,7 @@ Code was modified to incorporate the suggestions and the snapshot of the improve
 
 ### Response
 
-##### Improved Version after feedback [html file: index_intermediate_V5.html]
+###### Improved Version after feedback [html file: index_intermediate_V5.html]
 
 As suggested, line charts were shift from yearly trend to monthly trend for better comparison of the park visitation as either being year round or seasonal.
 
