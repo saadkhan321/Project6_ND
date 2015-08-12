@@ -142,19 +142,47 @@ Related files pertaining to the final version are as follows:
 
 ###### **[html file: index.html / data file: parkdata_final.tsv]**
 
+Visualization is at [this link](http://saadkhan321.github.io/)
+
 Image below shows the snapshot of how the visualization looks
 
 
 
 
-Visualization is at [this link](http://saadkhan321.github.io/)
+
 
 
 
 
 ## Feedback
 
-**NO FEEDBACK RECEIVED**
+The feedback was received via Udacity forums and email.
+
+Link to [Udacity Forums feedback](https://discussions.udacity.com/t/project-feedback-required-top-10-most-visited-national-parks-in-us/27199)
+
+### Feedback 1
+
+##### Matthew Mucker (Fellow Nanodegree class mate)
+
+"Very nice!
+
+The popup barcharts are a very nice touch. On my system, however, the title text of these charts is 'squished' vertically: the lines of text overlap each other and overlap the top border of the popup. This would be my primary feedback to you.
+
+I'm not sure it's necessary to extend the y-axis down to zero. That leaves a lot of wasted space at the bottom of the plot, but in your defense, not extending the axis down to zero can lead to misinterpretation of the data.
+
+I like the transitions when parks are added/removed from the chart".
+
+### Response
+
+Solution to the issue identified was given by modifying the code and impriving the tooltip chart. Before and after scenario is shown in the image below.
+
+###  Feedback 2
+
+##### Susan Streisand (Fellow Nanodegree class mate)
+
+"I like this chart. The colors are pretty and the pop-up for each year is a nice way to show details. It might be nice to have the year on the pop-up as it's not easy to see exactly which year you are looking at. I am in chrome and it doesn't look squished. The pale yellow for Acadia is a little hard to read sometimes though".
+
+##### Response
 
 ## Resources
 
