@@ -3,16 +3,16 @@ by Saad Khan, [Data Analyst Nanodegree](https://www.udacity.com/course/nd002) No
 
 ## Project Deliverables
 
-1. The original index.html file for the first version of your graphic **[Full Artice: index_final_V1.html | Html Code: index_final_V1.html]**
-2. The final index.html file for the final version of your graphic **[index_final.html]**
+1. The original index.html file for the first version of your graphic **[index_initial_V1.html]**
+2. The final index.html file for the final version of your graphic **[index.html]**
 3. The README.md file with the sections Summary, Design, Feedback, and Resources **[This file]**
 4. The final data set file used for the graphic **[parkdata_final.tsv]** This file is in the Project6_ND/index_files/data/ location
 5. A list of Web sites, books, forums, blog posts, github repositories, etc. that you referred to or used in creating your submission **[At the end of this README file in Resources section]**
-6. Additional versions of your index.html as you iterated on your visualization based on feedback (index1.html, index2.html, index3.html, ... , index_final.html)
+6. Additional versions of your index.html as you iterated on your visualization based on feedback (index1.html, index2.html, index3.html, ... , index_final.html) **[all files included in the index_files folder]**
 
 ## Summary
 
-The visualization illustrates annual visitor trend for the top 5 most visited National Parks in the US. The top 5 parks chosen for the visualization are based on National Geographic article [Top 10 Most Visited National Parks](http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/) and the [National Park Service website](www.nps.gov). Data used to create the visualization was, taken for the past 20 years, from the National Parks website [National Park Service - Park Reports](https://irma.nps.gov/Stats/) and the focus was specifically on recreation visitors as they take the major percentage chunk of the total visitors, visiting a National Park.
+The visualization illustrates annual visitor comparison for the top 5 most visited National Parks in the US. The top 5 parks chosen for the visualization are based on National Geographic article [Top 10 Most Visited National Parks](http://travel.nationalgeographic.com/travel/national-parks/most-visited-parks-photos/) and the [National Park Service website](www.nps.gov). Data used to create the visualization was, taken for the past 20 years, from the National Parks website [National Park Service - Park Reports](https://irma.nps.gov/Stats/) and the focus was specifically on recreation visitors as they take the major percentage chunk of the total visitors, visiting a National Park.
 
 ## Design
 
@@ -32,25 +32,25 @@ Initial sketch of what I wanted to visualize was created in MS Excel, which is i
 
 ##### Struggles 
 
-For the actual visualization, I started off by creating a basic multiple-line chart in D3 using the example: [Multi-Series Line Chart](http://bl.ocks.org/mbostock/3884955). This initial plot as shown below had no interactive element along with overlapping labels. Data considered for this visualization was only taken for 10 years [2005 - 2014]. Code and data files for this particular visualization are in the index_files folder:
+For the actual visualization, I started off by creating a basic multiple-line chart in D3 using the example: [Multi-Series Line Chart](http://bl.ocks.org/mbostock/3884955). This initial plot as shown below had no interactive element and also had overlapping labels. Data considered for this visualization was only taken for 10 years [2005 - 2014]. Code and data files for this particular visualization are in the index_files folder:
 
 ###### **[html file: index_initial_V1.html / data file: parkdata_initial_V1.tsv]** 
 
 ![Initial DataVis Parks D3 v1](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_D3_v1.PNG)
 
-Next, a slightly imporoved version of the chart was created where font for the charts was adjusted, y-axis values were displayed using appropriate axis customization according to [the link](http://curran.github.io/screencasts/introToD3/examples/viewer/#/103). Domain for y-axis was set at 0 to better visualize the visitation per park. Legend was added to the plot using [the link](http://bl.ocks.org/weiglemc/6185069). The image of the visualization is shown below. Code and data files for this improved version are in the index_files folder:
+Next, a slightly improved version of the chart was created where font for the charts was adjusted, y-axis values were displayed using appropriate axis customization according to [the link](http://curran.github.io/screencasts/introToD3/examples/viewer/#/103). Domain for y-axis was set at 0 to better visualize the visitation per park. Legend was added to the plot using [the link](http://bl.ocks.org/weiglemc/6185069). The image of the visualization is shown below. Code and data files for this improved version are in the index_files folder:
 
 ###### **[html file: index_initial_V2.html / data file: parkdata_initial_V1.tsv]** 
 
 ![Initial DataVis Parks D3 v2](https://github.com/saadkhan321/Project6_ND/blob/master/images/Initial_DataVis_Parks_D3_v2.PNG)
 
-### Initial Design Process [ moving on to Dimple.js]
+### Initial Design Process [moving on to Dimple.js]
 
 In order to add interaction/animation to the visualization I decided to switch to dimple.js and use its already built in features to enhance my visualization.
 
 ##### Initial Visualization with Interaction 
 
-To create the visualization using dimple.js I gathered some additional information pertaining to the parks and created a more detailed version of the data file. This data file is in the index_files/data folder [parkdata_initial_2.tsv].
+To create the visualization using dimple.js, I gathered some additional information pertaining to the parks and created a more detailed version of the data file. This data file is in the index_files/data folder [parkdata_initial_2.tsv].
 
 Using the newly created data file I created the initial visualization in dimple.js. Interactivity was added to the visualization in form of filtering the line charts on park basis. The code for this visualization is in the index_files folder:
 
@@ -76,7 +76,7 @@ To enhance the data representation of the visualization, I added useful informat
 
 ##### Enhancing the Tooltip
 
-This version of the data visualization included enhanced interactivity of the charts and animation of the tooltip with detailed tooltip chart displaying monthly visitor information. Code for this version is also in the index_files folder:
+This version of the data visualization included animation of the tooltip with detailed tooltip chart displaying monthly visitor information. Code for this version is also in the index_files folder:
 
 ###### **[html file: index_initial_V6.html / data file: parkdata_initial_V4.tsv]** 
 
@@ -86,7 +86,7 @@ This version of the data visualization included enhanced interactivity of the ch
 
 ##### 1. Intermediate V1 [without any feedback]
 
-The intermediate version 1 of the code was used along with a introduction of the visualization to show the comparison of the top most visited National Parks in the US. The html file pertaining to the full article and the associated data file are in the index_files folder. This was the first iteration without any feedback. Subsequent version have the feedback incorporated 
+The intermediate version 1 of the code was used along with an introduction of the visualization to show the comparison of the top most visited National Parks in the US. The html file pertaining to the full article and the associated data file are in the index_files folder. This was the first iteration without any feedback. Subsequent version have the feedback incorporated 
 
 ###### **[html file: index_intermediate_V1.html / data file: parkdata_initial_V4.tsv]**
 
@@ -94,7 +94,7 @@ bl.ocks code version 1 is at [this link](http://bl.ocks.org/saadkhan321/ffa76633
 
 ##### 2. Intermediate V2 [incorporating 1st feedback]
 
-The details of the 1st feedback are mentioned in the feedback section below. After the 1st feedback, an updated version of the data visualization was created and uploaded on to bl.ocks.org. The associated .html files are in the index_files folder:
+The details of the 1st feedback are mentioned in the feedback section below. After the 1st feedback, an updated version of the data visualization was created and uploaded on to bl.ocks.org for further review. The associated .html files are in the index_files folder:
 
 ###### **[html file: index_intermediate_V2.html / data file: parkdata_initial_V4.tsv]**
 
@@ -102,7 +102,7 @@ The code version 2 for the visualization after 1st feedback is at [this link](ht
 
 ##### 3. Intermediate V3 [incorporating 2nd feedback]
 
-Index_intermediate_V3.html was generated which incorporated the 2nd feedback. Details covered in the feedback section below. The code was uploaded on to bl.ocks.org and associated .html files are uploaded are in the index_files folder 
+Index_intermediate_V3.html was generated which incorporated the 2nd feedback. Details covered in the feedback section below. The code is on bl.ocks.org and associated .html files are uploaded are in the index_files folder 
 
 ###### **[html file: index_intermediate_V3.html / data file: parkdata_initial_V4.tsv]**
 
@@ -116,31 +116,38 @@ Some part of the 3rd feedback was incorporated in Index_intermediate_V4.html and
 
 ##### 5. Intermediate V5 [incorporating 4th feedback]
 
-A mixture of 3rd and 4th feedback was incorporated in this version. On the suggestion of the suggestion of the Udacity Coach (Sheng), data was shifted from yearly to monthly (details covered below in the feedback section). Doing so, code removed the popup chart. Further enhancements in the visualization to bring back the popup chart were done in the subsequent versions. Now on monthly level data included was averaged over 10 years of visitation. Files for this version are as follows:
+A mixture of 3rd and 4th feedback was incorporated in this version. On the suggestion of the Udacity Coach (Sheng-Kung), data was shifted from yearly to monthly format (details covered below in the feedback section). Doing so, popup chart stopped executing. Further enhancements in the visualization to bring back the popup chart were done in the subsequent versions. The monthly level data included was averaged over 10 years of visitation. Files for this version are as follows:
 
 ###### **[html file: index_intermediate_V5.html / data file: parkdata_initial_V4.tsv]**
 
 ##### 6. Intermediate V6 [Building up on all the feedbacks received]
 
-In this version, bar chart was included in the popup chart showing year by year visitation for the month selected. Also inlcluded a rough draft for in chart text. Related files are as follows:
+In this version, bar chart was included in the popup chart showing year by year visitation for the month selected. Also inlcluded a rough draft for in-chart text block in the main chart. Related files are as follows:
 
 ###### **[html file: index_intermediate_V6.html / data file: parkdata_initial_V4.tsv]**
 
 
 ### Final Design
 
-Final Design incorporated all feedbacks and some additional enhancements alongwith the story. Following are the additional enhancements I includedvon top of the feedback received:
+Final Design incorporated all feedbacks and some additional enhancements alongwith the story. Following are the additional enhancements I included on top of the feedback received:
 
-1. Removed default axis labels and added visually attractive axis labels
-2. In-chart text blocks with hover function to emphasize respective line charts were added. Text highlighted information pertaining to the main line charts.
-3. Reverted back to 20 years visitation data (main charts averaged over 20 years instead of 10)
-4. Popup chart converted to line charts instead of bar charts (incorporating 20 year trend)
-5. Main change was to only focus on top 5 parks inorder to remove cluttering from the visualization
+1. Main change was to only focus on top 5 parks inorder to remove cluttering from the visualization.
+2. Removed default axis labels and added visually attractive axis labels.
+3. 5 In-chart text blocks with hover function to emphasize respective line charts were added. Text provided information pertaining to the main line charts.
+4. Reverted back to 20 years of visitation data (main charts average over 20 years instead of 10 now)
+5. Popup chart converted to line charts instead of bar charts (incorporating 20 year trend)
+6. Changed the shape of the legend keys to be more viually appealing.
+
+Related files pertaining to the final version are as follows:
+
+###### **[html file: index.html / data file: parkdata_final.tsv]**
+
+Image below shows the snapshot of how the visualization looks
 
 
 
 
-Article itself is at [this link](http://saadkhan321.github.io/)
+Visualization is at [this link](http://saadkhan321.github.io/)
 
 
 
