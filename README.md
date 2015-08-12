@@ -84,7 +84,7 @@ This version of the data visualization included enhanced interactivity of the ch
 
 ### Intermediate Design Process [incorporating feedback]
 
-##### Intermediate V1 [without any feedback]
+##### 1. Intermediate V1 [without any feedback]
 
 The intermediate version 1 of the code was used along with a introduction of the visualization to show the comparison of the top most visited National Parks in the US. The html file pertaining to the full article and the associated data file are in the index_files folder. This was the first iteration without any feedback. Subsequent version have the feedback incorporated 
 
@@ -92,7 +92,7 @@ The intermediate version 1 of the code was used along with a introduction of the
 
 bl.ocks code version 1 is at [this link](http://bl.ocks.org/saadkhan321/ffa7663330bb317bea19)
 
-##### Intermediate V2 [incorporating 1st feedback]
+##### 2. Intermediate V2 [incorporating 1st feedback]
 
 The details of the 1st feedback are mentioned in the feedback section below. After the 1st feedback, an updated version of the data visualization was created and uploaded on to bl.ocks.org. The associated .html files are in the index_files folder:
 
@@ -100,7 +100,7 @@ The details of the 1st feedback are mentioned in the feedback section below. Aft
 
 The code version 2 for the visualization after 1st feedback is at [this link](http://bl.ocks.org/saadkhan321/3afb4229b42e81dfcace)
 
-##### Intermediate V3 [incorporating 2nd feedback]
+##### 3. Intermediate V3 [incorporating 2nd feedback]
 
 Index_intermediate_V3.html was generated which incorporated the 2nd feedback. Details covered in the feedback section below. The code was uploaded on to bl.ocks.org and associated .html files are uploaded are in the index_files folder 
 
@@ -108,14 +108,34 @@ Index_intermediate_V3.html was generated which incorporated the 2nd feedback. De
 
 Code version after the 2nd feedback for the visualization is at [this link](http://bl.ocks.org/saadkhan321/af2604432728503f60a7)
 
-##### Intermediate V4 [incorporating 3rd feedback]
+##### 4. Intermediate V4 [incorporating 3rd feedback]
 
-Some part of the 3rd feedback was incorporated in Index_intermediate_V4.html and rest was periodically implemented in the later versions as the visualization was being finalized. Html and data are in the as follows:
+Some part of the 3rd feedback was incorporated in Index_intermediate_V4.html and rest was periodically implemented in the later versions as the visualization was being finalized. Also some additional enhancements such as inclusion of legend in the chart along with in chart notes were also added to the visualization. Html and data file are as follows:
 
 ###### **[html file: index_intermediate_V4.html / data file: parkdata_initial_V4.tsv]**
 
-##### Intermediate V4 [incorporating 3rd feedback]
+##### 5. Intermediate V5 [incorporating 4th feedback]
 
+A mixture of 3rd and 4th feedback was incorporated in this version. On the suggestion of the suggestion of the Udacity Coach (Sheng), data was shifted from yearly to monthly (details covered below in the feedback section). Doing so, code removed the popup chart. Further enhancements in the visualization to bring back the popup chart were done in the subsequent versions. Now on monthly level data included was averaged over 10 years of visitation. Files for this version are as follows:
+
+###### **[html file: index_intermediate_V5.html / data file: parkdata_initial_V4.tsv]**
+
+##### 6. Intermediate V6 [Building up on all the feedbacks received]
+
+In this version, bar chart was included in the popup chart showing year by year visitation for the month selected. Also inlcluded a rough draft for in chart text. Related files are as follows:
+
+###### **[html file: index_intermediate_V6.html / data file: parkdata_initial_V4.tsv]**
+
+
+### Final Design
+
+Final Design incorporated all feedbacks and some additional enhancements alongwith the story. Following are the additional enhancements I includedvon top of the feedback received:
+
+1. Removed default axis labels and added visually attractive axis labels
+2. In-chart text blocks with hover function to emphasize respective line charts were added. Text highlighted information pertaining to the main line charts.
+3. Reverted back to 20 years visitation data (main charts averaged over 20 years instead of 10)
+4. Popup chart converted to line charts instead of bar charts (incorporating 20 year trend)
+5. Main change was to only focus on top 5 parks inorder to remove cluttering from the visualization
 
 
 
@@ -185,6 +205,9 @@ Wikipedia Resource: https://en.wikipedia.org/wiki/List_of_national_parks_of_the_
 ##### https://css-tricks.com/almanac/properties/b/background-image/
 ##### https://github.com/mbostock/d3/wiki/Time-Formatting
 ##### http://stackoverflow.com/questions/30945581/change-axis-color-dimple
+##### http://alignedleft.com/tutorials/d3/axes
+##### http://www.nytimes.com/interactive/2009/03/01/business/20090301_WageGap.html?_r=1&
+##### http://www.nytimes.com/interactive/2012/05/17/business/dealbook/how-the-facebook-offering-compares.html?_r=0
 
 ## Data
 
