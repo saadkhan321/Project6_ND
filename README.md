@@ -144,7 +144,9 @@ Related files pertaining to the final version are as follows:
 
 Visualization is at [this link](http://saadkhan321.github.io/)
 
-Image below shows the snapshot of how the visualization looks
+Image below shows the snapshot of how the final visualization looks
+
+![Final Visualization](https://github.com/saadkhan321/Project6_ND/blob/master/images/index_final.png)
 
 
 ## Feedback
@@ -171,6 +173,8 @@ I like the transitions when parks are added/removed from the chart".
 
 Solution to the issue identified was given by modifying the code and impriving the tooltip chart. Before and after scenario is shown in the image below.
 
+![After feedback 1](https://github.com/saadkhan321/Project6_ND/blob/master/images/improvemnt_after_feedback1.png)
+
 ###  Feedback 2
 
 ##### Susan Streisand (Fellow Nanodegree class mate) - Feedback via Udacity Forums
@@ -181,7 +185,12 @@ Solution to the issue identified was given by modifying the code and impriving t
 
 ###### Improved Version after feedback [html file: index_intermediate_V3.html]
 
-Code was modified to incorporate the suggestions and the snapshot of the improvement made in the visualizaiton following this feedback is as follows
+Code was modified to incorporate the suggestions and the snapshots of the improvement made in the visualizaiton following this feedback is as follows:
+
+
+![After feedback 2a](https://github.com/saadkhan321/Project6_ND/blob/master/images/improvemnt_after_feedback2a.png)
+![After feedback 2b](https://github.com/saadkhan321/Project6_ND/blob/master/images/improvemnt_after_feedback2b.png)
+
 
 ### Feedback 3
 
@@ -215,6 +224,11 @@ Code was modified to incorporate the suggestions and the snapshot of the improve
 ###### Improved Version after feedback [html file: index_intermediate_V5.html]
 
 As suggested, line charts were shift from yearly trend to monthly trend for better comparison of the park visitation as either being year round or seasonal.
+
+Snapshot with both feedback 3 and 4 incorporated is as below:
+
+![After feedback 3 and 4](https://github.com/saadkhan321/Project6_ND/blob/master/images/improvemnt_after_feedback3and4.png)
+
 
 ## Resources
 
