@@ -1,5 +1,5 @@
 # CS6300 SDP Fall 2017 - Assignment 4
-by Saad Khan (skhan315@gatech.edu)
+by Saad Khan ("skhan315@gatech.edu")
 
 ## Application Overview
 
