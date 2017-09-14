@@ -1,5 +1,5 @@
 # CS6300 SDP Fall 2017 - Assignment 4
-by Saad Khan (<skhan315@gatech.edu>)
+by Saad Khan (<pre>skhan315@gatech.edu</pre>)
 
 ## Application Overview
 
@@ -41,7 +41,7 @@ Invalid keyword example: 54abc
 
 ### Cloning
 
-git clone <https://github.gatech.edu/gt-omscs-se-2017fall/6300Fall17skhan315>
+git clone <pre>https://github.gatech.edu/gt-omscs-se-2017fall/6300Fall17skhan315</pre>
 
 ### Get it to Work
 
