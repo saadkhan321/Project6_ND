@@ -1,5 +1,7 @@
-# CS6300 SDP Fall 2017 - Assignment 4
+# CS6300 SDP Fall 2017 - Assignment 4: Android Development
 by Saad Khan (```skhan315@gatech.edu```)
+
+# Simple Android App
 
 ## Application Overview
 
