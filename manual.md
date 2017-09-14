@@ -26,6 +26,7 @@ The purpose of this application is to encrypt or decrypt a message using mixed a
 When the input message is invalid (does not contain atleast one letter or is empty), upon clicking the "RUN" button, the application will through out an error message "Message Required".
 
 Valid input message examples: Zozpzazn 1337!, Knoweldge is POWER!
+
 Invalid input message example: 123!3
 
 ### Keyword
@@ -33,6 +34,7 @@ Invalid input message example: 123!3
 When the keyword is invalid (does not contain all letters), upon clicking the "RUN" button, the application will through out an error message "Invalid Keyword". Also when the keyword is empty the application will through out an error message "Missing Keyword".
 
 Valid keyword examples: Kryptos, LazyDoggy
+
 Invalid keyword example: 54abc
 
 ## Application Usage
