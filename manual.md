@@ -46,8 +46,9 @@ git clone https://github.gatech.edu/gt-omscs-se-2017fall/6300Fall17skhan315
 ### Get it to Work
 
 1. Open the project using Android Studio by traversing to the Assignment 4 folder inside the cloned Repo
-2. Run the Application from the Android Studio by selecting Nexus 5 API (Android 7.0, APi 24)
+2. Run the Application from Android Studio by selecting Nexus 5 API (Android 7.0, APi 24)
 3. Type in the valid input message text in the message text box and similarly a valid keyword in the keyword text box
-4. Select any of the 2 options (encode or decode) an click on "RUN"
+4. Select any of the 2 options (encode or decode) and click the "RUN" button
 5. Result will be displayed in the result message text box
+6. If and invlaid input message or and invalid keyword is suppied, the result message text box will be empty and an appropriate will be displayed
 
