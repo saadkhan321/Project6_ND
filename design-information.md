@@ -59,7 +59,7 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### f. Receive the returned username, with possibly a number appended to it to ensure that it is unique.
 
-**Response:** When creatin a new player, vital information such as first name, last name, email, username will be passed onto the 'New Player' section and information will be saved onto the database. The database, in conjunction with the external web service will reply back with a unique username. How a unique username will be generated as mentioned above in point **f** above, is not a design requirement rather an implementation requirement and is not addressed here.  
+**Response:** When creatin a new player, vital information such as first name, last name, email, username will be passed onto the 'New Player' section and information will be saved onto the database. The database, in conjunction with the external web service will reply back with a unique username. How a unique username will be generated as mentioned above in **point f** above, is not a design requirement rather an implementation requirement and is not addressed here.  
 
 ### 6. To add a word scramble, the player will:
 
