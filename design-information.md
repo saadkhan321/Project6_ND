@@ -23,15 +23,7 @@ A mixture of both data structures such as lists and variables such as string, in
 
 #### (4) view the player statistics.
 
-**Response:** All of the above functionalities will be addressed within the player class.
-
-The **createWordScramble()** method will address '(1) create a word scramble'.
-
-The **chooseWordScramble()** method will address '(2) choose and solve word scrambles' and present the player with a list of word scrambles to choose from.
-
-The **viewScrambleStatistics()** method will take of the scramble statistics and will return the scramble stats for that particular player.
-
-Similarly, **viewPlayerStatistics()** method will take of the player statistics and will return the personal player stats for that particular player.
+**Response:** All of the above functionalities will be addressed within the player class. The **createWordScramble()** method will address '(1) create a word scramble'. The **chooseWordScramble()** method will address '(2) choose and solve word scrambles' and present the player with a list of word scrambles to choose from. The **viewScrambleStatistics()** method will take of the scramble statistics and will return the scramble stats for that particular player. Similarly, **viewPlayerStatistics()** method will take of the player statistics and will return the personal player stats for that particular player.
 
 ### 3. The application shall maintain an underlying database to save persistent information across runs (e.g., word scrambles, player information, statistics).
 
