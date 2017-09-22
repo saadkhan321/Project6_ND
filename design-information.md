@@ -11,9 +11,7 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### 1. When starting the application, a user may choose to either create a new player or log in.  For simplicity, authentication is optional.  A (unique) username will be sufficient for logging in.
 
-**Response:** The starting of the application can be realized as being represented by User GUI, which could give 2 options to the user (new player, login) along with an empty text box to put in the user's username. If the user is an 
-
-existing player, he/she would login otherwise he/she would go onto create a new player profile.
+**Response:** The starting of the application can be realized as being represented by User GUI, which could give 2 options to the user (new player, login) along with an empty text box to put in the user's username. If the user is an existing player, he/she would login otherwise he/she would go onto create a new player profile.
 
 ### 2. After logging in, the application shall allow players to 
 
@@ -25,11 +23,7 @@ existing player, he/she would login otherwise he/she would go onto create a new 
 
 #### (4) view the player statistics.
 
-**Response:** All of the above functionalities will be addressed within the player class. The **createWordScramble()** method will address '(1) create a word scramble'. The **chooseWordScramble()** method will address '(2) choose and 
-
-solve word scrambles' and present the player with a list of word scrambles to pick and choose from. The **viewScrambleStatistics()** method will take care of the scramble statistics and will return the scramble stats for that particular 
-
-player. Similarly, **viewPlayerStatistics()** method will take care of the player statistics and will return the personal player stats for that particular player.
+**Response:** All of the above functionalities will be addressed within the player class. The **createWordScramble()** method will address '(1) create a word scramble'. The **chooseWordScramble()** method will address '(2) choose and solve word scrambles' and present the player with a list of word scrambles to pick and choose from. The **viewScrambleStatistics()** method will take care of the scramble statistics and will return the scramble stats for that particular player. Similarly, **viewPlayerStatistics()** method will take care of the player statistics and will return the personal player stats for that particular player.
 
 ### 3. The application shall maintain an underlying database to save persistent information across runs (e.g., word scrambles, player information, statistics).
 
@@ -49,9 +43,7 @@ player. Similarly, **viewPlayerStatistics()** method will take care of the playe
 
 **Response:** 
 
-### You should represent this utility as a utility class that (1) is called "ExternalWebService", (2) is connected to the classes in the system that use it, and (3) explicitly list relevant methods used by those classes.  This class is 
-
-provided by the system, so it should only contain what is specified here. You do not need to include any aspect of the server in your design besides this utility class.
+### You should represent this utility as a utility class that (1) is called "ExternalWebService", (2) is connected to the classes in the system that use it, and (3) explicitly list relevant methods used by those classes. This class is provided by the system, so it should only contain what is specified here. You do not need to include any aspect of the server in your design besides this utility class.
 
 
 ### 5. When creating a new player, a user will:
