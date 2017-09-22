@@ -59,6 +59,8 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 #### f. Receive the returned username, with possibly a number appended to it to ensure that it is unique.
 
+**Response:** When creatin a new player, vital information such as first name, last name, email, username will be passed onto the 'New Player' section and information will be saved onto the database. The database, in conjunction with the external web service will reply back with a unique username. How a unique username will be generated as mentioned above in point **f** above, is not a design requirement rather an implementation requirement and is not addressed here.  
+
 ### 6. To add a word scramble, the player will:
 
 #### a. Enter a phrase (not scrambled).
@@ -71,9 +73,17 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 #### e. View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
 
+**Response:** Adding a word scramble is realized by utilizing a helper class **createWordScramble**. This class will take as inputs, the non-scrambled phrase, its clue and help the user generate appropriate scrambled phrase using the **viewScrambledPhrase()** method. Once the user is satisfied with the scrambled word on accepting, the user will then be able to view the 'uniqueID' now associated with that word scramble. 
+
 ### 7. A scramble shall only mix up alphabetic characters, keeping each word together. Words are contiguous sequences of alphabetic characters separated by one or more non-alphabetic characters.
 
+**Response:** This requirement pertains to the implementation level details and is not addressed as part of this design document.
+
 ### 8. All other characters and spacing will remain as they originally are.
+
+#### Example: The cat is loud :-). -> Het atc si ulod :-).
+
+**Response:** This is also an implementation level requirement and is not addressed as part of this design document.
 
 ### 9. When solving word scrambles, a player will:
 
@@ -90,6 +100,9 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 #### f. View whether it was correct.
 
 #### g. Return either to the puzzle, if wrong, or to the list, if correct.
+
+**Response:** 
+
 
 ### 10. A player may exit any scramble in progress at any time and return to it later.  The last state of the puzzle will be preserved.
 
