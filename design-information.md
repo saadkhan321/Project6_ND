@@ -15,13 +15,13 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### 2. After logging in, the application shall allow players to 
 
-#### (1) create a word scramble,
+### (1) create a word scramble,
 
-#### (2) choose and solve word scrambles,
+### (2) choose and solve word scrambles,
 
-#### (3) see statistics on their created and solved word scrambles, and
+### (3) see statistics on their created and solved word scrambles, and
 
-#### (4) view the player statistics.
+### (4) view the player statistics.
 
 **Response:** All of the above functionalities will be addressed within the player class. The **createWordScramble()** method will address '(1) create a word scramble'. The **chooseWordScramble()** method will address '(2) choose and solve word scrambles' and present the player with a list of word scrambles to pick and choose from. The **viewScrambleStatistics()** method will take care of the scramble statistics and will return the scramble stats for that particular player. Similarly, **viewPlayerStatistics()** method will take care of the player statistics and will return the personal player stats for that particular player.
 
@@ -31,15 +31,15 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### 4. Word scrambles and statistics will be shared with other instances of the application. An external web service utility will be used by the application to communicate with a central server to:
 
-#### a. Add a player and ensure that their username is unique.
+### a. Add a player and ensure that their username is unique.
 
-#### b. Send new word scrambles and receive a unique identifier for them.
+### b. Send new word scrambles and receive a unique identifier for them.
 
-#### c. Retrieve the list of scrambles, together with information on which player created each of them. 
+### c. Retrieve the list of scrambles, together with information on which player created each of them. 
 
-#### d. Report a solved scramble.
+### d. Report a solved scramble.
 
-#### e. Retrieve the list of players and the scrambles each have solved.
+### e. Retrieve the list of players and the scrambles each have solved.
 
 ### You should represent this utility as a utility class that (1) is called "ExternalWebService", (2) is connected to the classes in the system that use it, and (3) explicitly list relevant methods used by those classes. This class is provided by the system, so it should only contain what is specified here. You do not need to include any aspect of the server in your design besides this utility class.
 
@@ -47,31 +47,31 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### 5. When creating a new player, a user will:
 
-#### a. Enter the player’s first name.
+### a. Enter the player’s first name.
 
-#### b. Enter the player’s last name.
+### b. Enter the player’s last name.
 
-#### c. Enter the player’s desired username.
+### c. Enter the player’s desired username.
 
-#### d. Enter the player’s email.  
+### d. Enter the player’s email.  
 
-#### e. Save the information.
+### e. Save the information.
 
-#### f. Receive the returned username, with possibly a number appended to it to ensure that it is unique.
+### f. Receive the returned username, with possibly a number appended to it to ensure that it is unique.
 
 **Response:** When creatin a new player, vital information such as first name, last name, email, username will be passed onto the 'New Player' section and information will be saved onto the database. The database, in conjunction with the external web service will reply back with a unique username. How a unique username will be generated as mentioned above in point **f** above, is not a design requirement rather an implementation requirement and is not addressed here.  
 
 ### 6. To add a word scramble, the player will:
 
-#### a. Enter a phrase (not scrambled).
+### a. Enter a phrase (not scrambled).
 
-#### b. Enter a clue. 
+### b. Enter a clue. 
 
-#### c. View the phrase scrambled by the system. If the player does not like the result, they may choose for the system to re-scramble it until they are satisfied.
+### c. View the phrase scrambled by the system. If the player does not like the result, they may choose for the system to re-scramble it until they are satisfied.
 
-#### d. Accept the results or return to previous steps.
+### d. Accept the results or return to previous steps.
 
-#### e. View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
+### e. View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
 
 **Response:** Adding a word scramble is realized by utilizing a helper class **createWordScramble**. This class will take as inputs, the non-scrambled phrase, its clue and help the user generate appropriate scrambled phrase using the **viewScrambledPhrase()** method. Once the user is satisfied with the scrambled word on accepting, the user will then be able to view the 'uniqueID' now associated with that word scramble. 
 
@@ -81,25 +81,25 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### 8. All other characters and spacing will remain as they originally are.
 
-#### ```Example: The cat is loud :-). -> Het atc si ulod :-).```
+### ```Example: The cat is loud :-). -> Het atc si ulod :-).```
 
 **Response:** This is also an implementation level requirement and is not addressed as part of this design document.
 
 ### 9. When solving word scrambles, a player will:
 
-#### a. View the list of unsolved word scrambles, by identifier, with any in progress scrambles marked and shown first.
+### a. View the list of unsolved word scrambles, by identifier, with any in progress scrambles marked and shown first.
 
-#### b. Choose one word scramble to work on.
+### b. Choose one word scramble to work on.
 
-#### c. View the scramble.
+### c. View the scramble.
 
-#### d. Enter the letters in a different order to try to solve the scramble.
+### d. Enter the letters in a different order to try to solve the scramble.
 
-#### e. Submit a solution.
+### e. Submit a solution.
 
-#### f. View whether it was correct.
+### f. View whether it was correct.
 
-#### g. Return either to the puzzle, if wrong, or to the list, if correct.
+### g. Return either to the puzzle, if wrong, or to the list, if correct.
 
 **Response:** 
 
@@ -108,18 +108,18 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### 11. The scramble statistics shall list all scrambles with
 
-#### (1) their unique identifier,
+### (1) their unique identifier,
 
-#### (2) information on whether they were solved or created by the player, and
+### (2) information on whether they were solved or created by the player, and
 
-#### (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
+### (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
 
 ### 12. The player statistics will list players’ first names and last names, with
 
-#### (1) the number of scrambles that the player has solved,
+### (1) the number of scrambles that the player has solved,
 
-#### (2) the number of new scrambles created, and
+### (2) the number of new scrambles created, and
 
-#### (3) the average number of times that the scrambles they created have been solved by other players.  It will be sorted by decreasing number of scrambles that the player has solved.
+### (3) the average number of times that the scrambles they created have been solved by other players.  It will be sorted by decreasing number of scrambles that the player has solved.
 
 ### 13. The User Interface (UI) shall be intuitive and responsive.
