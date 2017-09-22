@@ -102,4 +102,5 @@ by Saad Khan (```skhan315@gatech.edu```)
 #### (2) the number of new scrambles created, and
 
 #### (3) the average number of times that the scrambles they created have been solved by other players.  It will be sorted by decreasing number of scrambles that the player has solved.
-The User Interface (UI) shall be intuitive and responsive.
+
+### 13. The User Interface (UI) shall be intuitive and responsive.
