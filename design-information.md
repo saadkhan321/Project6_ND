@@ -116,7 +116,7 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
 
-**Response:** 
+**Response:** In order to keep track of statistics pertaining to scrambles, **scrambleStatistics** class will be used where the 'uniqueID' for each scramble, along with the information regarding its creater/solver 'user_name' and 'solved_created' will be kept. This will also the no. of times a word scramble has been solved.
 
 ### 12. The player statistics will list players’ first names and last names, with
 
@@ -124,9 +124,9 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### (2) the number of new scrambles created, and
 
-### (3) the average number of times that the scrambles they created have been solved by other players.  It will be sorted by decreasing number of scrambles that the player has solved.
+### (3) the average number of times that the scrambles they created have been solved by other players. It will be sorted by decreasing number of scrambles that the player has solved.
 
-**Response:** 
+**Response:** Similar to the scramble statistics, **playerStatistics** class will keep all the necessary records for a particular player starting from his/her first and last name, no. of scrambles created and solved by that player and average no. of times the scrambles created by them are solved by others.
 
 ### 13. The User Interface (UI) shall be intuitive and responsive.
 
