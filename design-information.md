@@ -36,7 +36,7 @@ by Saad Khan (```skhan315@gatech.edu```)
 
 #### e. Retrieve the list of players and the scrambles each have solved.
 
-You should represent this utility as a utility class that (1) is called "ExternalWebService", (2) is connected to the classes in the system that use it, and (3) explicitly list relevant methods used by those classes.  This class is provided by the system, so it should only contain what is specified here. You do not need to include any aspect of the server in your design besides this utility class.
+### You should represent this utility as a utility class that (1) is called "ExternalWebService", (2) is connected to the classes in the system that use it, and (3) explicitly list relevant methods used by those classes.  This class is provided by the system, so it should only contain what is specified here. You do not need to include any aspect of the server in your design besides this utility class.
 
 
 ### 5. When creating a new player, a user will:
