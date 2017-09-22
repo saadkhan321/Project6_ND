@@ -11,7 +11,7 @@ A mixture of both data structures such as lists and variables such as string, in
 
 ### 1. When starting the application, a user may choose to either create a new player or log in.  For simplicity, authentication is optional.  A (unique) username will be sufficient for logging in.
 
-**Response: ** The starting of the application can be realized as user, represented by User GUI, which could give 2 options to the user (new player, login) along with an empty text box to put in the user's username. If the user is an existing player, he/she would login otherwise he/she would go onto create a unique profile.
+**Response:** The starting of the application can be realized as user, represented by User GUI, which could give 2 options to the user (new player, login) along with an empty text box to put in the user's username. If the user is an existing player, he/she would login otherwise he/she would go onto create a unique profile.
 
 ### 2. After logging in, the application shall allow players to 
 
@@ -23,7 +23,7 @@ A mixture of both data structures such as lists and variables such as string, in
 
 #### (4) view the player statistics.
 
-**Response: ** All of the above functionalities will be addressed within the player class.
+**Response:** All of the above functionalities will be addressed within the player class.
 
 The **createWordScramble()** method will address '(1) create a word scramble'.
 
