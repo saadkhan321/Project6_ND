@@ -12,37 +12,58 @@ by Saad Khan (```skhan315@gatech.edu```)
 ### 1. When starting the application, a user may choose to either create a new player or log in.  For simplicity, authentication is optional.  A (unique) username will be sufficient for logging in.
 
 
-### 2. After logging in, the application shall allow players to  (1) create a word scramble, (2) choose and solve word scrambles, (3) see statistics on their created and solved word scrambles, and (4) view the player statistics.
+### 2. After logging in, the application shall allow players to 
+
+#### (1) create a word scramble,
+
+#### (2) choose and solve word scrambles,
+
+#### (3) see statistics on their created and solved word scrambles, and
+
+#### (4) view the player statistics.
 
 ### 3. The application shall maintain an underlying database to save persistent information across runs (e.g., word scrambles, player information, statistics).
 
 ### 4. Word scrambles and statistics will be shared with other instances of the application.  An external web service utility will be used by the application to communicate with a central server to:
 
-a. Add a player and ensure that their username is unique.
-b. Send new word scrambles and receive a unique identifier for them.
-c. Retrieve the list of scrambles, together with information on which player created each of them. 
-d. Report a solved scramble.
-e. Retrieve the list of players and the scrambles each have solved.
+#### a. Add a player and ensure that their username is unique.
+
+#### b. Send new word scrambles and receive a unique identifier for them.
+
+#### c. Retrieve the list of scrambles, together with information on which player created each of them. 
+
+#### d. Report a solved scramble.
+
+#### e. Retrieve the list of players and the scrambles each have solved.
 
 You should represent this utility as a utility class that (1) is called "ExternalWebService", (2) is connected to the classes in the system that use it, and (3) explicitly list relevant methods used by those classes.  This class is provided by the system, so it should only contain what is specified here. You do not need to include any aspect of the server in your design besides this utility class.
 
 
 ### 5. When creating a new player, a user will:
 
-a. Enter the player’s first name.
-b. Enter the player’s last name.
-c. Enter the player’s desired username.
-d. Enter the player’s email.  
-e. Save the information.
-f. Receive the returned username, with possibly a number appended to it to ensure that it is unique.
+#### a. Enter the player’s first name.
+
+#### b. Enter the player’s last name.
+
+#### c. Enter the player’s desired username.
+
+#### d. Enter the player’s email.  
+
+#### e. Save the information.
+
+#### f. Receive the returned username, with possibly a number appended to it to ensure that it is unique.
 
 ### 6. To add a word scramble, the player will:
 
-a. Enter a phrase (not scrambled).
-b. Enter a clue. 
-c. View the phrase scrambled by the system. If the player does not like the result, they may choose for the system to re-scramble it until they are satisfied.
-d. Accept the results or return to previous steps.
-e. View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
+#### a. Enter a phrase (not scrambled).
+
+#### b. Enter a clue. 
+
+#### c. View the phrase scrambled by the system. If the player does not like the result, they may choose for the system to re-scramble it until they are satisfied.
+
+#### d. Accept the results or return to previous steps.
+
+#### e. View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
 
 ### 7. A scramble shall only mix up alphabetic characters, keeping each word together. Words are contiguous sequences of alphabetic characters separated by one or more non-alphabetic characters.
 
@@ -50,17 +71,35 @@ e. View the returned unique identifier for the word scramble. The scramble may n
 
 ### 9. When solving word scrambles, a player will:
 
-a. View the list of unsolved word scrambles, by identifier, with any in progress scrambles marked and shown first.
-b. Choose one word scramble to work on.
-c. View the scramble.
-d. Enter the letters in a different order to try to solve the scramble.
-e. Submit a solution.
-f. View whether it was correct.
-g. Return either to the puzzle, if wrong, or to the list, if correct.
+#### a. View the list of unsolved word scrambles, by identifier, with any in progress scrambles marked and shown first.
+
+#### b. Choose one word scramble to work on.
+
+#### c. View the scramble.
+
+#### d. Enter the letters in a different order to try to solve the scramble.
+
+#### e. Submit a solution.
+
+#### f. View whether it was correct.
+
+#### g. Return either to the puzzle, if wrong, or to the list, if correct.
 
 ### 10. A player may exit any scramble in progress at any time and return to it later.  The last state of the puzzle will be preserved.
 
-### 11. The scramble statistics shall list all scrambles with (1) their unique identifier, (2) information on whether they were solved or created by the player, and (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
+### 11. The scramble statistics shall list all scrambles with
 
-### 12. The player statistics will list players’ first names and last names, with (1) the number of scrambles that the player has solved, (2) the number of new scrambles created, and (3) the average number of times that the scrambles they created have been solved by other players.  It will be sorted by decreasing number of scrambles that the player has solved.
+#### (1) their unique identifier,
+
+#### (2) information on whether they were solved or created by the player, and
+
+#### (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
+
+### 12. The player statistics will list players’ first names and last names, with
+
+#### (1) the number of scrambles that the player has solved,
+
+#### (2) the number of new scrambles created, and
+
+#### (3) the average number of times that the scrambles they created have been solved by other players.  It will be sorted by decreasing number of scrambles that the player has solved.
 The User Interface (UI) shall be intuitive and responsive.
