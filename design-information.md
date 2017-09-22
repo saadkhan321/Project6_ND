@@ -81,7 +81,7 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### 8. All other characters and spacing will remain as they originally are.
 
-#### Example: The cat is loud :-). -> Het atc si ulod :-).
+#### ```Example: The cat is loud :-). -> Het atc si ulod :-).```
 
 **Response:** This is also an implementation level requirement and is not addressed as part of this design document.
 
