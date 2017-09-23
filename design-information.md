@@ -11,7 +11,7 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### 1. When starting the application, a user may choose to either create a new player or log in.  For simplicity, authentication is optional.  A (unique) username will be sufficient for logging in.
 
-**Response:** The starting of the application can be realized as being represented by User GUI, which could give 2 options to the user (new player, login) along with an empty text box to put in the user's username. If the user is an existing player, he/she would login otherwise he/she would go onto create a new player profile.
+**Response:** The start of the application can be realized as being represented by User GUI, which could give 2 options to the user (new player and login) along with an empty text box to put in the user's username. If the user is an existing player, he/she would login otherwise he/she would go onto create a new player profile.
 
 ### 2. After logging in, the application shall allow players to 
 
@@ -23,7 +23,7 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### (4) view the player statistics.
 
-**Response:** All of the above functionalities will be addressed within the player class. The **createWordScramble()** method will address '(1) create a word scramble'. The **chooseWordScramble()** method will address '(2) choose and solve word scrambles' and present the player with a list of word scrambles to pick and choose from. The **viewScrambleStatistics()** method will take care of the scramble statistics and will return the scramble stats for that particular player. Similarly, **viewPlayerStatistics()** method will take care of the player statistics and will return the personal player stats for that particular player.
+**Response:** All of the above functionalities will be addressed within the player class. The **createWordScramble()** method will address '(1) create a word scramble'. The **chooseWordScramble()** method will address '(2) choose and solve word scrambles' and present the player with a list of word scrambles to pick and choose from. The **viewScrambleStatistics()** method will take care of the scramble statistics and will return the scramble stats. Similarly, **viewPlayerStatistics()** method will take care of the player statistics and will return the personal player stats for that particular player. This class will also maintain a variable 'loggedin_user' (holding current player's user_name) only for log maintenance purposes.
 
 ### 3. The application shall maintain an underlying database to save persistent information across runs (e.g., word scrambles, player information, statistics).
 
@@ -43,7 +43,7 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### You should represent this utility as a utility class that (1) is called "ExternalWebService", (2) is connected to the classes in the system that use it, and (3) explicitly list relevant methods used by those classes. This class is provided by the system, so it should only contain what is specified here. You do not need to include any aspect of the server in your design besides this utility class.
 
-**Response:** The external web service will address all the above mentioned tasks where the **addPlayer()** method will add a new player based on what is provided in the 'New Player' class such as first name, last name, username, etc. When a new word scramble will be created, the **sendWordScramble()** method will be utilized to receive the unique identifier for that particular word scramble. **retrieveScrambleRecords()** method will be utilized to fetch the word scramble information along with the creator's information. In this case, scrambles can be considered as a list with uniqueIDs along with associated unique username for the creator of that word scramble. For reporting if a particular word scramble has been solved, **solvedWordScrambles(string <uniqueID>)** method will be utilized with the passing parameter as the 'uniqueID' for that word scramble. In the case, where player records are to be retrieved, **retrievePlayersRecords()** method will be used to extract the list of players and the word scrambles they have solved.
+**Response:** The external web service will address all of the above mentioned tasks where the **addPlayer()** method will add a new player based on what is provided in the 'New Player' class such as first name, last name, username, etc. When a new word scramble will be created, the **sendWordScramble()** method will be utilized to receive the unique identifier for that particular word scramble. **retrieveScrambleRecords()** method will be utilized to fetch the word scramble information along with the creator's information. In this case, scrambles can be considered as a list with 'uniqueIDs' along with associated unique 'user_name' for the creator of that word scramble. For record keeping purposes when a particular word scramble has been solved, **solvedWordScrambles(string <uniqueID>)** method will be utilized with the passing parameter as the 'uniqueID' to let the system know that a word scramble has been solved. In the case, where player records are to be retrieved, **retrievePlayersRecords()** method will be used to extract the list of players and the word scrambles they have solved.
 
 ### 5. When creating a new player, a user will:
 
@@ -59,7 +59,7 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### f. Receive the returned username, with possibly a number appended to it to ensure that it is unique.
 
-**Response:** When creatin a new player, vital information such as first name, last name, email, username will be passed onto the 'New Player' section and information will be saved onto the database. The database, in conjunction with the external web service will reply back with a unique username. How a unique username will be generated as mentioned above in **point f** above, is not a design requirement rather an implementation requirement and is not addressed here.  
+**Response:** When creating a new player, important information such as first name, last name, email, username will be passed on and this information will be saved onto the database. The database, in conjunction with the external web service will reply back with a unique username. How a unique username will be generated as mentioned above in **point f** above (i.e. with possibly a number appended to it to ensure that it is unique), is not a design requirement rather an implementation requirement and is not addressed here.  
 
 ### 6. To add a word scramble, the player will:
 
@@ -73,7 +73,7 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### e. View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
 
-**Response:** Adding a word scramble is realized by utilizing a helper class **createWordScramble**. This class will take as inputs, the non-scrambled phrase, its clue and help the user generate appropriate scrambled phrase using the **viewScrambledPhrase()** method. Once the user is satisfied with the scrambled word on accepting, the user will then be able to view the 'uniqueID' now associated with that word scramble. 
+**Response:** Adding a word scramble is realized by utilizing a helper class **createWordScramble**. This class will take as inputs, the non-scrambled phrase, its clue and helps the user generate appropriate scrambled phrase using the **viewScrambledPhrase()** method. Once the user is satisfied with the scrambled word then he/she will accept it. Once the user accepts it, he/she will then be able to view the 'uniqueID' now associated with that word scramble. 
 
 ### 7. A scramble shall only mix up alphabetic characters, keeping each word together. Words are contiguous sequences of alphabetic characters separated by one or more non-alphabetic characters.
 
@@ -103,7 +103,6 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 **Response:** In order to solve an existing word scramble, a helper class **solveWordScramble** will be used which will help the user to view the list of unsolved word scrambles via the **viewUnsolvedScrambles()** method. Once the user has chosen the scramble to solve 'phrase_scramble', the user can provide the solution to that scrambled word 'solution' in form of a string by passing it to the **solveWordScramble(string<solution>)** method, which will respond as true if the solution is correct and false otherwise.
 
-
 ### 10. A player may exit any scramble in progress at any time and return to it later.  The last state of the puzzle will be preserved.
 
 **Response:** To address this requirement, a method **saveGameProgess()** is included as part of the **solveWordScramble** class which will save the progress to a particular scramble for a particular user.
@@ -116,7 +115,7 @@ A mixture of both data structures (lists) and variables (string, int, boolean) w
 
 ### (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
 
-**Response:** In order to keep track of statistics pertaining to scrambles, **scrambleStatistics** class will be used where the 'uniqueID' for each scramble, along with the information regarding its creater/solver 'user_name' and 'solved_created' will be kept. This will also the no. of times a word scramble has been solved.
+**Response:** In order to keep track of statistics pertaining to scrambles, **scrambleStatistics** class will be used where the 'uniqueID' for each scramble, along with the information regarding its creater/solver 'user_name' and 'solved_created' will be kept. This will also keep the no. of times a word scramble has been solved.
 
 ### 12. The player statistics will list players’ first names and last names, with
 
