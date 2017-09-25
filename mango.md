@@ -30,7 +30,9 @@ During our team discussion, we discussed majorly about the absence of login func
 
 The UML design shown above was created by Isaac Silva. One of the main highlight for this design is that it is very clean and very well organized. The design avoids extra cluttering by including most of the design requirements within four modules. Design also uses a combination of getter and setter methods encompassing good programming practice. Concise explanation of each connection is another useful feature of the design.
 
-As an entry point to the application, the designer uses a 'User' class by including most of the essential design requirements such as creating a new player, viewing player statistics, maintaining game progress, solved game list, etc. Similarly, the 'Game' class, quite aptly, handles everything pertaining to the word scramble game as well as the statistics. The external web service utility also appropriately addresses the design requirements. On the other hand, the UML did not include any underlying database, which seems to be necessary for the application.
+As an entry point to the application, the designer uses a 'User' class by including most of the essential design requirements such as creating a new player, viewing player statistics, maintaining game progress, solved game list, etc. Similarly, the 'Game' class, quite aptly, handles everything pertaining to the word scramble game as well as the statistics. The external web service utility also appropriately addresses the design requirements.
+
+On the other hand, the UML did not include any underlying database, which seems to be necessary for the application. Although, the design in less cluttered with minimal modules, however, to make the design more easy to implement a few additional modules addressing specific tasks such as dedicated module to statistics, creating a new player, etc would have been more appropriate from implementation point of view.
 
 # Team Design
 ![Team Design UML](images/UML_team.png)
