@@ -28,6 +28,10 @@ This design handles its classes in a graceful and concise way by declaring attri
 
 During our team discussion, we discussed majorly about the absence of login functionality in this design. The player and admins are kept separate and the system here can let anyone simply select to be admin or a player. In the final design, we added a super class &#39;User&#39; which is parent to both player and administrator class and holds information like username and role, along with login functionality. Though not explicitly mentioned in requirements, we deemed login functionality essential for a real system.
 
+The UML design shown above was created by Isaac Silva. One of the main highlight for this design is that it is very clean and very well organized. The design avoids extra cluttering by including most of the design requirements within four modules. Design also uses a combination of getter and setter methods encompassing good programming practice. Concise explanation of each connection is another useful feature of the design.
+
+As an entry point to the application, the designer uses a 'User' class by including most of the essential design requirements such as creating a new player, viewing player statistics, maintaining game progress, solved game list, etc. Similarly, the 'Game' class, quite aptly, handles everything pertaining to the word scramble game as well as the statistics. The external web service utility also appropriately addresses the design requirements. On the other hand, the UML did not include any underlying database, which seems to be necessary for the application.
+
 # Team Design
 ![Team Design UML](images/UML_team.png)
 
