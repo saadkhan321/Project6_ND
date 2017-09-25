@@ -34,6 +34,12 @@ As an entry point to the application, the designer uses a 'User' class by includ
 
 On the other hand, the UML did not include any underlying database, which seems to be necessary for the application. Although, the design in less cluttered with minimal modules, however, to make the design more easy to implement a few additional modules addressing specific tasks such as dedicated module to statistics, creating a new player, etc would have been more appropriate from implementation point of view.
 
+The design presented above was created by Mukul Pai. This design expresses cardinality quite apprpriately between the 'User' and the 'Player' and then between the 'Player' and the 'Scramble' classes. Another highlight of the design is that object oriented approach is clearly defined between the 'Scramble' class and associated classes 'NewScramble', 'ProgressScramble', etc & then between the 'Statistics' class and 'PlayerStatistics' and 'ScrambleStatistics' classes.
+
+Similar to the rest of the team members, the design uses a 'User' class as an entry point to the application handling all the information that is required to create a new player. Along with that, the Scramble class and its associated classes clearly separated and address all what was required as part of the design requirements. This can be very positive in the sense that it provides better understanding of what the application implementation approach should be like.
+
+On the contrary, above mentioned aspects of the design are sort of positive as well as negative. That is having a more detailed UML design can be very apt in some cases, however, a more simpler design could have been more appropriate as some of the additional classes could have been engulfed into the parent classes. Another thing not present in the diagram was an underlying database to handle player, scramble and statistical information. 
+
 # Team Design
 ![Team Design UML](images/UML_team.png)
 
