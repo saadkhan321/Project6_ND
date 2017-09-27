@@ -9,30 +9,20 @@ by Isaac Silva (```isilva6@gatech.edu```), Mukul Pai (```mpai8@gatech.edu```), S
 
 ![Isaac Silva's Design](designs/design_Isaac_Silva.png)
 
-The UML design shown above was created by Isaac Silva. One of the main highlight for this design is that it is very clean and very well organized. The design has excellent portrayal of the overall system to be implemented which made it very easy to visualize the overall design of the system. The design avoids extra cluttering by including most of the design requirements within four modules. 
-
-- Excellent portrayal of the overall system to be implemented - very easy to visualize the overall design of the system.
-- Accurate mapping of requirements. Incorporated all the functional requirements that the system needs, to behave as expected.
-- Class components described are consistent i.e all components  accurately displays class specific attributes and functions.
-- Interaction between the components are showcased explicitly.
-
-
-Overall Good job done in incorporating all the requirements while keeping it simple and clean. (in contrast to my design where I have added scrupulous details which now I think is not required at this phase of design)
-
-Note: Post our monday night’s discussion and me going over the requirement specs again, it makes sense to have a simple abstract design for our Phase 1 design and can take Isaac’s design as base and then add on to it. Like for instance showcasing Statistics class and if needed the persistence layer  as per Saad’s insight. 
-
-The UML design shown above was created by Isaac Silva. One of the main highlight for this design is that it is very clean and very well organized. The design avoids extra cluttering by including most of the design requirements within four modules. Design also uses a combination of getter and setter methods encompassing good programming practice. Concise explanation of each connection is another useful feature of the design.
+The UML design shown above was created by Isaac Silva. One of the main highlights for this design is that it is very clean and very well organized. The design has excellent portrayal of the overall system to be implemented which made it very easy to visualize the overall design of the system. The design avoids extra cluttering by including most of the design requirements within four modules and also incorporates all the functional requirements needed by the system. Class components described in the UML are consistent i.e all components accurately display class specific attributes and functions. Design also uses a combination of getter and setter methods encompassing good programming practice. Interaction between the components are showcased explicitly by providing concise explanation of each connection.
 
 As an entry point to the application, the designer uses a 'User' class by including most of the essential design requirements such as creating a new player, viewing player statistics, maintaining game progress, solved game list, etc. Similarly, the 'Game' class, quite aptly, handles everything pertaining to the word scramble game as well as the statistics. The external web service utility also appropriately addresses the design requirements.
 
-On the other hand, the UML did not include any underlying database, which seems to be necessary for the application. Although, the design in less cluttered with minimal modules, however, to make the design easier to implement a few additional modules addressing specific tasks such as dedicated module to statistics, creating a new player, etc would have been more appropriate from implementation point of view.
-
-
+While the design covers everything that is required, it does not include any underlying database, which according to the designer, seems to be unnecessary for the model. Although, the design in less cluttered with minimal modules, however, to make the design easier to implement a few additional modules addressing specific tasks such as dedicated module to statistics, creating a new player, etc would have been more appropriate from implementation point of view. Never the less, the design makes a lot of sense overall and is used as the basis for teh final team design. 
 
 
 ### Design 2
 
 ![Mukul Pai's Design](designs/design_Mukul_Pai.png)
+
+
+The design presented above was created by Mukul Pai.
+
 
 
 -	having a statistics class to encapsulate the logic of how to get the statistics is a good idea.
