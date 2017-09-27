@@ -9,6 +9,8 @@ by Isaac Silva (```isilva6@gatech.edu```), Mukul Pai (```mpai8@gatech.edu```), S
 
 ![Isaac Silva's Design](designs/design_Isaac_Silva.png)
 
+The UML design shown above was created by Isaac Silva. One of the main highlight for this design is that it is very clean and very well organized. The design has excellent portrayal of the overall system to be implemented which made it very easy to visualize the overall design of the system. The design avoids extra cluttering by including most of the design requirements within four modules. 
+
 - Excellent portrayal of the overall system to be implemented - very easy to visualize the overall design of the system.
 - Accurate mapping of requirements. Incorporated all the functional requirements that the system needs, to behave as expected.
 - Class components described are consistent i.e all components  accurately displays class specific attributes and functions.
