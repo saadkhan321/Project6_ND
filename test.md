@@ -1,5 +1,5 @@
 # CS6300 SDP Fall 2017 - Group Project
-by Isaac Silva (```isilva6@gatech.edu```), Mukul Pai (```mpai8@gatech.edu```), Saad Khan (```skhan315@gatech.edu```)
+by Isaac Silva (```isilva6@gatech.edu```), Mukul Pai (```mpai8@gatech.edu```) & Saad Khan (```skhan315@gatech.edu```)
 
 ## Word Scramble Game
 
@@ -21,24 +21,11 @@ While the design covers everything that is required, it does not include any und
 ![Mukul Pai's Design](designs/design_Mukul_Pai.png)
 
 
-The design presented above was created by Mukul Pai.
+The design presented above was created by Mukul Pai. Including a 'Statistics' class to encapsulate the logic of how to get statistics is one the main postives of this design. This design also expresses cardinality quite appropriately between the 'User' and the 'Player' and then between the 'Player' and the 'Scramble' classes. Another highlight of the design is that object oriented approach is clearly defined between the 'Scramble' class and associated classes 'NewScramble', 'ProgressScramble', etc & then between the 'Statistics' class and 'PlayerStatistics' and 'ScrambleStatistics' classes.
 
+Similar to the rest of the team members, the design uses a 'User' class as an entry point to the application handling all the information that is required to create a new player. Along with that, the Scramble class and its associated classes clearly separated, addressing all what was required as part of the design requirements, however, the return data types for few of the methods were not that explicit, specifically the statistics object returned by few methods do not mentioned the returned data types.
 
-
--	having a statistics class to encapsulate the logic of how to get the statistics is a good idea.
--	The response of each method call could include  the data types in more details to facilitate comprehension of what the method is actually returning. For example, the Statistics object that gets returned by a few method calls does not contain any properties in the UML design, only methods, which makes it hard to understand what that type is representing
--	Couldn’t understand what Loggedin is a particular type and not just a property of a User Session Type for example. 
--	Not sure if player and user should have a one to many relationship. That was not clear in the requirements doc.
--	The state of scramble (in-progress, completed) as different class types is confusing. 
--	The overall design seems to have many types, which makes it a bit hard to understand.
--	The methods defined in the utility class are slightly different from what the requirements doc stipulated, more specifically the statistics method. Maybe they could have been written in a more declarative way.
-
-
-The design presented above was created by Mukul Pai. This design expresses cardinality quite appropriately between the 'User' and the 'Player' and then between the 'Player' and the 'Scramble' classes. Another highlight of the design is that object oriented approach is clearly defined between the 'Scramble' class and associated classes 'NewScramble', 'ProgressScramble', etc & then between the 'Statistics' class and 'PlayerStatistics' and 'ScrambleStatistics' classes.
-
-Similar to the rest of the team members, the design uses a 'User' class as an entry point to the application handling all the information that is required to create a new player. Along with that, the Scramble class and its associated classes clearly separated and address all what was required as part of the design requirements. This can be very positive in the sense that it provides better understanding of what the application implementation approach should be like.
-
-On the contrary, above mentioned aspects of the design are sort of positive as well as negative. That is having a more detailed UML design can be very apt in some cases, however, a more simpler design could have been more appropriate as some of the additional classes could have been engulfed into the parent classes. Another thing not present in the diagram was an underlying database to handle player, scramble and statistical information.
+The design having more detailed UML design can be very apt in some cases, however, a more simpler design could have been more appropriate as some of the additional classes could have been engulfed into the parent classes such as the 'Loggedin' feature and scramble (in-progress, completed). Another feaure not present in the diagram was an underlying database to handle player, scramble and statistical information.
 
 
 ### Design 3
