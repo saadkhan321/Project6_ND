@@ -20,7 +20,6 @@ While the design covers everything that is required, it does not include any und
 
 ![Mukul Pai's Design](designs/design_Mukul_Pai.png)
 
-
 The design presented above was created by Mukul Pai. Including a 'Statistics' class to encapsulate the logic of how to get statistics is one the main postives of this design. This design also expresses cardinality quite appropriately between the 'User' and the 'Player' and then between the 'Player' and the 'Scramble' classes. Another highlight of the design is that object oriented approach is clearly defined between the 'Scramble' class and associated classes 'NewScramble', 'ProgressScramble', etc & then between the 'Statistics' class and 'PlayerStatistics' and 'ScrambleStatistics' classes.
 
 Similar to the rest of the team members, the design uses a 'User' class as an entry point to the application handling all the information that is required to create a new player. Along with that, the Scramble class and its associated classes clearly separated, addressing all what was required as part of the design requirements, however, the return data types for few of the methods were not that explicit, specifically the statistics object returned by few methods do not mentioned the returned data types.
