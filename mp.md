@@ -1,28 +1,53 @@
-WORD SCRAMBLE Application - Design information
-•	1- When starting the application, a user may choose to either create a new player or log in. For simplicity, authentication is optional. A (unique) username will be sufficient for logging in.
-•	5- When creating a new player, a user will: Enter the player’s first name. Enter the player’s last name. Enter the player’s desired username. Enter the player’s email.
-Save the information. Receive the returned username, with possibly a number appended to it to ensure that it is unique.
-In UML diagram the above requirements 1 & 5 are outlined using the Class USER, which showcases the required attributes and function to create a player. This class representation has two methods-
-  * login() - to login for existing user
-  * createPlayer() - for new user to create a player. 
-When the user creates a player for the first time, a unique user ID is generated and provided to the user by External Webservice Utility(EWS). He can then use the login method to login as a player using the unique user ID.
-•	2- After logging in, the application shall allow players to (1) create a word scramble, (2) choose and solve word scrambles, (3) see statistics on their created and solved word scrambles, and (4) view the player statistics.
-•	6- To add a word scramble, the player will: Enter a phrase (not scrambled). Enter a clue. View the phrase scrambled by the system. If the player does not like the result, they may choose for the system to re-scramble it until they are satisfied. Accept the results or return to previous steps. View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
-•	9- When solving word scrambles, a player will: View the list of unsolved word scrambles, by identifier, with any in progress scrambles marked and shown first. Choose one word scramble to work on. View the scramble. Enter the letters in a different order to try to solve the scramble. Submit a solution. View whether it was correct. Return either to the puzzle, if wrong, or to the list, if correct.
-•	10- A player may exit any scramble in progress at any time and return to it later. The last state of the puzzle will be preserved.
-The PLAYER class and SCRAMBLE class in the design, represents the above four requirements (2 , 6, 9 & 10). Once the user logs in with his unique user id, he will have options to - Create a scramble , Update it and submit the scramble for other players to solve. To create a new scramble the player can utilize the generateScramble method, which takes in the inputPhrase and inputClue string parameters and creates a scramble. The player can reuse the generateScramble method to regenerate the scramble until he is satisfied with the scrambled word. Once the player is satisfied with the scrambled word, he will use the acceptScramble to save the scramble and the system will add the word in UNSOLVEDSCRAMBLE list. The system will save the original phrase in datastore for later matching purpose while solving the scrambled word. Once he submits the scramble he will see a unique scramble id.
-Also in this class, getUnsolvedScrambleList method will provide the list of all availble scramble words to the player to solve. The player can choose a scramble to solve from the list using chooseScramble and view the scrambled word using viewScramble method. While solving a scramble, the player will input the letters in different order to match with the correct answer pre - stored in system. Once the player has solved the scramble, submitSolution method of SCRAMBLE class will be invoked to submit and match the correct answer stored in the system. Player can view the result. If the result is incorrect, player can go back to retry the solution else go back to the list to pick new scramble to solve.
-PLAYER class has the checkStatistics method which will allow player to check his historical statistics and also the scramble game statistics. The player also has option to either saveScramble() - to save the existing scramble word, exit()- to quit the game or resumeScramble()- to resume any old saved game. The last state of the puzzle will be preserved and the player can resume to solve it at a later time.
-•	3- The application shall maintain an underlying database to save persistent information across runs (e.g., word scrambles, player information, statistics).
-This requirement has not been included in the design. All the storage and retrieval procedures with Database will be implemented with appropriate Persistance API implementation.
-•	4- Word scrambles and statistics will be shared with other instances of the application. An external web service utility will be used by the application to communicate with a central server to: Add a player and ensure that their username is unique. Send new word scrambles and receive a unique identifier for them. Retrieve the list of scrambles, together with information on which player created each of them. Report a solved scramble. Retrieve the list of players and the scrambles each have solved.
-You should represent this utility as a utility class that (1) is called "ExternalWebService", (2) is connected to the classes in the system that use it, and (3) explicitly list relevant methods used by those classes. This class is provided by the system, so it should only contain what is specified here. You do not need to include any aspect of the server in your design besides this utility class.
-ExternalWebService utility class represents this requirement in the design. This utility is linked to all intances of the system - login, scramble, player, statistics and will be the core service which will take care of all game functionalities like createUniqueUserId , generateNewScramble, retrievePlayerStatistics, retrieveScrambleStatistics, scrambleSolvedNotification.
-•	7- A scramble shall only mix up alphabetic characters, keeping each word together. Words are contiguous sequences of alphabetic characters separated by one or more non-alphabetic characters.
-•	8- All other characters and spacing will remain as they originally are.
-•	13- The User Interface (UI) shall be intuitive and responsive.
-Requirement 7 , 8 and 13 are implementation level tasks and are not represented in the design. Requirement 7 & 8 will be taken care as an algorithm implementation in createScramble method of SCRAMBLE class and requirement 13 will be implemented as non-functional requirement.
-•	11- The scramble statistics shall list all scrambles with (1) their unique identifier, (2) information on whether they were solved or created by the player, and (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
-•	12-The player statistics will list players’ first names and last names, with (1) the number of scrambles that the player has solved, (2) the number of new scrambles created, and (3) the average number of times that the scrambles they created have been solved by other players. It will be sorted by decreasing number of scrambles that the player has solved.
-In the design the class component STATISTICS will take care of both requirement 11 and 12. getPlayerStats method will be used by PLAYER class to get the players statistics which includes First and Last name, the number of scrambles he has solved, the number of new scrambles created and the average number of times the scrambles which he has created have been solved by other players. Similarly, getScrambleStats method can be utilized by Player to get the scramble statistics which includes the uniuqe scramble id, status on whether the scramble is solved or created by him and the count of number of times the scramble has been solved.
+# WORD SCRAMBLE Application - Design information
 
+## Requirements
+
+### 1. When starting the application, a user may choose to either create a new player or log in. For simplicity, authentication is optional. A (unique) username will be sufficient for logging in.
+
+### 5. When creating a new player, a user will: Enter the player’s first name. Enter the player’s last name. Enter the player’s desired username. Enter the player’s email. Save the information. Receive the returned username, with possibly a number appended to it to ensure that it is unique.
+
+In UML diagram the above requirements 1 & 5 are outlined using the Class USER, which showcases the required attributes and function to create a player. This class representation has two methods
+
+```login() - to login for existing user```
+
+```createPlayer() - for new user to create a player.```
+
+When the user creates a player for the first time, a unique user ID is generated and provided to the user by External Webservice Utility(EWS). He can then use the login method to login as a player using the unique user ID.
+
+### 2. After logging in, the application shall allow players to (1) create a word scramble, (2) choose and solve word scrambles, (3) see statistics on their created and solved word scrambles, and (4) view the player statistics.
+
+### 6. To add a word scramble, the player will: Enter a phrase (not scrambled). Enter a clue. View the phrase scrambled by the system. If the player does not like the result, they may choose for the system to re-scramble it until they are satisfied. Accept the results or return to previous steps. View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
+
+### 9. When solving word scrambles, a player will: View the list of unsolved word scrambles, by identifier, with any in progress scrambles marked and shown first. Choose one word scramble to work on. View the scramble. Enter the letters in a different order to try to solve the scramble. Submit a solution. View whether it was correct. Return either to the puzzle, if wrong, or to the list, if correct.
+
+### 10. A player may exit any scramble in progress at any time and return to it later. The last state of the puzzle will be preserved.
+
+The PLAYER class and SCRAMBLE class in the design, represents the above four requirements (2 , 6, 9 & 10). Once the user logs in with his unique user id, he will have options to - Create a scramble , Update it and submit the scramble for other players to solve. To create a new scramble the player can utilize the generateScramble method, which takes in the inputPhrase and inputClue string parameters and creates a scramble. The player can reuse the generateScramble method to regenerate the scramble until he is satisfied with the scrambled word. Once the player is satisfied with the scrambled word, he will use the acceptScramble to save the scramble and the system will add the word in UNSOLVEDSCRAMBLE list. The system will save the original phrase in datastore for later matching purpose while solving the scrambled word. Once he submits the scramble he will see a unique scramble id.
+
+Also in this class, getUnsolvedScrambleList method will provide the list of all availble scramble words to the player to solve. The player can choose a scramble to solve from the list using chooseScramble and view the scrambled word using viewScramble method. While solving a scramble, the player will input the letters in different order to match with the correct answer pre - stored in system. Once the player has solved the scramble, submitSolution method of SCRAMBLE class will be invoked to submit and match the correct answer stored in the system. Player can view the result. If the result is incorrect, player can go back to retry the solution else go back to the list to pick new scramble to solve.
+
+PLAYER class has the checkStatistics method which will allow player to check his historical statistics and also the scramble game statistics. The player also has option to either saveScramble() - to save the existing scramble word, exit()- to quit the game or resumeScramble()- to resume any old saved game. The last state of the puzzle will be preserved and the player can resume to solve it at a later time.
+
+### 3. The application shall maintain an underlying database to save persistent information across runs (e.g., word scrambles, player information, statistics).
+
+This requirement has not been included in the design. All the storage and retrieval procedures with Database will be implemented with appropriate Persistance API implementation.
+
+### 4. Word scrambles and statistics will be shared with other instances of the application. An external web service utility will be used by the application to communicate with a central server to: Add a player and ensure that their username is unique. Send new word scrambles and receive a unique identifier for them. Retrieve the list of scrambles, together with information on which player created each of them. Report a solved scramble. Retrieve the list of players and the scrambles each have solved.
+
+### You should represent this utility as a utility class that (1) is called "ExternalWebService", (2) is connected to the classes in the system that use it, and (3) explicitly list relevant methods used by those classes. This class is provided by the system, so it should only contain what is specified here. You do not need to include any aspect of the server in your design besides this utility class.
+
+ExternalWebService utility class represents this requirement in the design. This utility is linked to all intances of the system - login, scramble, player, statistics and will be the core service which will take care of all game functionalities like createUniqueUserId , generateNewScramble, retrievePlayerStatistics, retrieveScrambleStatistics, scrambleSolvedNotification.
+
+### 7. A scramble shall only mix up alphabetic characters, keeping each word together. Words are contiguous sequences of alphabetic characters separated by one or more non-alphabetic characters.
+
+### 8. All other characters and spacing will remain as they originally are.
+
+### 13. The User Interface (UI) shall be intuitive and responsive.
+
+Requirement 7 , 8 and 13 are implementation level tasks and are not represented in the design. Requirement 7 & 8 will be taken care as an algorithm implementation in createScramble method of SCRAMBLE class and requirement 13 will be implemented as non-functional requirement.
+
+### 11. The scramble statistics shall list all scrambles with (1) their unique identifier, (2) information on whether they were solved or created by the player, and (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
+
+### 12. The player statistics will list players’ first names and last names, with (1) the number of scrambles that the player has solved, (2) the number of new scrambles created, and (3) the average number of times that the scrambles they created have been solved by other players. It will be sorted by decreasing number of scrambles that the player has solved.
+
+In the design the class component STATISTICS will take care of both requirement 11 and 12. getPlayerStats method will be used by PLAYER class to get the players statistics which includes First and Last name, the number of scrambles he has solved, the number of new scrambles created and the average number of times the scrambles which he has created have been solved by other players. Similarly, getScrambleStats method can be utilized by Player to get the scramble statistics which includes the uniuqe scramble id, status on whether the scramble is solved or created by him and the count of number of times the scramble has been solved.
