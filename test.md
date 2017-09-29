@@ -27,7 +27,7 @@ Similar to the rest of the team members, the design uses a 'User' class as an en
 The design having more detailed UML design can be very apt in some cases, however, a more simpler design could have been more appropriate as some of the additional classes could have been engulfed into the parent classes such as the 'Loggedin' feature and scramble (in-progress, completed). Another feaure not present in the diagram was an underlying database to handle player, scramble and statistical information.
 
 
-### Design 3
+### Design 3 
 
 ![Saad Khan's Design](designs/design_Saad_Khan.png)
 
