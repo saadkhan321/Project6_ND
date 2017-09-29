@@ -13,7 +13,7 @@ The UML design shown above was created by Isaac Silva. One of the main highlight
 
 As an entry point to the application, the designer uses a 'User' class by including most of the essential design requirements such as creating a new player, viewing player statistics, maintaining game progress, solved game list, etc. Similarly, the 'Game' class, quite aptly, handles everything pertaining to the word scramble game as well as the statistics. The external web service utility also appropriately addresses the design requirements.
 
-While the design covers everything that is required, it does not include any underlying database, which according to the designer, seems to be unnecessary for the model. Although, the design in less cluttered with minimal modules, however, to make the design easier to implement a few additional modules addressing specific tasks such as dedicated module to statistics, creating a new player, etc would have been more appropriate from implementation point of view. Never the less, the design makes a lot of sense overall and is used as the basis for teh final team design. 
+While the design covers everything that is required, it does not include any underlying database, which according to the designer, seems to be unnecessary for the model. Although, the design in less cluttered with minimal modules, however, to make the design easier to implement a few additional modules addressing specific tasks such as dedicated module to statistics, creating a new player, etc would have been more appropriate from implementation point of view. Never the less, the design makes a lot of sense overall and is used as the basis for the final team design. 
 
 
 ### Design 2
@@ -45,7 +45,23 @@ The design also includes an underlying database (providing connectivity between 
 
 As a collective team effort, we setup multiple calls to visit various requirements of the design and reviewed pros and cons for each individual member's design. The disscussions were thorough which led to the final UML deisgn as shown above, which is an enhanced/updated version of the individual UML created by one of the team member, Isaac Silva. The team was in unanimous agreement that the application's entry point should be the 'User' class also evident in all the individual UML designs as well as the final design. It was decided that the 'User' class will give the option to the user to either create a new user profile by accepting user credentials such as first name, last name, email, user_id, etc or login if the profile is already in the system. This approach led to an agreement amongst team members on how to distinguish between new and existing players. 
 
+It was agreed upon amongst the members that once the user is logged in as an existing player, he/she will have four options  to choose from. (1) to create a word scramble, realized by the addition of 'Game' class which will serve as a blueprint for word scramble creations. (2) to choose and solve word scrambles, this is realized by 'PlayEvent' association class providing actual game instance for a user. There was a lot of discussion on how to realize the viewing statistics (both player and scramble) part, once the player has logged in. As a result of team discussions, other 2 members, Mukul and Saad had explicitly used separate scramble and player statistic classes in their individual designs which was not the case in Isaac's design, so it was collectively agreed upon that (3) in the case where a player is able to view statistics on their created and solved word scrambles, should be addressed by addition of an associated class 'ScrambleStatistic' with each 'Game' instance. For the case (4) where a player may view his/her own statistics, a similar associated class 'PlayerStatistic' class was associated with each 'Player' instance.  
 
+
+
+- PlayerStatistic
+
+The above utility classes are responsible for retrieving all the statistics around Scrambles and Players
+
+
+2 - Added a Statistic class associated with each Player instance: PlayerStatistic
+
+This is evident in the final team design above (shown by the association between the 'Game' and the 'ScrambleStatistic' class) and is an enhancement to Isaac's individual design. 
+
+
+As a result of team discussions, other 2 members, Mukul and Saad had explicitly used separate scramble and player statistic classes in their individual designs and thisthese updates were added onto Isaac's design 
+
+Added a Statistic class associated with each Game instance: ScrambleStatistic
 
 In the scenario that a user logged in with administrator rights we all agreed to the functionality an admin will have in the system which were to: 1)Add a player 2) Add a cryptogram 3) Edit a cryptogram. This would be built out within the administrator class and in order for these operations to occur there had to be a relationship between Administrator and Player, and between Administrator and Cryptogram. The relationship between the Administrator and the Player was simple enough to just add a new player entry. However, between the Administrator and the Cryptogram was more involved and an area of discussion amongst the team. We could either make a straight call to cryptogram for both the edit and the add however, if we used this approach where would the result message and the generated unique ID reside. It could have been on either the Cryptogram class or the helper class of addCryptogram. We agreed to use the helper addCryptogram class for the addCryptogram method for the admin. What is not shown here as we did not believe it had a large impact on the design was the cryptogram validation. This we decided would occur within the administrator method addCryptogram. Though not all individual designs included the same functionality, the team design incorporated a simple “edits” association and included a separate editCryptogram operation within Administrator to signify that the administrator should be able to edit any cryptogram at any time, not just at the time they submit a new one. The association between Player and Cryptogram was commonly agreed to be “solves” with the choosing and viewing of cryptograms implied by that simple relationship.
 
