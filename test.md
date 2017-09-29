@@ -43,10 +43,191 @@ The design also includes an underlying database (providing connectivity between 
 
 ![Team Design](designs/design_team.png)
 
-As a collective team effort, we setup multiple calls to visit various requirements of the design and reviewed pros and cons for each individual design. The disscussions were thorough which led to the final UML deisgn as shown above. The team was in unanimous agreement that the application's entry point should be the 'User' class also evident in all the individual UML designs. It was decided that the 'User' class will give the option to the user to either create a new user profile by accepting user credentials such as first name, last name, email, user_id, etc or login if the profile is already in the system. This approach led to an agreement amongst team members on how to distinguish between new and existing players.
+As a collective team effort, we setup multiple calls to visit various requirements of the design and reviewed pros and cons for each individual member design. The disscussions were thorough which led to the final UML deisgn as shown above. The team was in unanimous agreement that the application's entry point should be the 'User' class also evident in all the individual UML designs. It was decided that the 'User' class will give the option to the user to either create a new user profile by accepting user credentials such as first name, last name, email, user_id, etc or login if the profile is already in the system. This approach led to an agreement amongst team members on how to distinguish between new and existing players. 
 
 
 
+As a team, we set up a call to go through each requirement and review the pros and cons of each of our designs. Through our discussion we were able to come to the conclusion on the above UML design. We agreed that there needed to be some form of login for a player and administrator. This led us to the creating a user class which will be the entry to the program. This class will store the username and password information and redirect to giving the user either admin or player rights based on their credentials. We agreed upon this design as there needed to be a way to differentiate between not only players in the system, but also between a player and an administrator.
+
+In the scenario that a user logged in with administrator rights we all agreed to the functionality an admin will have in the system which were to: 1)Add a player 2) Add a cryptogram 3) Edit a cryptogram. This would be built out within the administrator class and in order for these operations to occur there had to be a relationship between Administrator and Player, and between Administrator and Cryptogram. The relationship between the Administrator and the Player was simple enough to just add a new player entry. However, between the Administrator and the Cryptogram was more involved and an area of discussion amongst the team. We could either make a straight call to cryptogram for both the edit and the add however, if we used this approach where would the result message and the generated unique ID reside. It could have been on either the Cryptogram class or the helper class of addCryptogram. We agreed to use the helper addCryptogram class for the addCryptogram method for the admin. What is not shown here as we did not believe it had a large impact on the design was the cryptogram validation. This we decided would occur within the administrator method addCryptogram. Though not all individual designs included the same functionality, the team design incorporated a simple “edits” association and included a separate editCryptogram operation within Administrator to signify that the administrator should be able to edit any cryptogram at any time, not just at the time they submit a new one. The association between Player and Cryptogram was commonly agreed to be “solves” with the choosing and viewing of cryptograms implied by that simple relationship.
+
+In the scenario that a user logged in as a player to the system they will be brought to the Player class in which we all agreed should contain the values of the users first name and last name. There was some discussion on whether these values should reside on the user level but we did not believe that the administrator needed to have these values. As a player in the system, the user shall be able to: 1)View a list of Cryptograms 2) Choose a cryptogram to solve 3) Solve the cryptogram 4) View a list of player ratings. In order to handle these scenarios we have 4 methods which will do these exact requirements. viewCryptogram is a method which will request the uniqueID of the cryptogram that the user would like to solve. chooseCryptogram will display a list to the user in which the user can choose any of the cryptograms to view. solveCryptogram is where the player will begin to play the game and we will begin subroutines in order to keep track of metrics such as if the cryptogram was solved or not. This will tie into the utility class of PlayerRating that will store for each player the attributes which will be passed back to the method in the player class named listPlayerRatings. The player class will be tied to the database service in order to update this information once a player begins work on a cryptogram
+
+The Cryptogram class will be used to store information on the cryptogram such as the encoded and decoded phrase for a cryptogram. Some team members included additional attributes such as a list of users who had correctly solved a particular cryptogram, but it was determined that such a list could be derived from the Player class and the relationship between Player and Cryptogram. There was also agreement that the Administrator class should not need any attributes but should include addPlayer and addCryptogram operations, in addition to the editCryptogram operation discussed earlier.
+
+Once a cryptogram is added or edited, the cryptogram will communicate to the database so that any further requests to the cryptogram will be updated accordingly. Regarding the local database, all but one user’s individual diagram included a class entity to represent this component in the design. Two of the three users who included it left it as a complete “black box” while one user tried to add some details about the data structures that would be stored there. It was decided that there does not need to be a lot of detail about the database in this UML class diagram, so it was left as a simple class with no attributes or operations. A “uses” dependency was established between the DatabaseService and the User superclass as well as Cryptogram. Similarly, three team members included some kind of class structure to handle player ratings. It was decided we should have a class representing the collection of attributes belonging to a player such as totalSolved, totalStarted, and so on.
+
+We discussed the ExternalWebService utility class and how exactly it will communicate with our system. We deemed that it should essentially be a gateway to an external server. As a result, this class will simply pass information about by using the methods sendPlayerRatings, sendCryptogram, requestPlayerRatings, and requestCryptogram.
+
+1 - When starting the application, a user may choose to either create a new player or log in.  For simplicity, authentication is optional.  A (unique) username will be sufficient for logging in.
+
+To realize this requirement, I added a class "User" to represent the player, with an attribute "username". A method signature was added to the same class:
+
+- login(username: String): Boolean
+
+That method returns true or false depending if the user logged in or not.
+
+
+2 - After logging in, the application shall allow players to  (1) create a word scramble, (2) choose and solve word scrambles, (3) see statistics on their created and solved word scrambles, and (4) view the player statistics.
+
+Even though this is more an UI requirement, it helped me understand some of the other elements of the domain. Thus, I added a class "Game" to be used as a blueprint for the creation of word scrambles and an association class "PlayEvent" for the actual action of a user playing a particular game instance. 
+
+
+3 - The application shall maintain an underlying database to save persistent information across runs (e.g., word scrambles, player information, statistics).
+
+I did not consider this requirement because the database does not affect the design directly.
+
+4 - Word scrambles and statistics will be shared with other instances of the application.  An external web service utility will be used by the application to communicate with a central server to:
+
+a - Add a player and ensure that their username is unique.
+b - Send new word scrambles and receive a unique identifier for them.
+c - Retrieve the list of scrambles, together with information on which player created each of them. 
+d - Report a solved scramble.
+e - Retrieve the list of players and the scrambles each have solved.
+
+
+In order to realize this requirement, added an Utility class called "ExternalWebService" with the following methods in order to fulfill each of the above-described functionalities:
+
+a - addUser(username: String): String 
+b - addNewWordScrambleGame(game: Game): Integer
+c - getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>
+d - reportSolvedScramble(game: Game)
+e - retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>
+ 
+
+A few remarks on the steps to fulfill this requirement:
+
+- Added unique identifier as a property in the Game class, according to indications of the "b" requirement.
+- The addUser method returns an unique username as a String
+
+
+5 - When creating a new player, a user will:
+
+a - Enter the player’s first name.
+b - Enter the player’s last name.
+c - Enter the player’s desired username.
+d - Enter the player’s email.  
+e - Save the information.
+f - Receive the returned username, with possibly a number appended to it to ensure that it is unique.
+
+In order to realize this requirement, I added the following properties to the User class:
+
+firstName: String
+lastName: String
+desiredUsername: String
+username: String
+email: String
+
+The following methods were added:
+
+- createNewPlayer(firstName, lastName, desiredUsername, email): String
+
+The above method returns a username that the system registered by using the ExternalWebService utility class. The addUser method signature was changed to address that requirement and became as follows:
+
+- addUser(firstName, lastName, desiredUsername, email): String
+
+That method returns a player's username that the remote system assigned to the user. 
+
+
+6 - To add a word scramble, the player will:
+
+a - Enter a phrase (not scrambled).
+b - Enter a clue. 
+c - View the phrase scrambled by the system. If the player does not like the result, they may choose for the system to re-scramble it until they are satisfied.
+d - Accept the results or return to previous steps.
+e - View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
+
+
+In order to realize this requirement, the following property fields were added to the Game class:
+
+identifier: Integer
+originalPhrase: String
+clue: String
+scrambledPhrase: String
+
+The following methods were added to the Game class:
+
+- createNewGame(phrase: String, clue: String): Integer
+- refreshScrambledPhrase()
+- saveGame(): Integer
+
+A few remarks on the steps to fulfill this requirement:
+
+- The createNewGame method saves the game object locally until the user accepts the scrambled phrase
+- The refreshCrumbledPhrase method fulfills requirement "C" above
+- The saveGame method saves the game and returns the final identifier
+- The saveGame method uses the ExternalWebService utility class. More specifically the "addNewWordScrambleGame(game: Game): Integer" method signature
+
+
+7 - A scramble shall only mix up alphabetic characters, keeping each word together. Words are contiguous sequences of alphabetic characters separated by one or more non-alphabetic characters.
+
+In order to realize this requirement, the scrumbledPhrase property on the Game class was confirmed to be "String"
+
+8 - All other characters and spacing will remain as they originally are.
+
+This requirement does not affect the UML design
+
+9 - When solving word scrambles, a player will:
+
+a - View the list of unsolved word scrambles, by identifier, with any in progress scrambles marked and shown first.
+b - Choose one word scramble to work on.
+c - View the scramble.
+d - Enter the letters in a different order to try to solve the scramble.
+e - Submit a solution.
+f - View whether it was correct.
+g - Return either to the puzzle, if wrong, or to the list, if correct.
+
+
+In order to realize this requirement, the following steps were taken:
+
+- In order to fulfill requirement "a", the method "retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>" available in the ExternalWebService utility class is used to filter the results of the "getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>" method, also available the same utility class. This gives a list of unsolved word scrambles for a particular user. To show the scrambles in progress for a user, a method called "getInProgressGameList(): List<Game>" was added to the User class. The list returned by this method is used in combination with the list returned and filtered by the mentioned utility methods.
+- A method signature "submitSolution(solution: String): Boolean" was added. If the solution is correct the method returns true, otherwise it returns false.
+- If the solution is correct call the method "reportSolvedScramble(game: Game)", available in the ExternalWebService utility class.
+
+
+10 - A player may exit any scramble in progress at any time and return to it later.  The last state of the puzzle will be preserved.
+
+In order to fulfill this requirement a property called "gameState" was added to the PlayEvent class. In addition, the following method signature was added to the same class:
+
+- updateGameState(state: String)
+
+This method assumes the game state is in a string format.
+
+
+11 - The scramble statistics shall list all scrambles with (1) their unique identifier, (2) information on whether they were solved or created by the player, and (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
+
+In order to realize this requirement, two methods are used from the ExternalWebService utility class:
+
+- retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>
+- getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>
+
+The former returns a list of all players and the scrambles each solved. The latter returns the list of all scrambles and its authors. By callind both methods, filtering the results and making the appropriate calculations, we get fulfill the requirements described in this section. For convenience, we also added a new property called "numberOfTimesSolved: Integer" in the Game class, in order to facilitate sorting of games by the number of times players solved them. A setter method called "setSolvedTimes(game: Game)" was added to the same class in order to set the numberOfTimesSolved attribute.
+
+
+A method called "getScrambleStatistics()" was added to the Game clas in order to wrap the calls to the methods in the ExternalWebService utility class and perform the necessary filtering and calculations. 
+
+
+12 - The player statistics will list players’ first names and last names, with (1) the number of scrambles that the player has solved, (2) the number of new scrambles created, and (3) the average number of times that the scrambles they created have been solved by other players.  It will be sorted by decreasing number of scrambles that the player has solved.
+
+In order to realize this requirement, two methods are used from the ExternalWebService utility class:
+
+- retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>
+- getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>
+
+By callind the above methods, filtering the results and performing the necessary calculations accordingly, points 1,2,3 can be easily met. In order to facilitate sorting and making the calculations more explicit, the following properties, alongside with its setters methods, were added to the User class:
+
+- numberOfSolvedGames: Integer
+- numberOfGamesCreated: Integer 
+- authoredGamesSolvedAverage: Integer
+
+
+A method called "getPlayerStatistics()" was added to the User class in order to wrap the calls to the methods in the ExternalWebService utility class and perform the necessary filtering and calculations. 
+
+
+13 - The User Interface (UI) shall be intuitive and responsive.
+
+This requirement does not affect the UML design
+ 
 
 
 Update Notes:
@@ -70,7 +251,6 @@ This design encapsulates different types depending on its concern. Proper encaps
 In addition, proper naming of properties and methods is paramount for the successful communication of requirements across all team members. 
 
 In the process of coming up with this design, it was crucial to combine the best intuitions present in each of the team's designs. Coming up with a class structure that is clean, concise and properly scope is key for properly capturing and executing requirements. 
-
 
 ## *Summary*
 
