@@ -165,5 +165,5 @@ A method called "getPlayerStatistics()" was added to the User class in order to 
 
 13 - The User Interface (UI) shall be intuitive and responsive.
 
-This requirement does not affect the UML design
+This requirement does not affect the UML design 
  
