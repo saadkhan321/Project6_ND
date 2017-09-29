@@ -51,83 +51,10 @@ It was also agreed upon amongst the members that once the user is logged in as a
 
 Realization of the case where the user is a new player was straight forward and it was communally decided within the team (also present in all 3 individual designs) that the user, while creating a new player profile, will pass on inputs as new user credentials onto the 'addUser' method in the external web service utility (EWS) which will then return a unique user ID for that new player which will register that player with the system. In contrast to this, for the scenario where player has an option to create a new word scramble, all 3 designs had taken different approaches, however, for the final design, this requirement was realized based primarily on Isaac's individual design by using only the 'createNewGame', 'refreshCrumbledPhrase' and 'saveGame' methods inside the 'Game' class while excluding 'getGameList', 'updateSolvedTimes' and 'getScrambleStatistics' methods which were also present in his original individual design. Similarly, most of the getter and setter methods such as 'getinProgressGameList', 'getSolvedGameList', 'setNumberOfSolvedGames' etc, which were part of the 'User' class in Isaac's individual design were also excluded from the 'User' class in the final design. All of the above mentioned methods/functionalities, in the final design, reside under inside the 'ScrambleStatistic' and the 'PlayerStatistic' classes.
 
-Further discussion between the team members took place on how to represent statistics requirements more efficiently. Instead of creating only 2 classes, one for addressing scramble statistics (requirement 11 - assignment 5) and another one for addressing player statistics (requirement 12 - assignment 5), the idea of keeping separate utility classes (<<utility>> - ScrambleStatistics, <<utility>> - PlayerStatistics) and 'Game' & 'User' associated classes ('ScrambleStatistic', 'PlayerStatistic') was specifically incorporated into the final design for proper encapsulation by providing loose-coupling and flexibility. While almost all of the requirements in point 11 and 12 were addressed in the associated classes'PlayerStatistic' and 'ScrambleStatistic', only methods such as <<utility>> - ScrambleStatistics: ('getScrambleStatistics', 'getGameList') and <<utility>> - PlayerStatistics: ('getPlayerStatistics') were kept in the respective utility classes in order to utilize the EWS to extract the desired statistics.
+Further discussion between the team members took place on how to represent statistics requirements more efficiently. Instead of creating only 2 classes, one for addressing scramble statistics (requirement 11 - assignment 5) and another one for addressing player statistics (requirement 12 - assignment 5), the idea of keeping separate utility classes (<<utility>> - ScrambleStatistics, <<utility>> - PlayerStatistics) and 'Game' & 'User' associated classes ('ScrambleStatistic', 'PlayerStatistic') was specifically incorporated into the final design for proper encapsulation by providing loose-coupling and flexibility. While almost all of the requirements in point 11 and 12 were addressed in the associated classes'PlayerStatistic' and 'ScrambleStatistic', only methods such as <<utility>> - ScrambleStatistics: ('getScrambleStatistics', 'getGameList') and <<utility>> - PlayerStatistics: ('getPlayerStatistics') were kept in the respective utility classes in order to utilize the EWS to extract the desired statistics. These methods were added to their respective statistics classes in order to wrap the calls to the methods in the ExternalWebService utility class and perform the desired filtering and calculations. 
 
-///
-It was agreed upon within the team that coming up with a class structure that is clean, concise and properly scoped is the key for properly capturing and executing requirements. Structuring the final design this way made it less cluttered and was a combination of best intuitions present in each of the team member's designs.
-///
+It was agreed upon within the team that coming up with a class structure that is clean, concise and properly scoped is the key for properly capturing and executing requirements. Structuring the final design this way made it less cluttered and was a combination of best intuitions present in each of the individual team member's design.
 
-
-
-11 - The scramble statistics shall list all scrambles with (1) their unique identifier, (2) information on whether they were solved or created by the player, and (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
-
-In order to realize this requirement, two methods are used from the ExternalWebService utility class:
-
-- retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>
-- getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>
-
-The former returns a list of all players and the scrambles each solved. The latter returns the list of all scrambles and its authors. By callind both methods, filtering the results and making the appropriate calculations, we get fulfill the requirements described in this section. For convenience, we also added a new property called "numberOfTimesSolved: Integer" in the Game class, in order to facilitate sorting of games by the number of times players solved them. A setter method called "setSolvedTimes(game: Game)" was added to the same class in order to set the numberOfTimesSolved attribute.
-
-
-A method called "getScrambleStatistics()" was added to the Game clas in order to wrap the calls to the methods in the ExternalWebService utility class and perform the necessary filtering and calculations. 
-
-
-12 - The player statistics will list players’ first names and last names, with (1) the number of scrambles that the player has solved, (2) the number of new scrambles created, and (3) the average number of times that the scrambles they created have been solved by other players.  It will be sorted by decreasing number of scrambles that the player has solved.
-
-In order to realize this requirement, two methods are used from the ExternalWebService utility class:
-
-- retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>
-- getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>
-
-By callind the above methods, filtering the results and performing the necessary calculations accordingly, points 1,2,3 can be easily met. In order to facilitate sorting and making the calculations more explicit, the following properties, alongside with its setters methods, were added to the User class:
-
-- numberOfSolvedGames: Integer
-- numberOfGamesCreated: Integer 
-- authoredGamesSolvedAverage: Integer
-
-
-A method called "getPlayerStatistics()" was added to the User class in order to wrap the calls to the methods in the ExternalWebService utility class and perform the necessary filtering and calculations. 
-
-
-In addition, proper naming of properties and methods is paramount for the successful communication of requirements across all team members. 
-
-In the process of coming up with this design, it was crucial to combine the best intuitions present in each of the team's designs. Coming up with a class structure that is clean, concise and properly scope is key for properly capturing and executing requirements. 
-
- However, between the Administrator and the Cryptogram was more involved and an area of discussion amongst the team. We could either make a straight call to cryptogram for both the edit and the add however, if we used this approach where would the result message and the generated unique ID reside. It could have been on either the Cryptogram class or the helper class of addCryptogram. We agreed to use the helper addCryptogram class for the addCryptogram method for the admin. What is not shown here as we did not believe it had a large impact on the design was the cryptogram validation. This we decided would occur within the administrator method addCryptogram. Though not all individual designs included the same functionality, the team design incorporated a simple “edits” association and included a separate editCryptogram operation within Administrator to signify that the administrator should be able to edit any cryptogram at any time, not just at the time they submit a new one. The association between Player and Cryptogram was commonly agreed to be “solves” with the choosing and viewing of cryptograms implied by that simple relationship.
-
-In the scenario that a user logged in as a player to the system they will be brought to the Player class in which we all agreed should contain the values of the users first name and last name. There was some discussion on whether these values should reside on the user level but we did not believe that the administrator needed to have these values. As a player in the system, the user shall be able to: 1)View a list of Cryptograms 2) Choose a cryptogram to solve 3) Solve the cryptogram 4) View a list of player ratings. In order to handle these scenarios we have 4 methods which will do these exact requirements. viewCryptogram is a method which will request the uniqueID of the cryptogram that the user would like to solve. chooseCryptogram will display a list to the user in which the user can choose any of the cryptograms to view. solveCryptogram is where the player will begin to play the game and we will begin subroutines in order to keep track of metrics such as if the cryptogram was solved or not. This will tie into the utility class of PlayerRating that will store for each player the attributes which will be passed back to the method in the player class named listPlayerRatings. The player class will be tied to the database service in order to update this information once a player begins work on a cryptogram
-
-The Cryptogram class will be used to store information on the cryptogram such as the encoded and decoded phrase for a cryptogram. Some team members included additional attributes such as a list of users who had correctly solved a particular cryptogram, but it was determined that such a list could be derived from the Player class and the relationship between Player and Cryptogram. There was also agreement that the Administrator class should not need any attributes but should include addPlayer and addCryptogram operations, in addition to the editCryptogram operation discussed earlier.
-
-Once a cryptogram is added or edited, the cryptogram will communicate to the database so that any further requests to the cryptogram will be updated accordingly. Regarding the local database, all but one user’s individual diagram included a class entity to represent this component in the design. Two of the three users who included it left it as a complete “black box” while one user tried to add some details about the data structures that would be stored there. It was decided that there does not need to be a lot of detail about the database in this UML class diagram, so it was left as a simple class with no attributes or operations. A “uses” dependency was established between the DatabaseService and the User superclass as well as Cryptogram. Similarly, three team members included some kind of class structure to handle player ratings. It was decided we should have a class representing the collection of attributes belonging to a player such as totalSolved, totalStarted, and so on.
-
-We discussed the ExternalWebService utility class and how exactly it will communicate with our system. We deemed that it should essentially be a gateway to an external server. As a result, this class will simply pass information about by using the methods sendPlayerRatings, sendCryptogram, requestPlayerRatings, and requestCryptogram.
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-This design encapsulates different types depending on its concern. Proper encapsulation is key for loose-coupling and flexibility. 
-
-In addition, proper naming of properties and methods is paramount for the successful communication of requirements across all team members. 
-
-In the process of coming up with this design, it was crucial to combine the best intuitions present in each of the team's designs. Coming up with a class structure that is clean, concise and properly scope is key for properly capturing and executing requirements. 
 
 ## *Summary*
 
