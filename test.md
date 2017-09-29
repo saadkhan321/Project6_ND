@@ -43,66 +43,53 @@ The design also includes an underlying database (providing connectivity between 
 
 ![Team Design](designs/design_team.png)
 
-As a collective team effort, we setup multiple calls to visit various requirements of the design and reviewed pros and cons for each individual member's design. The disscussions were thorough which led to the final UML deisgn as shown above, which is an enhanced/updated version of the individual UML created by one of the team member, Isaac Silva. The team was in unanimous agreement that the application's entry point should be the 'User' class also evident in all the individual UML designs as well as the final design. It was decided that the 'User' class will give the three options to the user to (1) create a new user profile by accepting user credentials such as first name, last name, email, user_id, etc, (2) login if the profile is already in the system and (3) logout from the application. This approach led to an agreement amongst team members on how to distinguish between new and existing players. 
+As a collective team effort, we setup multiple calls to visit various requirements of the design and reviewed pros and cons for each individual member's design. The disscussions were thorough which led to the final UML deisgn as shown above, which is an enhanced/updated version of the individual UML created by one of the team member, Isaac Silva (Design 1). The team was in unanimous agreement that the application's entry point should be the 'User' class also evident in all the individual UML designs as well as the final design. It was decided that the 'User' class will give the three options to the user to (1) create a new user profile by accepting user credentials such as first name, last name, email, user_id, etc, (2) login if the profile is already in the system and (3) logout from the application. This approach led to an agreement amongst team members on how to distinguish between new and existing players.
 
-It was agreed upon amongst the members that once the user is logged in as an existing player, he/she will have four options to choose from. (1) to create a word scramble, realized by the 'Game' class which will serve as a blueprint for word scramble creations. For the case (2) where a player has to choose and solve word scrambles, this is realized by 'PlayEvent' association class providing actual game instance for a user. For the other 2 options, there was a lot of discussion on how to realize the viewing statistics (both player and scramble) part, once the player had logged in. As a result of team discussions, other 2 members, Mukul and Saad had explicitly used separate scramble and player statistic classes in their individual designs which was not the case in Isaac's design, so it was collectively agreed upon that in order to better encapsulate the functionality required by the scramble statistics and player statistics components an addition of 2 utility classes will be helpful. For this reason, ScrambleStatistics and PlayerStatistics utility classes are added to Isaac's design which will be responsible for retrieving all the statistics around scrambles and players. In assoication with these utility classes (once the player is logged in) for the case (3) where a player wants to be able to view statistics on their created and solved word scrambles, will be addressed by addition of a class 'ScrambleStatistic' associated with each 'Game' instance. For the case (4) where a player may view his/her own statistics, a similar class 'PlayerStatistic' is added which is associated with each 'Player' instance. These classes are added to the final design as major enhancements for proper encapsulation as it is key for loose-coupling and flexibility.
+Although, the 'User' class was present in all 3 individual designs, it had very contrasting purpose for each design. While, for Mukul's (Design 2) and Saad's (Design 3) design, the 'User' class was never directly fetching player statistics, in Isaac's (Design 1) the 'User' was doing so. A lot of thought process went into keeping the 'User' class as clean/less cluttered as possible. the idea of incorporating a separate class for player statistics helped fine tuning the 'User' class to only include necessary methods as mentioned above. The details of separate classes for statistics is discussed in the following paragraphs.
 
-Realization of the case where the user is a new player was straight forward and it was communally decided within the team (present in all 3 individual designs) that the user, while creating a new player profile, will pass on inputs as new user credentials onto the 'addUser' method in the external web service utility which will then return a unique user ID for that new player that is registered with the system. In contrast to this, for the scenario where player has an option to create a new word scramble, all 3 designs had taken different approaches, however, for the final design this requirement was realized based primarily on Isaac's individual design by using only the 'createNewGame', 'refreshCrumbledPhrase' and 'saveGame' methods inside the 'Game' class while excluding 'getGameList', 'updateSolvedTimes' and 'getScrambleStatistics' methods from his original design. Similarly, most of the getter and setter methods such as 'getinProgressGameList', 'getSolvedGameList', 'setNumberOfSolvedGames' etc, which were part of the 'User' class in Isaac's individual design were also excluded from the 'User' class in the final design. All of these methods/functionalities in the final are part of the 'ScrambleStatistic' and the 'PlayerStatistic' classes. It was agreed upon within the team that coming up with a class structure that is clean, concise and properly scoped is the key for properly capturing and executing requirements. Structuring the final design this way made it less cluttered and was a combination of best intuitions present in each of the team member's designs.
+It was agreed upon amongst the members that once the user is logged in as an existing player, he/she will have four options to choose from. (1) to create a word scramble, realized by the 'Game' class which will serve as a blueprint for word scramble creations. For the case (2) where a player has to choose and solve word scrambles, this is realized by 'PlayEvent' association class providing actual game instance for a user. For the other 2 options, there was a lot of discussion on how to realize the viewing statistics (both player and scramble) part, once the player had logged in. As a result of team discussions, other 2 members, Mukul (Design 2) and Saad (Design 3) had explicitly used separate scramble and player statistic classes in their individual designs which was not the case in Isaac's design, so it was collectively agreed upon that in order to better encapsulate the functionality required by the scramble statistics and player statistics components an addition of 2 utility classes will be helpful. For this reason, ScrambleStatistics and PlayerStatistics utility classes are added to Isaac's design which will be responsible for retrieving all the statistics around scrambles and players. In assoication with these utility classes (once the player is logged in) for the case (3) where a player wants to be able to view statistics on their created and solved word scrambles, will be addressed by addition of a class 'ScrambleStatistic' associated with each 'Game' instance. For the case (4) where a player may view his/her own statistics, a similar class 'PlayerStatistic' is added which is associated with each 'Player' instance. These classes are added to the final design as major enhancements for proper encapsulation as it is key for loose-coupling and flexibility.
 
-
-
-6 - To add a word scramble, the player will:
-
-a - Enter a phrase (not scrambled).
-b - Enter a clue. 
-c - View the phrase scrambled by the system. If the player does not like the result, they may choose for the system to re-scramble it until they are satisfied.
-d - Accept the results or return to previous steps.
-e - View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
+Realization of the case where the user is a new player was straight forward and it was communally decided within the team (present in all 3 individual designs) that the user, while creating a new player profile, will pass on inputs as new user credentials onto the 'addUser' method in the external web service utility which will then return a unique user ID for that new player that is registered with the system. In contrast to this, for the scenario where player has an option to create a new word scramble, all 3 designs had taken different approaches, however, for the final design, this requirement was realized based primarily on Isaac's individual design by using only the 'createNewGame', 'refreshCrumbledPhrase' and 'saveGame' methods inside the 'Game' class while excluding 'getGameList', 'updateSolvedTimes' and 'getScrambleStatistics' methods from his original design. Similarly, most of the getter and setter methods such as 'getinProgressGameList', 'getSolvedGameList', 'setNumberOfSolvedGames' etc, which were part of the 'User' class in Isaac's individual design were also excluded from the 'User' class in the final design. All of the above mentioned methods/functionalities now reside under inside the 'ScrambleStatistic' and the 'PlayerStatistic' classes as part of the final design.
 
 
-In order to realize this requirement, the following property fields were added to the Game class:
 
-identifier: Integer
-originalPhrase: String
-clue: String
-scrambledPhrase: String
-
-The following methods were added to the Game class:
-
-- createNewGame(phrase: String, clue: String): Integer
-- refreshScrambledPhrase()
-- saveGame(): Integer
-
-A few remarks on the steps to fulfill this requirement:
-
-- The createNewGame method saves the game object locally until the user accepts the scrambled phrase
-- The refreshCrumbledPhrase method fulfills requirement "C" above
-- The saveGame method saves the game and returns the final identifier
-- The saveGame method uses the ExternalWebService utility class. More specifically the "addNewWordScrambleGame(game: Game): Integer" method signature
-
-4 - Word scrambles and statistics will be shared with other instances of the application.  An external web service utility will be used by the application to communicate with a central server to:
-
-a - Add a player and ensure that their username is unique.
-b - Send new word scrambles and receive a unique identifier for them.
-c - Retrieve the list of scrambles, together with information on which player created each of them. 
-d - Report a solved scramble.
-e - Retrieve the list of players and the scrambles each have solved.
+///
+It was agreed upon within the team that coming up with a class structure that is clean, concise and properly scoped is the key for properly capturing and executing requirements. Structuring the final design this way made it less cluttered and was a combination of best intuitions present in each of the team member's designs.
+///
 
 
-In order to realize this requirement, added an Utility class called "ExternalWebService" with the following methods in order to fulfill each of the above-described functionalities:
+The 'User' class presented in Isaac's individual design was encompassing 
 
-a - addUser(username: String): String 
-b - addNewWordScrambleGame(game: Game): Integer
-c - getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>
-d - reportSolvedScramble(game: Game)
-e - retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>
- 
+Although, the 'User' class was represented in the individual designs but had very contrasting purpose in all 3 designs. For Mukul's design, the 'User' class was never directly fetching 
 
-A few remarks on the steps to fulfill this requirement:
+11 - The scramble statistics shall list all scrambles with (1) their unique identifier, (2) information on whether they were solved or created by the player, and (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
 
-- Added unique identifier as a property in the Game class, according to indications of the "b" requirement.
-- The addUser method returns an unique username as a String
+In order to realize this requirement, two methods are used from the ExternalWebService utility class:
 
+- retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>
+- getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>
+
+The former returns a list of all players and the scrambles each solved. The latter returns the list of all scrambles and its authors. By callind both methods, filtering the results and making the appropriate calculations, we get fulfill the requirements described in this section. For convenience, we also added a new property called "numberOfTimesSolved: Integer" in the Game class, in order to facilitate sorting of games by the number of times players solved them. A setter method called "setSolvedTimes(game: Game)" was added to the same class in order to set the numberOfTimesSolved attribute.
+
+
+A method called "getScrambleStatistics()" was added to the Game clas in order to wrap the calls to the methods in the ExternalWebService utility class and perform the necessary filtering and calculations. 
+
+
+12 - The player statistics will list players’ first names and last names, with (1) the number of scrambles that the player has solved, (2) the number of new scrambles created, and (3) the average number of times that the scrambles they created have been solved by other players.  It will be sorted by decreasing number of scrambles that the player has solved.
+
+In order to realize this requirement, two methods are used from the ExternalWebService utility class:
+
+- retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>
+- getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>
+
+By callind the above methods, filtering the results and performing the necessary calculations accordingly, points 1,2,3 can be easily met. In order to facilitate sorting and making the calculations more explicit, the following properties, alongside with its setters methods, were added to the User class:
+
+- numberOfSolvedGames: Integer
+- numberOfGamesCreated: Integer 
+- authoredGamesSolvedAverage: Integer
+
+
+A method called "getPlayerStatistics()" was added to the User class in order to wrap the calls to the methods in the ExternalWebService utility class and perform the necessary filtering and calculations. 
 
 
 In addition, proper naming of properties and methods is paramount for the successful communication of requirements across all team members. 
