@@ -43,53 +43,46 @@ The design also includes an underlying database (providing connectivity between 
 
 ![Team Design](designs/design_team.png)
 
-As a collective team effort, we setup multiple calls to visit various requirements of the design and reviewed pros and cons for each individual member's design. The disscussions were thorough which led to the final UML deisgn as shown above, which is an enhanced/updated version of the individual UML created by one of the team member, Isaac Silva. The team was in unanimous agreement that the application's entry point should be the 'User' class also evident in all the individual UML designs as well as the final design. It was decided that the 'User' class will give the option to the user to either create a new user profile by accepting user credentials such as first name, last name, email, user_id, etc or login if the profile is already in the system. This approach led to an agreement amongst team members on how to distinguish between new and existing players. 
+As a collective team effort, we setup multiple calls to visit various requirements of the design and reviewed pros and cons for each individual member's design. The disscussions were thorough which led to the final UML deisgn as shown above, which is an enhanced/updated version of the individual UML created by one of the team member, Isaac Silva. The team was in unanimous agreement that the application's entry point should be the 'User' class also evident in all the individual UML designs as well as the final design. It was decided that the 'User' class will give the three options to the user to (1) create a new user profile by accepting user credentials such as first name, last name, email, user_id, etc, (2) login if the profile is already in the system and (3) logout from the application. This approach led to an agreement amongst team members on how to distinguish between new and existing players. 
 
-It was agreed upon amongst the members that once the user is logged in as an existing player, he/she will have four options  to choose from. (1) to create a word scramble, realized by the addition of 'Game' class which will serve as a blueprint for word scramble creations. (2) to choose and solve word scrambles, this is realized by 'PlayEvent' association class providing actual game instance for a user. There was a lot of discussion on how to realize the viewing statistics (both player and scramble) part, once the player has logged in. As a result of team discussions, other 2 members, Mukul and Saad had explicitly used separate scramble and player statistic classes in their individual designs which was not the case in Isaac's design, so it was collectively agreed upon that (3) in the case where a player is able to view statistics on their created and solved word scrambles, should be addressed by addition of an associated class 'ScrambleStatistic' with each 'Game' instance. For the case (4) where a player may view his/her own statistics, a similar associated class 'PlayerStatistic' class was associated with each 'Player' instance.  
+It was agreed upon amongst the members that once the user is logged in as an existing player, he/she will have four options to choose from. (1) to create a word scramble, realized by the 'Game' class which will serve as a blueprint for word scramble creations. For the case (2) where a player has to choose and solve word scrambles, this is realized by 'PlayEvent' association class providing actual game instance for a user. For the other 2 options, there was a lot of discussion on how to realize the viewing statistics (both player and scramble) part, once the player had logged in. As a result of team discussions, other 2 members, Mukul and Saad had explicitly used separate scramble and player statistic classes in their individual designs which was not the case in Isaac's design, so it was collectively agreed upon that in order to better encapsulate the functionality required by the scramble statistics and player statistics components an addition of 2 utility classes will be helpful. For this reason, ScrambleStatistics and PlayerStatistics utility classes are added to Isaac's design which will be responsible for retrieving all the statistics around scrambles and players. In assoication with these utility classes (once the player is logged in) for the case (3) where a player wants to be able to view statistics on their created and solved word scrambles, will be addressed by addition of a class 'ScrambleStatistic' associated with each 'Game' instance. For the case (4) where a player may view his/her own statistics, a similar class 'PlayerStatistic' is added which is associated with each 'Player' instance. These classes are added to the final design as major enhancements for proper encapsulation as it is key for loose-coupling and flexibility.
 
-
-
-- PlayerStatistic
-
-The above utility classes are responsible for retrieving all the statistics around Scrambles and Players
+Realization of the case where the user is a new player was straight forward and it was communally decided within the team (present in all 3 individual designs) that the user, while creating a new player profile, will pass on inputs as new user credentials onto the 'addUser' method in the external web service utility which will then return a unique user ID for that new player that is registered with the system. In contrast to this, for the scenario where player has an option to create a new word scramble, all 3 designs had taken different approaches, however, for the final design this requirement was realized based primarily on Isaac's individual design by using only the 'createNewGame', 'refreshCrumbledPhrase' and 'saveGame' methods inside the 'Game' class while excluding 'getGameList', 'updateSolvedTimes' and 'getScrambleStatistics' methods from his original design. Similarly, most of the getter and setter methods such as 'getinProgressGameList', 'getSolvedGameList', 'setNumberOfSolvedGames' etc, which were part of the 'User' class in Isaac's individual design were also excluded from the 'User' class in the final design. All of these methods/functionalities in the final are part of the 'ScrambleStatistic' and the 'PlayerStatistic' classes. This was the final design is less cluttered and is a best 
 
 
-2 - Added a Statistic class associated with each Player instance: PlayerStatistic
+n addition, proper naming of properties and methods is paramount for the successful communication of requirements across all team members. 
 
-This is evident in the final team design above (shown by the association between the 'Game' and the 'ScrambleStatistic' class) and is an enhancement to Isaac's individual design. 
-
-
-As a result of team discussions, other 2 members, Mukul and Saad had explicitly used separate scramble and player statistic classes in their individual designs and thisthese updates were added onto Isaac's design 
-
-Added a Statistic class associated with each Game instance: ScrambleStatistic
-
-In the scenario that a user logged in with administrator rights we all agreed to the functionality an admin will have in the system which were to: 1)Add a player 2) Add a cryptogram 3) Edit a cryptogram. This would be built out within the administrator class and in order for these operations to occur there had to be a relationship between Administrator and Player, and between Administrator and Cryptogram. The relationship between the Administrator and the Player was simple enough to just add a new player entry. However, between the Administrator and the Cryptogram was more involved and an area of discussion amongst the team. We could either make a straight call to cryptogram for both the edit and the add however, if we used this approach where would the result message and the generated unique ID reside. It could have been on either the Cryptogram class or the helper class of addCryptogram. We agreed to use the helper addCryptogram class for the addCryptogram method for the admin. What is not shown here as we did not believe it had a large impact on the design was the cryptogram validation. This we decided would occur within the administrator method addCryptogram. Though not all individual designs included the same functionality, the team design incorporated a simple “edits” association and included a separate editCryptogram operation within Administrator to signify that the administrator should be able to edit any cryptogram at any time, not just at the time they submit a new one. The association between Player and Cryptogram was commonly agreed to be “solves” with the choosing and viewing of cryptograms implied by that simple relationship.
-
-In the scenario that a user logged in as a player to the system they will be brought to the Player class in which we all agreed should contain the values of the users first name and last name. There was some discussion on whether these values should reside on the user level but we did not believe that the administrator needed to have these values. As a player in the system, the user shall be able to: 1)View a list of Cryptograms 2) Choose a cryptogram to solve 3) Solve the cryptogram 4) View a list of player ratings. In order to handle these scenarios we have 4 methods which will do these exact requirements. viewCryptogram is a method which will request the uniqueID of the cryptogram that the user would like to solve. chooseCryptogram will display a list to the user in which the user can choose any of the cryptograms to view. solveCryptogram is where the player will begin to play the game and we will begin subroutines in order to keep track of metrics such as if the cryptogram was solved or not. This will tie into the utility class of PlayerRating that will store for each player the attributes which will be passed back to the method in the player class named listPlayerRatings. The player class will be tied to the database service in order to update this information once a player begins work on a cryptogram
-
-The Cryptogram class will be used to store information on the cryptogram such as the encoded and decoded phrase for a cryptogram. Some team members included additional attributes such as a list of users who had correctly solved a particular cryptogram, but it was determined that such a list could be derived from the Player class and the relationship between Player and Cryptogram. There was also agreement that the Administrator class should not need any attributes but should include addPlayer and addCryptogram operations, in addition to the editCryptogram operation discussed earlier.
-
-Once a cryptogram is added or edited, the cryptogram will communicate to the database so that any further requests to the cryptogram will be updated accordingly. Regarding the local database, all but one user’s individual diagram included a class entity to represent this component in the design. Two of the three users who included it left it as a complete “black box” while one user tried to add some details about the data structures that would be stored there. It was decided that there does not need to be a lot of detail about the database in this UML class diagram, so it was left as a simple class with no attributes or operations. A “uses” dependency was established between the DatabaseService and the User superclass as well as Cryptogram. Similarly, three team members included some kind of class structure to handle player ratings. It was decided we should have a class representing the collection of attributes belonging to a player such as totalSolved, totalStarted, and so on.
-
-We discussed the ExternalWebService utility class and how exactly it will communicate with our system. We deemed that it should essentially be a gateway to an external server. As a result, this class will simply pass information about by using the methods sendPlayerRatings, sendCryptogram, requestPlayerRatings, and requestCryptogram.
-
-1 - When starting the application, a user may choose to either create a new player or log in.  For simplicity, authentication is optional.  A (unique) username will be sufficient for logging in.
-
-To realize this requirement, I added a class "User" to represent the player, with an attribute "username". A method signature was added to the same class:
-
-- login(username: String): Boolean
-
-That method returns true or false depending if the user logged in or not.
+In the process of coming up with this design, it was crucial to combine the best intuitions present in each of the team's designs. Coming up with a class structure that is clean, concise and properly scope is key for properly capturing and executing requirements. 
 
 
-2 - After logging in, the application shall allow players to  (1) create a word scramble, (2) choose and solve word scrambles, (3) see statistics on their created and solved word scrambles, and (4) view the player statistics.
+6 - To add a word scramble, the player will:
 
-Even though this is more an UI requirement, it helped me understand some of the other elements of the domain. Thus, I added a class "Game" to be used as a blueprint for the creation of word scrambles and an association class "PlayEvent" for the actual action of a user playing a particular game instance. 
+a - Enter a phrase (not scrambled).
+b - Enter a clue. 
+c - View the phrase scrambled by the system. If the player does not like the result, they may choose for the system to re-scramble it until they are satisfied.
+d - Accept the results or return to previous steps.
+e - View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
 
 
-3 - The application shall maintain an underlying database to save persistent information across runs (e.g., word scrambles, player information, statistics).
+In order to realize this requirement, the following property fields were added to the Game class:
 
-I did not consider this requirement because the database does not affect the design directly.
+identifier: Integer
+originalPhrase: String
+clue: String
+scrambledPhrase: String
+
+The following methods were added to the Game class:
+
+- createNewGame(phrase: String, clue: String): Integer
+- refreshScrambledPhrase()
+- saveGame(): Integer
+
+A few remarks on the steps to fulfill this requirement:
+
+- The createNewGame method saves the game object locally until the user accepts the scrambled phrase
+- The refreshCrumbledPhrase method fulfills requirement "C" above
+- The saveGame method saves the game and returns the final identifier
+- The saveGame method uses the ExternalWebService utility class. More specifically the "addNewWordScrambleGame(game: Game): Integer" method signature
 
 4 - Word scrambles and statistics will be shared with other instances of the application.  An external web service utility will be used by the application to communicate with a central server to:
 
@@ -115,32 +108,48 @@ A few remarks on the steps to fulfill this requirement:
 - The addUser method returns an unique username as a String
 
 
-5 - When creating a new player, a user will:
 
-a - Enter the player’s first name.
-b - Enter the player’s last name.
-c - Enter the player’s desired username.
-d - Enter the player’s email.  
-e - Save the information.
-f - Receive the returned username, with possibly a number appended to it to ensure that it is unique.
+In addition, proper naming of properties and methods is paramount for the successful communication of requirements across all team members. 
 
-In order to realize this requirement, I added the following properties to the User class:
+In the process of coming up with this design, it was crucial to combine the best intuitions present in each of the team's designs. Coming up with a class structure that is clean, concise and properly scope is key for properly capturing and executing requirements. 
 
-firstName: String
-lastName: String
-desiredUsername: String
-username: String
-email: String
+ However, between the Administrator and the Cryptogram was more involved and an area of discussion amongst the team. We could either make a straight call to cryptogram for both the edit and the add however, if we used this approach where would the result message and the generated unique ID reside. It could have been on either the Cryptogram class or the helper class of addCryptogram. We agreed to use the helper addCryptogram class for the addCryptogram method for the admin. What is not shown here as we did not believe it had a large impact on the design was the cryptogram validation. This we decided would occur within the administrator method addCryptogram. Though not all individual designs included the same functionality, the team design incorporated a simple “edits” association and included a separate editCryptogram operation within Administrator to signify that the administrator should be able to edit any cryptogram at any time, not just at the time they submit a new one. The association between Player and Cryptogram was commonly agreed to be “solves” with the choosing and viewing of cryptograms implied by that simple relationship.
 
-The following methods were added:
+In the scenario that a user logged in as a player to the system they will be brought to the Player class in which we all agreed should contain the values of the users first name and last name. There was some discussion on whether these values should reside on the user level but we did not believe that the administrator needed to have these values. As a player in the system, the user shall be able to: 1)View a list of Cryptograms 2) Choose a cryptogram to solve 3) Solve the cryptogram 4) View a list of player ratings. In order to handle these scenarios we have 4 methods which will do these exact requirements. viewCryptogram is a method which will request the uniqueID of the cryptogram that the user would like to solve. chooseCryptogram will display a list to the user in which the user can choose any of the cryptograms to view. solveCryptogram is where the player will begin to play the game and we will begin subroutines in order to keep track of metrics such as if the cryptogram was solved or not. This will tie into the utility class of PlayerRating that will store for each player the attributes which will be passed back to the method in the player class named listPlayerRatings. The player class will be tied to the database service in order to update this information once a player begins work on a cryptogram
 
-- createNewPlayer(firstName, lastName, desiredUsername, email): String
+The Cryptogram class will be used to store information on the cryptogram such as the encoded and decoded phrase for a cryptogram. Some team members included additional attributes such as a list of users who had correctly solved a particular cryptogram, but it was determined that such a list could be derived from the Player class and the relationship between Player and Cryptogram. There was also agreement that the Administrator class should not need any attributes but should include addPlayer and addCryptogram operations, in addition to the editCryptogram operation discussed earlier.
 
-The above method returns a username that the system registered by using the ExternalWebService utility class. The addUser method signature was changed to address that requirement and became as follows:
+Once a cryptogram is added or edited, the cryptogram will communicate to the database so that any further requests to the cryptogram will be updated accordingly. Regarding the local database, all but one user’s individual diagram included a class entity to represent this component in the design. Two of the three users who included it left it as a complete “black box” while one user tried to add some details about the data structures that would be stored there. It was decided that there does not need to be a lot of detail about the database in this UML class diagram, so it was left as a simple class with no attributes or operations. A “uses” dependency was established between the DatabaseService and the User superclass as well as Cryptogram. Similarly, three team members included some kind of class structure to handle player ratings. It was decided we should have a class representing the collection of attributes belonging to a player such as totalSolved, totalStarted, and so on.
 
-- addUser(firstName, lastName, desiredUsername, email): String
+We discussed the ExternalWebService utility class and how exactly it will communicate with our system. We deemed that it should essentially be a gateway to an external server. As a result, this class will simply pass information about by using the methods sendPlayerRatings, sendCryptogram, requestPlayerRatings, and requestCryptogram.
 
-That method returns a player's username that the remote system assigned to the user. 
+
+
+4 - Word scrambles and statistics will be shared with other instances of the application.  An external web service utility will be used by the application to communicate with a central server to:
+
+a - Add a player and ensure that their username is unique.
+b - Send new word scrambles and receive a unique identifier for them.
+c - Retrieve the list of scrambles, together with information on which player created each of them. 
+d - Report a solved scramble.
+e - Retrieve the list of players and the scrambles each have solved.
+
+
+In order to realize this requirement, added an Utility class called "ExternalWebService" with the following methods in order to fulfill each of the above-described functionalities:
+
+a - addUser(username: String): String 
+b - addNewWordScrambleGame(game: Game): Integer
+c - getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>
+d - reportSolvedScramble(game: Game)
+e - retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>
+ 
+
+A few remarks on the steps to fulfill this requirement:
+
+- Added unique identifier as a property in the Game class, according to indications of the "b" requirement.
+- The addUser method returns an unique username as a String
+
+
+ 
 
 
 6 - To add a word scramble, the player will:
