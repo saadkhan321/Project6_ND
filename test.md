@@ -46,6 +46,32 @@ The design also includes an underlying database (providing connectivity between 
 As a collective team effort, we setup multiple calls to visit various requirements of the design and reviewed pros and cons for each individual design. The disscussions were thorough which led to the final UML deisgn as shown above. The team was in unanimous agreement that the application's entry point should be the 'User' class also evident in all the individual UML designs. It was decided that the 'User' class will give the option to the user to either create a new user profile by accepting user credentials such as first name, last name, email, user_id, etc or login if the profile is already in the system. This approach led to an agreement amongst team members on how to distinguish between new and existing players.
 
 
+
+
+
+Update Notes:
+
+Created a design that better encapsulated the functionality required by the ScrambleStatistics and PlayerStatistic components. The changes in that regards were the following:
+
+1 - Added two utility classes:
+
+
+- ScrambleStatistic
+- PlayerStatistic
+
+The above utility classes are responsible for retrieving all the statistics around Scrambles and Players
+
+
+2 - Added a Statistic class associated with each Player instance: PlayerStatistic
+3 - Added a Statistic class associated with each Game instance: ScrambleStatistic
+
+This design encapsulates different types depending on its concern. Proper encapsulation is key for loose-coupling and flexibility. 
+
+In addition, proper naming of properties and methods is paramount for the successful communication of requirements across all team members. 
+
+In the process of coming up with this design, it was crucial to combine the best intuitions present in each of the team's designs. Coming up with a class structure that is clean, concise and properly scope is key for properly capturing and executing requirements. 
+
+
 ## *Summary*
 
 Main objective of coming together as a team for the final design was to get individual as well as collective team feedback which turned out to be quite useful. At the beginning, a review word document was shared amongst the team members in between successive team meetings. This way, each team member was able to perform first draft of the review based on other team member's design. This left each team member and the team collectively in a better position to address the do's and don’ts for the final design and by the time the team got together to discuss the final design each member had a clear idea of what was to go into the final design.
