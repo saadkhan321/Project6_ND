@@ -1,131 +1,55 @@
-# CS6300 SDP Fall 2017 - Assignment 5: Software Design
-by Saad Khan (```skhan315@gatech.edu```)
+# CS6300 SDP Fall 2017 - Group Project
+by Isaac Silva (```isilva6@gatech.edu```), Mukul Pai (```mpai8@gatech.edu```) & Saad Khan (```skhan315@gatech.edu```)
 
-# Word Scramble Game
-## Overview
+## Word Scramble Game
 
-A mixture of both data structures (lists) and variables (string, int, boolean) were utilized as part of the design. Main focus was to keep the design simple but at the same time incorporating all what was needed as per the requirements.
+## *Individual Designs*
 
-## Requirements
+### Design 1
 
-### 1. When starting the application, a user may choose to either create a new player or log in.  For simplicity, authentication is optional.  A (unique) username will be sufficient for logging in.
+![Isaac Silva's Design](designs/design_Isaac_Silva.png)
 
-**Response:** The start of the application can be realized as being represented by User GUI, which could give 2 options to the user (new player and login) along with an empty text box to put in the user's username. If the user is an existing player, he/she would login otherwise he/she would go onto create a new player profile.
+The UML design shown above was created by Isaac Silva. One of the main highlights for this design is that it is very clean and very well organized. The design has excellent portrayal of the overall system to be implemented which made it very easy to visualize the overall design of the system. The design avoids extra cluttering by including most of the design requirements within four modules and also incorporates all the functional requirements needed by the system. Class components described in the UML are consistent i.e all components accurately display class specific attributes and functions. Design also uses a combination of getter and setter methods encompassing good programming practice. Interaction between the components are showcased explicitly by providing concise explanation of each connection.
 
-### 2. After logging in, the application shall allow players to 
+As an entry point to the application, the designer uses a 'User' class by including most of the essential design requirements such as creating a new player, viewing player statistics, maintaining game progress, solved game list, etc. Similarly, the 'Game' class, quite aptly, handles everything pertaining to the word scramble game as well as the statistics. The external web service utility also appropriately addresses the design requirements.
 
-### (1) create a word scramble,
+While the design covers everything that is required, it does not include any underlying database, which according to the designer, seems to be unnecessary for the model. Although, the design in less cluttered with minimal modules, however, to make the design easier to implement a few additional modules addressing specific tasks such as dedicated module to statistics, creating a new player, etc would have been more appropriate from implementation point of view. Never the less, the design makes a lot of sense overall and is used as the basis for teh final team design. 
 
-### (2) choose and solve word scrambles,
 
-### (3) see statistics on their created and solved word scrambles, and
+### Design 2
 
-### (4) view the player statistics.
+![Mukul Pai's Design](designs/design_Mukul_Pai.png)
 
-**Response:** All of the above functionalities will be addressed within the player class. The **createWordScramble()** method will address '(1) create a word scramble'. The **chooseWordScramble()** method will address '(2) choose and solve word scrambles' and present the player with a list of word scrambles to pick and choose from. The **viewScrambleStatistics()** method will take care of the scramble statistics and will return the scramble stats. Similarly, **viewPlayerStatistics()** method will take care of the player statistics and will return the personal player stats for that particular player. This class will also maintain a variable 'loggedin_user' (holding current player's user_name) only for log maintenance purposes.
+The design presented above was created by Mukul Pai. Including a 'Statistics' class to encapsulate the logic of how to get statistics is one the main postives of this design. This design also expresses cardinality quite appropriately between the 'User' and the 'Player' and then between the 'Player' and the 'Scramble' classes. Another highlight of the design is that object oriented approach is clearly defined between the 'Scramble' class and associated classes 'NewScramble', 'ProgressScramble', etc & then between the 'Statistics' class and 'PlayerStatistics' and 'ScrambleStatistics' classes.
 
-### 3. The application shall maintain an underlying database to save persistent information across runs (e.g., word scrambles, player information, statistics).
+Similar to the rest of the team members, the design uses a 'User' class as an entry point to the application handling all the information that is required to create a new player. Along with that, the Scramble class and its associated classes clearly separated, addressing all what was required as part of the design requirements, however, the return data types for few of the methods were not that explicit, specifically the statistics object returned by few methods do not mentioned the returned data types.
 
-**Response:** The functionality of the database has been depicted by a database black box which will handle the requests generated by the the new/existing player, word scrambles, statistics and will consult the external web service (discussed in requirment #4) in order to address those requests.
+The design having more detailed UML design can be very apt in some cases, however, a more simpler design could have been more appropriate as some of the additional classes could have been engulfed into the parent classes such as the 'Loggedin' feature and scramble (in-progress, completed). Another feaure not present in the diagram was an underlying database to handle player, scramble and statistical information.
 
-### 4. Word scrambles and statistics will be shared with other instances of the application. An external web service utility will be used by the application to communicate with a central server to:
 
-### a. Add a player and ensure that their username is unique.
+### Design 3
 
-### b. Send new word scrambles and receive a unique identifier for them.
+![Saad Khan's Design](designs/design_Saad_Khan.png)
 
-### c. Retrieve the list of scrambles, together with information on which player created each of them. 
+This design was generated by Saad Khan. From the user point of view, this application design excellently covers all the different components that are to be involved in the application with accurate interactions and flow. Good design principles were followed to showcase attributes of each component along with their functionalities. This design also had similarities with another team member's design in terms of the appraoch taken to include statistics class (playerStatistics, scrambleStatistics) and also having multiple instances of the word scramble.
 
-### d. Report a solved scramble.
+In comparison to rest of the individual member design, the application design begins a user class, where the user has a choice of either choosing to login if his/her user profile is already in the system otherwise just choose to enter as new player in order to land onto a new player profile creation page/activity. This way the design for the UI point of view seems less cluttered, however, a more simpler approch could have been to encompass it as an instance of the player class rather keeping it as a separate class. 
 
-### e. Retrieve the list of players and the scrambles each have solved.
+The design also includes an underlying database (providing connectivity between the external web service (EWS) and rest of the modules), which during team discussion was considered a feature that could have been excluded from the UML and this way the EWS, a centralized utility, could have been connected in a way to be accessed by all other components in the system. Overall nice job but there seem to be quite a few class and the design coudl have been simplified in certain cases such as 'createWordScramble' class could have been an instance of the 'wordScramble' class while 'solveWordScramble' class could aslo have been described a method for the 'wordScramble' class.
 
-### You should represent this utility as a utility class that (1) is called "ExternalWebService", (2) is connected to the classes in the system that use it, and (3) explicitly list relevant methods used by those classes. This class is provided by the system, so it should only contain what is specified here. You do not need to include any aspect of the server in your design besides this utility class.
 
-**Response:** The external web service will address all of the above mentioned tasks where the **addPlayer()** method will add a new player based on what is provided in the 'New Player' class such as first name, last name, username, etc. When a new word scramble will be created, the **sendWordScramble()** method will be utilized to receive the unique identifier for that particular word scramble. **retrieveScrambleRecords()** method will be utilized to fetch the word scramble information along with the creator's information. In this case, scrambles can be considered as a list with 'uniqueIDs' along with associated unique 'user_name' for the creator of that word scramble. For record keeping purposes when a particular word scramble has been solved, **solvedWordScrambles(string <uniqueID>)** method will be utilized with the passing parameter as the 'uniqueID' to let the system know that a word scramble has been solved. In the case, where player records are to be retrieved, **retrievePlayersRecords()** method will be used to extract the list of players and the word scrambles they have solved.
 
-### 5. When creating a new player, a user will:
+## *Team Design*
 
-### a. Enter the player’s first name.
+![Team Design](designs/design_team.png)
 
-### b. Enter the player’s last name.
+As a collective team effort, we setup multiple calls to visit various requirements of the design and reviewed pros and cons for each individual design. The disscussions were thorough which led to the final UML deisgn as shown above. The team was in unanimous agreement that the application's entry point should be the 'User' class also evident in all the individual UML designs. It was decided that the 'User' class will give the option to the user to either create a new user profile by accepting user credentials such as first name, last name, email, user_id, etc or login if the profile is already in the system. This approach led to an agreement amongst team members on how to distinguish between new and existing players.
 
-### c. Enter the player’s desired username.
 
-### d. Enter the player’s email.  
+## *Summary*
 
-### e. Save the information.
+Main objective of coming together as a team for the final design was to get individual as well as collective team feedback which turned out to be quite useful. At the beginning, a review word document was shared amongst the team members in between successive team meetings. This way, each team member was able to perform first draft of the review based on other team member's design. This left each team member and the team collectively in a better position to address the do's and don’ts for the final design and by the time the team got together to discuss the final design each member had a clear idea of what was to go into the final design.
 
-### f. Receive the returned username, with possibly a number appended to it to ensure that it is unique.
+The whole experience of team work highlighted both theoretical and industrial practices of software development process. This approach and the feedback from within the team also helped each team member to review the capabilities of their own individual design. Building the final design was an iterative process with the team observing and mitigating possible design shortcomings along the way.
 
-**Response:** When creating a new player, important information such as first name, last name, email, username will be passed on and this information will be saved onto the database. The database, in conjunction with the external web service will reply back with a unique username. How a unique username will be generated as mentioned above in **point f** above (i.e. with possibly a number appended to it to ensure that it is unique), is not a design requirement rather an implementation requirement and is not addressed here.  
-
-### 6. To add a word scramble, the player will:
-
-### a. Enter a phrase (not scrambled).
-
-### b. Enter a clue. 
-
-### c. View the phrase scrambled by the system. If the player does not like the result, they may choose for the system to re-scramble it until they are satisfied.
-
-### d. Accept the results or return to previous steps.
-
-### e. View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
-
-**Response:** Adding a word scramble is realized by utilizing a helper class **createWordScramble**. This class will take as inputs, the non-scrambled phrase, its clue and helps the user generate appropriate scrambled phrase using the **viewScrambledPhrase()** method. Once the user is satisfied with the scrambled word then he/she will accept it. Once the user accepts it, he/she will then be able to view the 'uniqueID' now associated with that word scramble. 
-
-### 7. A scramble shall only mix up alphabetic characters, keeping each word together. Words are contiguous sequences of alphabetic characters separated by one or more non-alphabetic characters.
-
-**Response:** This requirement pertains to the implementation level details and is not addressed as part of this design document.
-
-### 8. All other characters and spacing will remain as they originally are.
-
-### ```Example: The cat is loud :-). -> Het atc si ulod :-).```
-
-**Response:** This is also an implementation level requirement and is not addressed as part of this design document.
-
-### 9. When solving word scrambles, a player will:
-
-### a. View the list of unsolved word scrambles, by identifier, with any in progress scrambles marked and shown first.
-
-### b. Choose one word scramble to work on.
-
-### c. View the scramble.
-
-### d. Enter the letters in a different order to try to solve the scramble.
-
-### e. Submit a solution.
-
-### f. View whether it was correct.
-
-### g. Return either to the puzzle, if wrong, or to the list, if correct.
-
-**Response:** In order to solve an existing word scramble, a helper class **solveWordScramble** will be used which will help the user to view the list of unsolved word scrambles via the **viewUnsolvedScrambles()** method. Once the user has chosen the scramble to solve 'phrase_scramble', the user can provide the solution to that scrambled word 'solution' in form of a string by passing it to the **solveWordScramble(string<solution>)** method, which will respond as true if the solution is correct and false otherwise.
-
-### 10. A player may exit any scramble in progress at any time and return to it later.  The last state of the puzzle will be preserved.
-
-**Response:** To address this requirement, a method **saveGameProgess()** is included as part of the **solveWordScramble** class which will save the progress to a particular scramble for a particular user.
-
-### 11. The scramble statistics shall list all scrambles with
-
-### (1) their unique identifier,
-
-### (2) information on whether they were solved or created by the player, and
-
-### (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
-
-**Response:** In order to keep track of statistics pertaining to scrambles, **scrambleStatistics** class will be used where the 'uniqueID' for each scramble, along with the information regarding its creater/solver 'user_name' and 'solved_created' will be kept. This will also keep the no. of times a word scramble has been solved.
-
-### 12. The player statistics will list players’ first names and last names, with
-
-### (1) the number of scrambles that the player has solved,
-
-### (2) the number of new scrambles created, and
-
-### (3) the average number of times that the scrambles they created have been solved by other players. It will be sorted by decreasing number of scrambles that the player has solved.
-
-**Response:** Similar to the scramble statistics, **playerStatistics** class will keep all the necessary records for a particular player starting from his/her first and last name, no. of scrambles created and solved by that player and average no. of times the scrambles created by them are solved by others.
-
-### 13. The User Interface (UI) shall be intuitive and responsive.
-
-**Response:** User interface intuitiveness and responsiveness is an implementation level detail so is not discussed here as part of the design.
+The team also took a fresh approach by re-visiting the requirements for assignment 5. Although, the final design was a version of one of the team member's design, re-visiting the requirements helped the team address the task at hand in a much better way. Finally, when compiling the team design, members put extra effort to make it precisely while clearly portraying what was required of it without making it too intricate.
