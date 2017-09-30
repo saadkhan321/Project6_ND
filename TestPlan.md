@@ -1,7 +1,7 @@
 # Test Plan 
 
 **Version**: 3.0 *(Updated with complete test results)*<br>
-**Author**: Team 25
+**Author**: Team 47
 
 ## 1 Testing Strategy
 
