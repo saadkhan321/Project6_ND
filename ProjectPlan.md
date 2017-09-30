@@ -1,7 +1,7 @@
 # Project Plan
 
 **Version**: 1.0<br>
-**Author**: Team 25
+**Author**: Team 47
 
 ## 1 Introduction
 
