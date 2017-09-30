@@ -1,8 +1,7 @@
 # CS6300 SDP Fall 2017 - Assignment 5: Software Design
 by Saad Khan (```skhan315@gatech.edu```)
 
-# Word Scrabble Game
-
+# Word Scramble Game
 ## Overview
 
 A mixture of both data structures (lists) and variables (string, int, boolean) were utilized as part of the design. Main focus was to keep the design simple but at the same time incorporating all what was needed as per the requirements.
