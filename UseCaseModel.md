@@ -1,7 +1,7 @@
 # Use Case Model
 
 **Version**: 2.0 *(Some use cases updated with slightly different sequence of events)*<br>
-**Author**: Team 25
+**Author**: Team 47
 
 ## 1 Use Case Diagram
 
