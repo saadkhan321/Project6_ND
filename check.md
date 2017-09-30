@@ -1,169 +1,53 @@
-1 - When starting the application, a user may choose to either create a new player or log in.  For simplicity, authentication is optional.  A (unique) username will be sufficient for logging in.
+# WORD SCRAMBLE Application - Design information
 
-To realize this requirement, I added a class "User" to represent the player, with an attribute "username". A method signature was added to the same class:
+## Requirements
 
-- login(username: String): Boolean
+### 1. When starting the application, a user may choose to either create a new player or log in. For simplicity, authentication is optional. A (unique) username will be sufficient for logging in.
 
-That method returns true or false depending if the user logged in or not.
+### 5. When creating a new player, a user will: Enter the player’s first name. Enter the player’s last name. Enter the player’s desired username. Enter the player’s email. Save the information. Receive the returned username, with possibly a number appended to it to ensure that it is unique.
 
+In UML diagram the above requirements 1 & 5 are outlined using the Class USER, which showcases the required attributes and function to create a player. This class representation has two methods
 
-2 - After logging in, the application shall allow players to  (1) create a word scramble, (2) choose and solve word scrambles, (3) see statistics on their created and solved word scrambles, and (4) view the player statistics.
+```login() - to login for existing user```
 
-Even though this is more an UI requirement, it helped me understand some of the other elements of the domain. Thus, I added a class "Game" to be used as a blueprint for the creation of word scrambles and an association class "PlayEvent" for the actual action of a user playing a particular game instance. 
+```createPlayer() - for new user to create a player.```
 
+When the user creates a player for the first time, a unique user ID is generated and provided to the user by External Webservice Utility(EWS). He can then use the login method to login as a player using the unique user ID.
 
-3 - The application shall maintain an underlying database to save persistent information across runs (e.g., word scrambles, player information, statistics).
+### 2. After logging in, the application shall allow players to (1) create a word scramble, (2) choose and solve word scrambles, (3) see statistics on their created and solved word scrambles, and (4) view the player statistics.
 
-I did not consider this requirement because the database does not affect the design directly.
+### 6. To add a word scramble, the player will: Enter a phrase (not scrambled). Enter a clue. View the phrase scrambled by the system. If the player does not like the result, they may choose for the system to re-scramble it until they are satisfied. Accept the results or return to previous steps. View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
 
-4 - Word scrambles and statistics will be shared with other instances of the application.  An external web service utility will be used by the application to communicate with a central server to:
+### 9. When solving word scrambles, a player will: View the list of unsolved word scrambles, by identifier, with any in progress scrambles marked and shown first. Choose one word scramble to work on. View the scramble. Enter the letters in a different order to try to solve the scramble. Submit a solution. View whether it was correct. Return either to the puzzle, if wrong, or to the list, if correct.
 
-a - Add a player and ensure that their username is unique.
-b - Send new word scrambles and receive a unique identifier for them.
-c - Retrieve the list of scrambles, together with information on which player created each of them. 
-d - Report a solved scramble.
-e - Retrieve the list of players and the scrambles each have solved.
+### 10. A player may exit any scramble in progress at any time and return to it later. The last state of the puzzle will be preserved.
 
+The PLAYER class and SCRAMBLE class in the design, represents the above four requirements (2 , 6, 9 & 10). Once the user logs in with his unique user id, he will have options to - Create a scramble , Update it and submit the scramble for other players to solve. To create a new scramble the player can utilize the generateScramble method, which takes in the inputPhrase and inputClue string parameters and creates a scramble. The player can reuse the generateScramble method to regenerate the scramble until he is satisfied with the scrambled word. Once the player is satisfied with the scrambled word, he will use the acceptScramble to save the scramble and the system will add the word in UNSOLVEDSCRAMBLE list. The system will save the original phrase in datastore for later matching purpose while solving the scrambled word. Once he submits the scramble he will see a unique scramble id.
 
-In order to realize this requirement, added an Utility class called "ExternalWebService" with the following methods in order to fulfill each of the above-described functionalities:
+Also in this class, getUnsolvedScrambleList method will provide the list of all availble scramble words to the player to solve. The player can choose a scramble to solve from the list using chooseScramble and view the scrambled word using viewScramble method. While solving a scramble, the player will input the letters in different order to match with the correct answer pre - stored in system. Once the player has solved the scramble, submitSolution method of SCRAMBLE class will be invoked to submit and match the correct answer stored in the system. Player can view the result. If the result is incorrect, player can go back to retry the solution else go back to the list to pick new scramble to solve.
 
-a - addUser(username: String): String 
-b - addNewWordScrambleGame(game: Game): Integer
-c - getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>
-d - reportSolvedScramble(game: Game)
-e - retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>
- 
+PLAYER class has the checkStatistics method which will allow player to check his historical statistics and also the scramble game statistics. The player also has option to either saveScramble() - to save the existing scramble word, exit()- to quit the game or resumeScramble()- to resume any old saved game. The last state of the puzzle will be preserved and the player can resume to solve it at a later time.
 
-A few remarks on the steps to fulfill this requirement:
+### 3. The application shall maintain an underlying database to save persistent information across runs (e.g., word scrambles, player information, statistics).
 
-- Added unique identifier as a property in the Game class, according to indications of the "b" requirement.
-- The addUser method returns an unique username as a String
+This requirement has not been included in the design. All the storage and retrieval procedures with Database will be implemented with appropriate Persistance API implementation.
 
+### 4. Word scrambles and statistics will be shared with other instances of the application. An external web service utility will be used by the application to communicate with a central server to: Add a player and ensure that their username is unique. Send new word scrambles and receive a unique identifier for them. Retrieve the list of scrambles, together with information on which player created each of them. Report a solved scramble. Retrieve the list of players and the scrambles each have solved.
 
-5 - When creating a new player, a user will:
+### You should represent this utility as a utility class that (1) is called "ExternalWebService", (2) is connected to the classes in the system that use it, and (3) explicitly list relevant methods used by those classes. This class is provided by the system, so it should only contain what is specified here. You do not need to include any aspect of the server in your design besides this utility class.
 
-a - Enter the player’s first name.
-b - Enter the player’s last name.
-c - Enter the player’s desired username.
-d - Enter the player’s email.  
-e - Save the information.
-f - Receive the returned username, with possibly a number appended to it to ensure that it is unique.
+ExternalWebService utility class represents this requirement in the design. This utility is linked to all intances of the system - login, scramble, player, statistics and will be the core service which will take care of all game functionalities like createUniqueUserId , generateNewScramble, retrievePlayerStatistics, retrieveScrambleStatistics, scrambleSolvedNotification.
 
-In order to realize this requirement, I added the following properties to the User class:
+### 7. A scramble shall only mix up alphabetic characters, keeping each word together. Words are contiguous sequences of alphabetic characters separated by one or more non-alphabetic characters.
 
-firstName: String
-lastName: String
-desiredUsername: String
-username: String
-email: String
+### 8. All other characters and spacing will remain as they originally are.
 
-The following methods were added:
+### 13. The User Interface (UI) shall be intuitive and responsive.
 
-- createNewPlayer(firstName, lastName, desiredUsername, email): String
+Requirement 7 , 8 and 13 are implementation level tasks and are not represented in the design. Requirement 7 & 8 will be taken care as an algorithm implementation in createScramble method of SCRAMBLE class and requirement 13 will be implemented as non-functional requirement.
 
-The above method returns a username that the system registered by using the ExternalWebService utility class. The addUser method signature was changed to address that requirement and became as follows:
+### 11. The scramble statistics shall list all scrambles with (1) their unique identifier, (2) information on whether they were solved or created by the player, and (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
 
-- addUser(firstName, lastName, desiredUsername, email): String
+### 12. The player statistics will list players’ first names and last names, with (1) the number of scrambles that the player has solved, (2) the number of new scrambles created, and (3) the average number of times that the scrambles they created have been solved by other players. It will be sorted by decreasing number of scrambles that the player has solved.
 
-That method returns a player's username that the remote system assigned to the user. 
-
-
-6 - To add a word scramble, the player will:
-
-a - Enter a phrase (not scrambled).
-b - Enter a clue. 
-c - View the phrase scrambled by the system. If the player does not like the result, they may choose for the system to re-scramble it until they are satisfied.
-d - Accept the results or return to previous steps.
-e - View the returned unique identifier for the word scramble. The scramble may not be further edited after this point.
-
-
-In order to realize this requirement, the following property fields were added to the Game class:
-
-identifier: Integer
-originalPhrase: String
-clue: String
-scrambledPhrase: String
-
-The following methods were added to the Game class:
-
-- createNewGame(phrase: String, clue: String): Integer
-- refreshScrambledPhrase()
-- saveGame(): Integer
-
-A few remarks on the steps to fulfill this requirement:
-
-- The createNewGame method saves the game object locally until the user accepts the scrambled phrase
-- The refreshCrumbledPhrase method fulfills requirement "C" above
-- The saveGame method saves the game and returns the final identifier
-- The saveGame method uses the ExternalWebService utility class. More specifically the "addNewWordScrambleGame(game: Game): Integer" method signature
-
-
-7 - A scramble shall only mix up alphabetic characters, keeping each word together. Words are contiguous sequences of alphabetic characters separated by one or more non-alphabetic characters.
-
-In order to realize this requirement, the scrumbledPhrase property on the Game class was confirmed to be "String"
-
-8 - All other characters and spacing will remain as they originally are.
-
-This requirement does not affect the UML design
-
-9 - When solving word scrambles, a player will:
-
-a - View the list of unsolved word scrambles, by identifier, with any in progress scrambles marked and shown first.
-b - Choose one word scramble to work on.
-c - View the scramble.
-d - Enter the letters in a different order to try to solve the scramble.
-e - Submit a solution.
-f - View whether it was correct.
-g - Return either to the puzzle, if wrong, or to the list, if correct.
-
-
-In order to realize this requirement, the following steps were taken:
-
-- In order to fulfill requirement "a", the method "retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>" available in the ExternalWebService utility class is used to filter the results of the "getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>" method, also available the same utility class. This gives a list of unsolved word scrambles for a particular user. To show the scrambles in progress for a user, a method called "getInProgressGameList(): List<Game>" was added to the User class. The list returned by this method is used in combination with the list returned and filtered by the mentioned utility methods.
-- A method signature "submitSolution(solution: String): Boolean" was added. If the solution is correct the method returns true, otherwise it returns false.
-- If the solution is correct call the method "reportSolvedScramble(game: Game)", available in the ExternalWebService utility class.
-
-
-10 - A player may exit any scramble in progress at any time and return to it later.  The last state of the puzzle will be preserved.
-
-In order to fulfill this requirement a property called "gameState" was added to the PlayEvent class. In addition, the following method signature was added to the same class:
-
-- updateGameState(state: String)
-
-This method assumes the game state is in a string format.
-
-
-11 - The scramble statistics shall list all scrambles with (1) their unique identifier, (2) information on whether they were solved or created by the player, and (3) the number of times any player has solved them. This list shall be sorted by decreasing number of solutions.
-
-In order to realize this requirement, two methods are used from the ExternalWebService utility class:
-
-- retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>
-- getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>
-
-The former returns a list of all players and the scrambles each solved. The latter returns the list of all scrambles and its authors. By callind both methods, filtering the results and making the appropriate calculations, we get fulfill the requirements described in this section. For convenience, we also added a new property called "numberOfTimesSolved: Integer" in the Game class, in order to facilitate sorting of games by the number of times players solved them. A setter method called "setSolvedTimes(game: Game)" was added to the same class in order to set the numberOfTimesSolved attribute.
-
-
-A method called "getScrambleStatistics()" was added to the Game clas in order to wrap the calls to the methods in the ExternalWebService utility class and perform the necessary filtering and calculations. 
-
-
-12 - The player statistics will list players’ first names and last names, with (1) the number of scrambles that the player has solved, (2) the number of new scrambles created, and (3) the average number of times that the scrambles they created have been solved by other players.  It will be sorted by decreasing number of scrambles that the player has solved.
-
-In order to realize this requirement, two methods are used from the ExternalWebService utility class:
-
-- retrievePlayersAndSolvedScrambles: ArrayList<Map<User, ArrayList< Game>>>
-- getListOfWordScrambleGamesAndAuthors(): ArrayList<Map<Game, User>>
-
-By callind the above methods, filtering the results and performing the necessary calculations accordingly, points 1,2,3 can be easily met. In order to facilitate sorting and making the calculations more explicit, the following properties, alongside with its setters methods, were added to the User class:
-
-- numberOfSolvedGames: Integer
-- numberOfGamesCreated: Integer 
-- authoredGamesSolvedAverage: Integer
-
-
-A method called "getPlayerStatistics()" was added to the User class in order to wrap the calls to the methods in the ExternalWebService utility class and perform the necessary filtering and calculations. 
-
-
-13 - The User Interface (UI) shall be intuitive and responsive.
-
-This requirement does not affect the UML design
- 
+In the design the class component STATISTICS will take care of both requirement 11 and 12. getPlayerStats method will be used by PLAYER class to get the players statistics which includes First and Last name, the number of scrambles he has solved, the number of new scrambles created and the average number of times the scrambles which he has created have been solved by other players. Similarly, getScrambleStats method can be utilized by Player to get the scramble statistics which includes the uniuqe scramble id, status on whether the scramble is solved or created by him and the count of number of times the scramble has been solved.
