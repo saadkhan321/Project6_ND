@@ -1,7 +1,7 @@
 # Design Document
 
 **Version**: 2.0 *(Updates to assumptions to reflect final design, addition of actual final product UI screenshots)*<br>
-**Author**: Team 25
+**Author**: Team 47
 
 ## 1 Design Considerations
 
