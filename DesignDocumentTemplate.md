@@ -24,16 +24,61 @@ Following chart is used to log all the changes made to this document.
 
 This section enumerates all the assumptions that will impact the word scramble application design.
 
-1. Version control will be handled using Georgia Tech’s GitHub.
+1. Version control will be handled using Georgia Tech’s GitHub. 
+
+* Private team GitHub repository will be used to handle version control for the project.
+
+
 2. The app will be a client-server design and will depend on ExternalWebService to handle communication between the client and central server. 
+
+* Word Scramble game will be designed as a client/server application and will utilize the external web service (EWS) utiliity in order to communicate back and forth between the client (user/player) and the server.
+
 3. The app will use as a gradle dependency Bootstrap for Android to develop the majority of the front-facing view. 
+
+* DOUBLE CHECK
+
 4. There will be basic authentication and unencrypted passwords.
+
+* As per the UML design requirements, authentication is optional so the application will only require a unique username to login.
+
+
 5. The app will use a fixed text-based, flat-file database that will be started on application startup.
+
+* DOUBLE CHECK
+
 6. Development deliverables will be delivered in a timely manner.
+
+* It is intended that all the deliverables pertaining to development of the application will distributed in am appropriate and prompt way.
+
 7. A waterfall approach will be used.
+
+* DOUBLE CHECK
+
 8. Testing will cover all functionality of the application.
+
+* It is also intedend that the Test plan will account for all the various functionalities pertaining to the word scramble application.
+
 9. Some pre-processing of cryptogram inputs may be necessary to ensure compatibility with database storage schemes and formatting.
+
+* DOUBLE CHECK
+
+
 10. Player Ratings will be handled as follows: Cryptograms will be counted as "started" once the solution phrase entry field is populated with any text and before it is submitted. Cryptograms with incorrect submissions will continue to count toward started cryptograms, but those with correct submissions will be counted only as "solved" (and no longer as "started"). Incorrect submissions will be increased for each incorrect submission, including multiple incorrect submissions for the same cryptogram.
+
+* It is assumed that once a player has successfully logged in and wishes to initiate a particular game instance using the assocation class "PlayEvent", the game instance will have one of 3 stages:
+
+| Stage     | Description |
+| :-------: | :---------: |
+| RUNNING  | The time from which the solution letters are entered in the solution text box till the time submit button is clicked. In the case where the solution is incorrect, the game will remain in the running stage as neither a correct solution has been entered yet nor the player has saved his progress |                    
+| SUBMITTED |             |                
+| COMPLETE  |             |                         
+                 
+
+It is assumed that once a player initiates a particular game instance using the assocation class "PlayEvent", the word scramble game will be considered as "running", once a probable solution to the scramble is submitted, the game will then be considered as "submitted"
+
+an association class “PlayEvent” for the actual action of a user playing a particular game instance. 
+
+
 11. It will not be necessary to create new administrators through the app user interface. An administrator account will be provided with credentials username: "admin" and password: Password" (without quotes).
 12. Credentials (both username and password) may be case-sensitive and contain only alphanumeric characters.
 13. It is acceptable to be able to edit previously created cryptogram solution and encoded phrases, even if the requirements do not explicitly state this.
