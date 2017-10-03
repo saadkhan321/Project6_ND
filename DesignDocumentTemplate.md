@@ -21,7 +21,7 @@ Following chart is used to log all the changes made to this document.
 
 ### 1.1 Assumptions
 
-[comment]: <*Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues.*>
+[comment]: <> (*Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues.*)
 
 This section enumerates all the assumptions that will impact the word scramble application design.
 
