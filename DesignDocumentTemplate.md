@@ -5,6 +5,7 @@
 **Author**:  Team 47 
 
 | Name | GT email ID |
+| :-----: | :-----------------: |
 | Isaac Silva | isilva6@gatech.edu |
 | Mukul Pai | mpai8@gatech.edu |
 | Saad Khan | skhan315@gatech.edu |
