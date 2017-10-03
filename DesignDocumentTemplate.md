@@ -10,7 +10,7 @@
 | Mukul Pai | ```mpai8@gatech.edu``` |
 | Saad Khan | ```skhan315@gatech.edu``` |
 
-### Document Tracking
+**Document Tracking**
 
 Following chart is used to log all the changes made to this document.
 
@@ -21,86 +21,70 @@ Following chart is used to log all the changes made to this document.
 
 ## 1 Design Considerations
 
-*The subsections below describe the issues that need to be addressed or resolved prior to or while completing the design, as well as issues that may influence the design process.*
+<!-- *The subsections below describe the issues that need to be addressed or resolved prior to or while completing the design, as well as issues that may influence the design process.* -->
+
+This section contains all of the assumptions, system dependencies and constraints that were considered during the design of each subsystem and component of the word scramble application.
 
 ### 1.1 Assumptions
 <!-- *Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues.* -->
 
+TAn android mobile pplication is dependent on the Web Application because the mobile application cannot work without the data from the web application and vice versa. 
+
 This section enumerates all the assumptions that will impact the word scramble application design.
 
-1. Version control will be handled using Georgia Tech’s GitHub. 
+1. The Word Scramble android game will be designed as a client/server application and will utilize the external web service (EWS) utiliity in order to communicate back and forth between the client (user/player) and the server.
 
-* Private team GitHub repository will be used to handle version control for the project.
+2. As per the UML design requirements, authentication is optional so the application will only require a unique username for a particular player to login.
 
+3. The intention of the application development team is that all the deliverables pertaining to development of the application will be distributed in a appropriate and prompt way.
 
-2. The app will be a client-server design and will depend on ExternalWebService to handle communication between the client and central server. 
+4. It is also intedend that the test plan will account for all the various functionalities pertaining to the word scramble application.
 
-* Word Scramble game will be designed as a client/server application and will utilize the external web service (EWS) utiliity in order to communicate back and forth between the client (user/player) and the server.
+5. Private team GitHub repository assigned by Georgia Tech will be used to handle version control for the group project.
 
-3. The app will use as a gradle dependency Bootstrap for Android to develop the majority of the front-facing view. 
-
-* DOUBLE CHECK
-
-4. There will be basic authentication and unencrypted passwords.
-
-* As per the UML design requirements, authentication is optional so the application will only require a unique username to login.
-
-
-5. The app will use a fixed text-based, flat-file database that will be started on application startup.
-
-* DOUBLE CHECK
-
-6. Development deliverables will be delivered in a timely manner.
-
-* It is intended that all the deliverables pertaining to development of the application will distributed in am appropriate and prompt way.
-
-7. A waterfall approach will be used.
-
-* DOUBLE CHECK
-
-8. Testing will cover all functionality of the application.
-
-* It is also intedend that the Test plan will account for all the various functionalities pertaining to the word scramble application.
-
-9. Some pre-processing of cryptogram inputs may be necessary to ensure compatibility with database storage schemes and formatting.
-
-* DOUBLE CHECK
-
-
-10. Player Ratings will be handled as follows: Cryptograms will be counted as "started" once the solution phrase entry field is populated with any text and before it is submitted. Cryptograms with incorrect submissions will continue to count toward started cryptograms, but those with correct submissions will be counted only as "solved" (and no longer as "started"). Incorrect submissions will be increased for each incorrect submission, including multiple incorrect submissions for the same cryptogram.
-
-* It is assumed that once a player has successfully logged in and wishes to initiate a particular game instance using the assocation class "PlayEvent", the game instance will have one of 4 stages for a player:
+6. It is assumed that once a player has successfully logged in and wishes to initiate a particular game instance using the assocation class "PlayEvent", the game instance will have one of 4 stages for a player:
 
 | Stage     | Description |
 | :-------: | :---------: |
 | RUNNING   | The time from which the solution letters are entered in the solution text box till the time submit button is clicked. In the case where the solution is incorrect, the game will remain in the running stage as neither a correct solution has been entered yet nor the player has saved their progress .|
 | IN-PROGRESS | When a player leaves without submitting a solution, the game stays in this stage to keep record of any game that is in progress for that player.|
 | SUBMITTED | In the case where the player clicks the submit button, the game moves to this state and will have to options to choose from, either move to the complete state (described below) or stay in the running state as the solution is incorrect up until that point.        |                
-| COMPLETE  | When the solution letters submitted are for a correct solution, the state changes to complete, highlighting that a particular player has solved a scramble.    |                         
-                 
+| COMPLETE  | When the solution letters submitted are for a correct solution, the state changes to complete, highlighting that a particular player has solved a scramble.    |  
+
+7. To start with, the application will be provided along with an initial user credential (username = player1) which will be considered as a demo user. 
+
+8. Username required for logging into or for creating a new player profile shall only contain alphabets and/or numerical characters. The username will also be case sensitive.
+
+9. The game will be able to accept infinte number of word scrambles before a player actually decides to save it to the system.
+
+10. A valid word scramble will be the one where each alphabet or number is replaced at its position.
+
+11. The application will allow a player to save word scrambles with same solution but have different clues.
+
+
+3. The app will use as a gradle dependency Bootstrap for Android to develop the majority of the front-facing view. 
+
+* DOUBLE CHECK
 
 
 
-11. It will not be necessary to create new administrators through the app user interface. An administrator account will be provided with credentials username: "admin" and password: Password" (without quotes).
+
+5. The app will use a fixed text-based, flat-file database that will be started on application startup.
+
+* DOUBLE CHECK
 
 
-* To start with, the application will be provided along with an initial user credential (username = player1) which will be considered as a demo user.  
+7. A waterfall approach will be used.
 
-12. Credentials (both username and password) may be case-sensitive and contain only alphanumeric characters.
-
-* Username required for logging into or for creating a new player profile shall only contain alphabets and/or numerical characters. The username will also be case sensitive.
-
-13. It is acceptable to be able to edit previously created cryptogram solution and encoded phrases, even if the requirements do not explicitly state this.
+* DOUBLE CHECK
 
 
-* The game will be able to accept infinte number of word scrambles before a player actually decides to save it to the system.
 
-14. Only cryptograms in which every alphabetic character is shifted by the same number of positions in the alphabet (Caesar cipher or shift cipher) will be allowed when creating cryptograms. Additionally, cryptograms with same solution and encoded phrases (shift by 0 positions) will not be allowed.
+9. Some pre-processing of cryptogram inputs may be necessary to ensure compatibility with database storage schemes and formatting.
+
+* DOUBLE CHECK               
 
 
-* A valid word scramble will be the one where each alphabet or number is replaced at its position.
-
-* The application will allow a player to save word scrambles with same solution but have different clues.
 
 ### 1.2 Constraints
 
