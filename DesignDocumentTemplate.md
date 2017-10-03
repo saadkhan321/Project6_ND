@@ -73,15 +73,28 @@ This section enumerates all the assumptions that will impact the word scramble a
 | COMPLETE  | When the solution letters submitted are for a correct solution, the state changes to complete, highlighting that a particular player has solved a scramble.    |                         
                  
 
-It is assumed that once a player initiates a particular game instance using the assocation class "PlayEvent", the word scramble game will be considered as "running", once a probable solution to the scramble is submitted, the game will then be considered as "submitted"
-
-an association class “PlayEvent” for the actual action of a user playing a particular game instance. 
 
 
 11. It will not be necessary to create new administrators through the app user interface. An administrator account will be provided with credentials username: "admin" and password: Password" (without quotes).
+
+
+* To start with, the application will be provided along with an initial user credential (username = player1) which will be considered as a demo user.  
+
 12. Credentials (both username and password) may be case-sensitive and contain only alphanumeric characters.
+
+* Username required for logging into or for creating a new player profile shall only contain alphabets and/or numerical characters. The username will also be case sensitive.
+
 13. It is acceptable to be able to edit previously created cryptogram solution and encoded phrases, even if the requirements do not explicitly state this.
+
+
+* The game will be able to accept infinte number of word scrambles before a player actually decides to save it to the system.
+
 14. Only cryptograms in which every alphabetic character is shifted by the same number of positions in the alphabet (Caesar cipher or shift cipher) will be allowed when creating cryptograms. Additionally, cryptograms with same solution and encoded phrases (shift by 0 positions) will not be allowed.
+
+
+* A valid word scramble will be the one where each alphabet or number is replaced at its position.
+
+* The application will allow a player to save word scrambles with same solution but have different clues.
 
 ### 1.2 Constraints
 
