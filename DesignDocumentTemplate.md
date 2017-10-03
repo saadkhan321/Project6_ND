@@ -65,13 +65,14 @@ This section enumerates all the assumptions that will impact the word scramble a
 
 10. Player Ratings will be handled as follows: Cryptograms will be counted as "started" once the solution phrase entry field is populated with any text and before it is submitted. Cryptograms with incorrect submissions will continue to count toward started cryptograms, but those with correct submissions will be counted only as "solved" (and no longer as "started"). Incorrect submissions will be increased for each incorrect submission, including multiple incorrect submissions for the same cryptogram.
 
-* It is assumed that once a player has successfully logged in and wishes to initiate a particular game instance using the assocation class "PlayEvent", the game instance will have one of 3 stages:
+* It is assumed that once a player has successfully logged in and wishes to initiate a particular game instance using the assocation class "PlayEvent", the game instance will have one of 4 stages for a player:
 
 | Stage     | Description |
 | :-------: | :---------: |
-| RUNNING  | The time from which the solution letters are entered in the solution text box till the time submit button is clicked. In the case where the solution is incorrect, the game will remain in the running stage as neither a correct solution has been entered yet nor the player has saved his progress |                    
-| SUBMITTED |             |                
-| COMPLETE  |             |                         
+| RUNNING   | The time from which the solution letters are entered in the solution text box till the time submit button is clicked. In the case where the solution is incorrect, the game will remain in the running stage as neither a correct solution has been entered yet nor the player has saved their progress .|
+| IN-PROGRESS | When a player leaves without submitting a solution, the game stays in this stage to keep record of any game that is in progress for that player.|
+| SUBMITTED | In the case where the player clicks the submit button, the game moves to this state and will have to options to choose from, either move to the complete state (described below) or stay in the running state as the solution is incorrect up until that point.        |                
+| COMPLETE  | When the solution letters submitted are for a correct solution, the state changes to complete, highlighting that a particular player has solved a scramble.    |                         
                  
 
 It is assumed that once a player initiates a particular game instance using the assocation class "PlayEvent", the word scramble game will be considered as "running", once a probable solution to the scramble is submitted, the game will then be considered as "submitted"
