@@ -61,28 +61,13 @@ This section enumerates all the assumptions that will impact the word scramble a
 
 11. The application will allow a player to save word scrambles with same solution but have different clues.
 
+12. The development process for the application will follow the waterfall model only moving into the next phase once the previous one is finalized.
 
-3. The app will use as a gradle dependency Bootstrap for Android to develop the majority of the front-facing view. 
+13. ARE WE GOING TO PRE_PROCESS TEH WORD SCRAMBLE AND CLUE IN ANY WAY FOR EASE OF STORAGE OR FOR EASE OF FORMATTING
 
-* DOUBLE CHECK
+14. gradle dependency Bootstrap for Android any ASSUMPTION
 
-
-
-
-5. The app will use a fixed text-based, flat-file database that will be started on application startup.
-
-* DOUBLE CHECK
-
-
-7. A waterfall approach will be used.
-
-* DOUBLE CHECK
-
-
-
-9. Some pre-processing of cryptogram inputs may be necessary to ensure compatibility with database storage schemes and formatting.
-
-* DOUBLE CHECK               
+15. The applicaiton will use a flat text based approach to take user input for the original phrase, scrambled phrase, solution phrase and the clue.          
 
 
 
