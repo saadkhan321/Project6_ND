@@ -4,6 +4,17 @@
 
 **Author**:  Team 47 *(Isaac Silva - Mukul Pai - Saad Khan)*
 
+### Document Tracking
+
+Following chart is used to log all the changes made to this document.
+
+| Version | Date of edit/change | Who made the edit/change | Description of edit/change |
+| :-----: | :-----------------: | :----------------------: | :------------------------: |
+|         |                     |                          |                            |
+|         |                     |                          |                            |
+|         |                     |                          |                            |
+|         |                     |                          |                            |
+
 ## 1 Design Considerations
 
 *The subsections below describe the issues that need to be addressed or resolved prior to or while completing the design, as well as issues that may influence the design process.*
@@ -50,18 +61,3 @@ This section covers assumptions pertaining to the word scramble application
 *For GUI-based systems, this section should provide the specific format/layout of the user interface of the system (e.g., in the form of graphical mockups).*
 
 
-### Document Tracking
-
-Following chart is used to log all the changes made to this document.
-
-| Version | Date of edit/change | Who made the edit/change | Description of edit/change |
-| :-----: | :-----------------: | :----------------------: | :------------------------: |
-|         |                     |                          |                            |
-|         |                     |                          |                            
-
-| Team Member Name   | Role                                    |
-| :----------------: | :-------------------------------------: |
-| Michael Amadasun   | User Interface Software Developer       |
-| Alexander Molnar   | Application Tester                      |
-| Muzammil Mueen     | Application Software Developer          |
-| David Nelson       | Application Designer/Documentation Lead |
