@@ -10,7 +10,7 @@ Following chart is used to log all the changes made to this document.
 
 | Version | Date of edit/change | Who made the edit/change | Description of edit/change |
 | :-----: | :-----------------: | :----------------------: | :------------------------: |
-|    v1.0     |    10/03/2017                 |   skhan315                       |           first draft                 |
+|    v1.0     |    10/03/2017                 |   skhan315 (Saad Khan)                       |           *first draft*                 |
 
 
 ## 1 Design Considerations
