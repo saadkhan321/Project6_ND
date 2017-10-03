@@ -20,7 +20,7 @@ Following chart is used to log all the changes made to this document.
 *The subsections below describe the issues that need to be addressed or resolved prior to or while completing the design, as well as issues that may influence the design process.*
 
 ### 1.1 Assumptions
-<!-- *Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues. --*>
+<!-- *Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues.* -->
 
 This section enumerates all the assumptions that will impact the word scramble application design.
 
