@@ -21,9 +21,24 @@ Following chart is used to log all the changes made to this document.
 
 ### 1.1 Assumptions
 
-*Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues.*
+[comment]: <*Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues.*>
 
-This section covers assumptions pertaining to the word scramble application
+This section enumerates all the assumptions that will impact the word scramble application design.
+
+1. Version control will be handled using Georgia Tech’s GitHub.
+2. The app will be a client-server design and will depend on ExternalWebService to handle communication between the client and central server. 
+3. The app will use as a gradle dependency Bootstrap for Android to develop the majority of the front-facing view. 
+4. There will be basic authentication and unencrypted passwords.
+5. The app will use a fixed text-based, flat-file database that will be started on application startup.
+6. Development deliverables will be delivered in a timely manner.
+7. A waterfall approach will be used.
+8. Testing will cover all functionality of the application.
+9. Some pre-processing of cryptogram inputs may be necessary to ensure compatibility with database storage schemes and formatting.
+10. Player Ratings will be handled as follows: Cryptograms will be counted as "started" once the solution phrase entry field is populated with any text and before it is submitted. Cryptograms with incorrect submissions will continue to count toward started cryptograms, but those with correct submissions will be counted only as "solved" (and no longer as "started"). Incorrect submissions will be increased for each incorrect submission, including multiple incorrect submissions for the same cryptogram.
+11. It will not be necessary to create new administrators through the app user interface. An administrator account will be provided with credentials username: "admin" and password: Password" (without quotes).
+12. Credentials (both username and password) may be case-sensitive and contain only alphanumeric characters.
+13. It is acceptable to be able to edit previously created cryptogram solution and encoded phrases, even if the requirements do not explicitly state this.
+14. Only cryptograms in which every alphabetic character is shifted by the same number of positions in the alphabet (Caesar cipher or shift cipher) will be allowed when creating cryptograms. Additionally, cryptograms with same solution and encoded phrases (shift by 0 positions) will not be allowed.
 
 ### 1.2 Constraints
 
