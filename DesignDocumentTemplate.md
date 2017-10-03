@@ -73,7 +73,14 @@ This section enumerates all the assumptions that will impact the word scramble a
 
 ### 1.2 Constraints
 
-*Describe any constraints on the system that have a significant impact on the design of the system.*
+<!-- *Describe any constraints on the system that have a significant impact on the design of the system.* -->
+
+
+1. The app will be coded using Java 1.8 in the IntelliJ Idea IDE as well as Android Studio 2.2.
+2.Project resources may not be available at all times due to other commitments
+3.The project needs to be delivered within the specified timeline
+4. Technology is relatively new to the development team
+
 
 ### 1.3 System Environment
 
