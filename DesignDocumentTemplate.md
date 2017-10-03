@@ -12,6 +12,8 @@
 
 *Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues.*
 
+This section covers assumptions pertaining to the word scramble application
+
 ### 1.2 Constraints
 
 *Describe any constraints on the system that have a significant impact on the design of the system.*
@@ -47,3 +49,19 @@
 ## 4 User Interface Design
 *For GUI-based systems, this section should provide the specific format/layout of the user interface of the system (e.g., in the form of graphical mockups).*
 
+
+### Document Tracking
+
+Following chart is used to log all the changes made to this document.
+
+| Version | Date of edit/change | Who made the edit/change | Description of edit/change |
+| :-----: | :-----------------: | :----------------------: | :------------------------: |
+|         |                     |                          |                            |
+|         |                     |                          |                            
+
+| Team Member Name   | Role                                    |
+| :----------------: | :-------------------------------------: |
+| Michael Amadasun   | User Interface Software Developer       |
+| Alexander Molnar   | Application Tester                      |
+| Muzammil Mueen     | Application Software Developer          |
+| David Nelson       | Application Designer/Documentation Lead |
