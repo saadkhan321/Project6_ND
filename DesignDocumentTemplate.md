@@ -32,7 +32,7 @@ TAn android mobile pplication is dependent on the Web Application because the mo
 
 This section enumerates all the assumptions that will impact the word scramble application design.
 
-| **Sr. No.** | **Description** |
+| **No.** | **Description** |
 | :---: | :--- |
 |1. | The Word Scramble android game will be designed as a client/server application and will utilize the external web service (EWS) utiliity in order to communicate back and forth between the client (user/player) and the server. |
 |2. | As per the UML design requirements, authentication is optional so the application will only require a unique username for a particular player to login.|
@@ -40,7 +40,7 @@ This section enumerates all the assumptions that will impact the word scramble a
 |4. | It is also intedend that the test plan will account for all the various functionalities pertaining to the word scramble application.|
 |5. | Private team GitHub repository assigned by Georgia Tech will be used to handle version control for the group project.|
 |6. | It is assumed that once a player has successfully logged in and wishes to initiate a particular game instance using the assocation class "PlayEvent", the game instance will have one of 4 stages for a player:|
-| Stage     | Description |
+<!--| Stage     | Description |-->
 <!--| :-------: | :--------- |-->
 | RUNNING   | The time from which the solution letters are entered in the solution text box till the time submit button is clicked. In the case where the solution is incorrect, the game will remain in the running stage as neither a correct solution has been entered yet nor the player has saved their progress .|
 | IN-PROGRESS | When a player leaves without submitting a solution, the game stays in this stage to keep record of any game that is in progress for that player.|
