@@ -75,7 +75,9 @@ This section enumerates all the assumptions that will impact the word scramble a
 
 ## 2 Architectural Design
 
-*The architecture provides the high-level design view of a system and provides a basis for more detailed design work. These subsections describe the top-level components of the system you are building and their relationships.*
+<!-- *The architecture provides the high-level design view of a system and provides a basis for more detailed design work. These subsections describe the top-level components of the system you are building and their relationships.* -->
+
+This section of the design document describes the architectural design for the Word Scramble application and intends to briefly explain the details of the design and the design process.
 
 ### 2.1 Component Diagram
 
