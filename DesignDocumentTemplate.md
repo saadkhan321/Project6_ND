@@ -10,9 +10,7 @@
 | Mukul Pai | ```mpai8@gatech.edu``` |
 | Saad Khan | ```skhan315@gatech.edu``` |
 
-**Document Tracking**
-
-Following chart is used to log all the changes made to this document.
+**Document Tracking**: Following chart is used to log all the changes made to this document.
 
 | Version | Date of edit/change | Who made the edit/change | Description of edit/change |
 | :-----: | :-----------------: | :----------------------: | :------------------------: |
