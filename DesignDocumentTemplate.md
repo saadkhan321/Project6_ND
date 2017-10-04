@@ -63,9 +63,6 @@ This section enumerates all the assumptions that will impact the word scramble a
 |3. |Team will try to deliver the project within the allotted time period.|
 |4. |Huge amounts of data shall not be stored on the application (android phone).|
 |5. |Internet access shold be available for the application to execute properly.|
----------------------------------------------------------------------------------------------
-6. 
-7. 
 
 ### 1.3 System Environment
 
@@ -76,7 +73,7 @@ This section enumerates all the assumptions that will impact the word scramble a
 |1. |Word Scramble application will be created with a minimum targeted sdk version of 19, i.e application will be operational under API level 19.|
 |2. |Fully working application should be able to run at default screen resolutions on standard android phones.|
 |3. |At software testing level, application will be tested on Nexus 5 API 24 (Android 7.0, API 24) Android Emulator.|
-----------------------------------------------------------------------------------------------------------------
+
 
 ## 2 Architectural Design
 
