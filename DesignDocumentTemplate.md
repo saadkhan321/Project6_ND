@@ -45,7 +45,7 @@ This section enumerates all the assumptions that will impact the word scramble a
 6. It is assumed that once a player has successfully logged in and wishes to initiate a particular game instance using the assocation class "PlayEvent", the game instance will have one of 4 stages for a player:
 
 | Stage     | Description |
-| :-------: | :---------: |
+| :-------: | :--------- |
 | RUNNING   | The time from which the solution letters are entered in the solution text box till the time submit button is clicked. In the case where the solution is incorrect, the game will remain in the running stage as neither a correct solution has been entered yet nor the player has saved their progress .|
 | IN-PROGRESS | When a player leaves without submitting a solution, the game stays in this stage to keep record of any game that is in progress for that player.|
 | SUBMITTED | In the case where the player clicks the submit button, the game moves to this state and will have to options to choose from, either move to the complete state (described below) or stay in the running state as the solution is incorrect up until that point.        |                
