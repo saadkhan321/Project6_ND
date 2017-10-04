@@ -46,9 +46,9 @@ This section enumerates all the assumptions that will impact the word scramble a
 |10. |A valid word scramble will be the one where each alphabet must be replaced at its position. None of the letters in the phrase should be left unscrambled.|
 |11. |The application will allow a player to save word scrambles with same solution but have different clues.|
 |12. |The development process for the application will follow the waterfall model only moving into the next phase once the previous one is finalized.|
-|13. |ARE WE GOING TO PRE_PROCESS TEH WORD SCRAMBLE AND CLUE IN ANY WAY FOR EASE OF STORAGE OR FOR EASE OF FORMATTING|
-|14. |gradle dependency Bootstrap for Android any ASSUMPTION|
-|15. |The applicaiton will use a flat text based approach to take user input for the original phrase, scrambled phrase, solution phrase and the clue. |         
+|13. | *ARE WE GOING TO PRE_PROCESS TEH WORD SCRAMBLE AND CLUE IN ANY WAY FOR EASE OF STORAGE OR FOR EASE OF FORMATTING*|
+|14. |*gradle dependency Bootstrap for Android any ASSUMPTION*|
+|15. |*The applicaiton will use a flat text based approach to take user input for the original phrase, scrambled phrase, solution phrase and the clue.* |         
 
 
 
@@ -56,11 +56,13 @@ This section enumerates all the assumptions that will impact the word scramble a
 
 <!-- *Describe any constraints on the system that have a significant impact on the design of the system.* -->
 
-1. Word Scramble application will be programmed using Android Studio version 2.2.
-2. If programming outside of Android Studio is neccessary, IntelliJ Idea IDE with Java version 1.8 will be used where required.
-3. Team will try to deliver the project within the allotted time period.
-4. Huge amounts of data shall not be stored on the application (android phone)
-5. Internet access shold be available for the application to execute properly.
+| **No.** | **Description** |
+| :---: | :--- |
+|1. |Word Scramble application will be programmed using Android Studio version 2.2.|
+|2. |If programming outside of Android Studio is neccessary, IntelliJ Idea IDE with Java version 1.8 will be used where required.|
+|3. |Team will try to deliver the project within the allotted time period.|
+|4. |Huge amounts of data shall not be stored on the application (android phone).|
+|5. |Internet access shold be available for the application to execute properly.|
 ---------------------------------------------------------------------------------------------
 6. 
 7. 
@@ -69,9 +71,11 @@ This section enumerates all the assumptions that will impact the word scramble a
 
 <!-- *Describe the hardware and software that the system must operate in and interact with.* -->
 
-1. Word Scramble application will be created with a minimum targeted sdk version of 19, i.e application will be operational under API level 19.
-2. Fully working application should be able to run at default screen resolutions on standard android phones.
-3. At software testing level, application will be tested on Nexus 5 API 24 (Android 7.0, API 24) Android Emulator.
+| **No.** | **Description** |
+| :---: | :--- |
+|1. |Word Scramble application will be created with a minimum targeted sdk version of 19, i.e application will be operational under API level 19.|
+|2. |Fully working application should be able to run at default screen resolutions on standard android phones.|
+|3. |At software testing level, application will be tested on Nexus 5 API 24 (Android 7.0, API 24) Android Emulator.|
 ----------------------------------------------------------------------------------------------------------------
 
 ## 2 Architectural Design
