@@ -1,7 +1,7 @@
 # CS6300 SDP Fall 2017 - Group Project
 by Isaac Silva (```isilva6@gatech.edu```), Mukul Pai (```mpai8@gatech.edu```) & Saad Khan (```skhan315@gatech.edu```)
 
-# Word Scramble Game - User Manual
+## Word Scramble Game - User Manual
 
 **Author**:  Team 47 
 
@@ -19,13 +19,13 @@ by Isaac Silva (```isilva6@gatech.edu```), Mukul Pai (```mpai8@gatech.edu```) & 
 
 SDPCryptogram is a mobile app that allows players to practice solving cryptograms and compare their scores with others. Cryptograms are alphanumeric phrases in which the alphabetical characters are encrypted by some method, for example by shifting each character by a set number of positions in the alphabet. For each cryptogram, the player is presented with the encrypted phrase and must analyze it in order to try to discover the code and solve the puzzle. Players can submit their solutions unlimited times, but the number of incorrect submissions will be tracked and remain part their player rating along with total number of cryptograms started and solved. Administrators can add new  players to the game and new cryptograms for players to solve at any time..
 
-## Getting Started
+### Getting Started
 
 SDPCryptogram can be built and run on an android emulator via Android Studio. The Genymotion emulator plugin for Android Studio is recommended for better performance.
 
 The minimum API level is 19 and the maximum is 25.
 
-## Using SDPCryptogram
+### Using SDPCryptogram
 
 Upon launching SDPCryptogram, you will be presented with a login screen. Both administrators and players can use this screen to login, and the app will detect the type of user automatically and log them into the appropriate home screen.
 
@@ -45,12 +45,12 @@ The player home screen includes two options: **Choose Cryptogram** and **Player 
 
 Navigation: Navigation in SDPCryptogram is intended to be intuitive and buttons easy to understand and use. The standard Android **Back** button can be used to navigate to previous screens when no explicit button is provided for navigation. Furthermore, the "three dot" menu symbol at the top right of every screen can be touched to display a **logout** option that will take the user back to the login page to allow switching between users.
 
-## Built With
+### Built With
 
 * [Gradle](https://gradle.org/) - Dependency Management
 * [Andorid Bootstrap](https://github.com/Bearded-Hen/Android-Bootstrap) - Used for front end design
 
-## Authors
+### Authors
 
 * **Michael Amadasun** - *User Interface Software Developer*
 * **Alexander Molnar** - *Application Tester*
