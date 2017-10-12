@@ -1,7 +1,21 @@
-# SDPCryptogram User Manual
+# CS6300 SDP Fall 2017 - Group Project
+by Isaac Silva (```isilva6@gatech.edu```), Mukul Pai (```mpai8@gatech.edu```) & Saad Khan (```skhan315@gatech.edu```)
 
-**Version**: 2.0 *(Made changes to reflect final product features)*<br>
-**Author**: Team 25
+# Word Scramble Game - User Manual
+
+**Author**:  Team 47 
+
+| Name | GT email ID |
+| :-----: | :----------------- |
+| Isaac Silva | ```isilva6@gatech.edu``` |
+| Mukul Pai | ```mpai8@gatech.edu``` |
+| Saad Khan | ```skhan315@gatech.edu``` |
+
+**Document Tracking**: Following chart is used to log all the changes made to this document.
+
+| Version | Date of edit/change | Who made the edit/change | Description of edit/change |
+| :-----: | :-----------------: | :----------------------: | :------------------------: |
+|    v1.0     |    10/13/2017                 |   Team 47                       |           *first draft*                 |
 
 SDPCryptogram is a mobile app that allows players to practice solving cryptograms and compare their scores with others. Cryptograms are alphanumeric phrases in which the alphabetical characters are encrypted by some method, for example by shifting each character by a set number of positions in the alphabet. For each cryptogram, the player is presented with the encrypted phrase and must analyze it in order to try to discover the code and solve the puzzle. Players can submit their solutions unlimited times, but the number of incorrect submissions will be tracked and remain part their player rating along with total number of cryptograms started and solved. Administrators can add new  players to the game and new cryptograms for players to solve at any time..
 
